@@ -26,23 +26,46 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "AccountingService",
-  "url": "https://gomesduartecontabil.com",
-  "telephone": "+55-24-99240-8530",
-  "priceRange": "Sob Consulta",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rua das Azaléias, 55 - Bairro Cidade Alegria",
-    "addressLocality": "Resende",
-    "addressRegion": "RJ",
-    "postalCode": "27525-090",
-    "addressCountry": "BR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -22.4416,
-    "longitude": -44.4939
-  }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://gomesduartecontabil.com/#website",
+      "url": "https://gomesduartecontabil.com/",
+      "name": "Gomes Duarte Assessoria Contábil",
+      "publisher": {
+        "@id": "https://gomesduartecontabil.com/#organization"
+      }
+    },
+    {
+      "@type": [
+        "Organization",
+        "AccountingService"
+      ],
+      "@id": "https://gomesduartecontabil.com/#organization",
+      "name": "Gomes Duarte Assessoria Contábil",
+      "url": "https://gomesduartecontabil.com",
+      "telephone": "+55-24-99240-8530",
+      "priceRange": "Sob Consulta",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.png"
+      },
+      "image": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua das Azaléias, 55 - Bairro Cidade Alegria",
+        "addressLocality": "Resende",
+        "addressRegion": "RJ",
+        "postalCode": "27525-090",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -22.4416,
+        "longitude": -44.4939
+      }
+    }
+  ]
 }
 </script>
   
