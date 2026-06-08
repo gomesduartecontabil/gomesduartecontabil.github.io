@@ -12,7 +12,7 @@
   <title>Gomes Duarte Assessoria Contabil - Escritorio de Contabilidade Resende RJ</title>
 
   <!-- IDENTIDADE VISUAL DA MARCA & FAVICON (SEO) -->
-  <link class="fav-icon" rel="icon" href="assets/images/logotipo-gd-contabil-1-circulo.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="assets/images/logotipo-gd-contabil-1-circulo.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/images/logotipo-gd-contabil-1-circulo.png">
 
   <!-- Estilos e Fontes do Mobirise -->
@@ -27,40 +27,41 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=XjiJoI"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=XjiJoI" type="text/css">
 
-  <!-- SCRIPT 1: Exclusivo para o Nome da Marca aparecer no topo do Google -->
+  <!-- SCRIPT UNIFICADO: Dados Estruturados para o Google (SEO Local e Marca) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Gomes Duarte Assessoria Contábil",
-    "url": "https://gomesduartecontabil.com/"
-  }
-  </script>
-
-  <!-- SCRIPT 2: Seus dados locais de Contabilidade em Resende (Sincronizado com o Mapa) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["Organization", "AccountingService"],
-    "name": "Gomes Duarte Assessoria Contábil",
-    "url": "https://gomesduartecontabil.com",
-    "telephone": "+55-24-99240-8530",
-    "priceRange": "Sob Consulta",
-    "logo": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.png",
-    "image": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rua das Azaléias, 55 - Bairro Cidade Alegria",
-      "addressLocality": "Resende",
-      "addressRegion": "RJ",
-      "postalCode": "27525-090",
-      "addressCountry": "BR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -22.4811858,
-      "longitude": -44.4920007
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://gomesduartecontabil.com/#website",
+        "url": "https://gomesduartecontabil.com/",
+        "name": "Gomes Duarte Assessoria Contábil"
+      },
+      {
+        "@type": ["Organization", "AccountingService"],
+        "@id": "https://gomesduartecontabil.com/#organization",
+        "name": "Gomes Duarte Assessoria Contábil",
+        "url": "https://gomesduartecontabil.com",
+        "telephone": "+55-24-99240-8530",
+        "priceRange": "Sob Consulta",
+        "logo": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.png",
+        "image": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua das Azaléias, 55 - Bairro Cidade Alegria",
+          "addressLocality": "Resende",
+          "addressRegion": "RJ",
+          "postalCode": "27525-090",
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -22.4811858,
+          "longitude": -44.4920007
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -72,7 +73,7 @@
       <div class="container">
         <div class="navbar-brand">
           <span class="navbar-logo">
-            <a href="https://gomesduartecontabil.com">
+            <a href="https://gomesduartecontabil.com" aria-label="Gomes Duarte Assessoria Contábil">
               <img src="assets/images/logotipo-gd-contabil-1-circulo.png" alt="Gomes Duarte Assessoria Contabil - Escritorio de Contabilidade Resende RJ" style="height: 5rem;">
             </a>
           </span>
@@ -125,7 +126,7 @@
           <div class="item-wrapper">
             <div class="card-box align-left">
               <h5 class="card-title mbr-fonts-style display-5"><strong>Tecnologia, Estratégia e Resultado</strong></h5>
-              <p class="card-text mbr-fonts-style display-7">Unimos inovação tecnológica com experience contábil para entregar performance e eficiência.</p>
+              <p class="card-text mbr-fonts-style display-7">Unimos inovação tecnológica com experiência contábil para entregar performance e eficiência.</p>
             </div>
           </div>
         </div>
@@ -157,7 +158,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-12 col-lg-6 image-wrapper">
-          <img class="w-100" src="assets/images/3-imagem-de-sessao-3-2.png" alt="Mobirise Website Builder">
+          <img class="w-100" src="assets/images/3-imagem-de-sessao-3-2.png" alt="Planejamento estratégico">
         </div>
         <div class="col-12 col-md-12 col-lg">
           <div class="text-wrapper align-left">
@@ -173,7 +174,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-12 col-lg-6 image-wrapper">
-          <img class="w-100" src="assets/images/banner-1920-site-3.png" alt="Mobirise Website Builder">
+          <img class="w-100" src="assets/images/banner-1920-site-3.png" alt="Análise de Oportunidades">
         </div>
         <div class="col-12 col-md-12 col-lg">
           <div class="text-wrapper align-left">
@@ -189,7 +190,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-12 col-lg-6 image-wrapper">
-          <img class="w-100" src="assets/images/1-imagem-de-sessao-3.png" alt="Mobirise Website Builder">
+          <img class="w-100" src="assets/images/1-imagem-de-sessao-3.png" alt="Novo Padrão em Contabilidade">
         </div>
         <div class="col-12 col-md-12 col-lg">
           <div class="text-wrapper align-left">
@@ -211,7 +212,7 @@
                         <div class="img-wrapper mt-4 justify-content-center">
                             <img src="assets/images/mbr.jpg" alt="Depoimento Mariana" data-slide-to="0" data-bs-slide-to="0">
                         </div>
-                        <p class="card-title mbr-fonts-style mt-3 display-7">Mariana Souza - Empresaria</p>
+                        <p class="card-title mbr-fonts-style mt-3 display-7">Mariana Souza - Empresária</p>
                     </div>
                 </div>
             </div>
@@ -315,7 +316,7 @@
             <span class="mbr-iconfont m-auto socicon-instagram socicon"></span>
             <div class="card-box">
               <h4 class="card-title mbr-fonts-style mb-1 display-5"><strong>Instagram</strong></h4>
-              <h1 class="card-text mbr-fonts-style display-7"><a href="https://instagram.com/gomesduartecontabil" class="text-success" target="_blank">gomesduartecontabil</a></h1>
+              <h1 class="card-text mbr-fonts-style display-7"><a href="https://instagram.com/gomesduartecontabil" class="text-success" target="_blank" rel="noopener">gomesduartecontabil</a></h1>
             </div>
           </div>
         </div>
@@ -337,10 +338,6 @@
             <div class="card-box align-center">
               <div class="iconfont-wrapper mb-3">
                 <span class="mbr-iconfont mobi-mbri-protect mobi-mbri"></span>
-                <span class="mbr-iconfont mobi-mbri-protect mobi-mbri"></span>
-                <span class="mbr-iconfont mobi-mbri-protect mobi-mbri"></span>
-                <span class="mbr-iconfont mobi-mbri-protect mobi-mbri"></span>
-                <span class="mbr-iconfont mobi-mbri-protect mobi-mbri"></span>
               </div>
             </div>
           </div>
@@ -350,10 +347,6 @@
             <div class="card-box align-center">
               <div class="iconfont-wrapper mb-3">
                 <span class="mbr-iconfont mbri-lock"></span>
-                <span class="mbr-iconfont mbri-lock"></span>
-                <span class="mbr-iconfont mbri-lock"></span>
-                <span class="mbr-iconfont mbri-lock"></span>
-                <span class="mbr-iconfont mbri-lock"></span>
               </div>
             </div>
           </div>
@@ -362,10 +355,6 @@
           <div class="item-wrapper">
             <div class="card-box align-center">
               <div class="iconfont-wrapper mb-3">
-                <span class="mbr-iconfont mobi-mbri-star mobi-mbri"></span>
-                <span class="mbr-iconfont mobi-mbri-star mobi-mbri"></span>
-                <span class="mbr-iconfont mobi-mbri-star mobi-mbri"></span>
-                <span class="mbr-iconfont mobi-mbri-star mobi-mbri"></span>
                 <span class="mbr-iconfont mobi-mbri-star mobi-mbri"></span>
               </div>
             </div>
@@ -376,7 +365,7 @@
   </section>
 
   <p style="text-align: center; color: #777777; font-size: 12px; margin-top: 30px;">
-    © <span id="current-year"></span> Gomes Duarte Assessoria Contábil. Desenvolvido via Mobirise.
+    &copy; <span id="current-year"></span> Gomes Duarte Assessoria Contábil. Desenvolvido via Mobirise.
   </p>
   <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
     
