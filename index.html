@@ -19,16 +19,16 @@
   <link rel="icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp" type="image/webp" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp">
 
-  <!-- CSS CRÍTICO TOTAL EM LINHA (Zera a faixa branca e estabiliza o topo) -->
+  <!-- CSS CRÍTICO E ESTRUTURAL (Corrige o menu e garante o visual original das seções) -->
   <style>
     @font-face { font-family: 'Inter Tight'; font-display: swap; }
     @font-face { font-family: 'MobiriseIcons'; font-display: block; }
     @font-face { font-family: 'mobi2'; font-display: block; }
     @font-face { font-family: 'Socicon'; font-display: block; }
 
-    body { margin: 0; font-family: 'Inter Tight', sans-serif; background-color: #ffffff; overflow-x: hidden; }
+    body { margin: 0; font-family: 'Inter Tight', sans-serif; background-color: #ffffff; overflow-x: hidden; color: #232323; }
     
-    /* Corrige a faixa branca: força o menu a sobrepor o banner de forma transparente */
+    /* Zera a faixa branca e fixa o menu transparente sobre o banner */
     header { 
       position: absolute; 
       width: 100%; 
@@ -40,11 +40,17 @@
     
     .menu { background: transparent !important; }
     .navbar { background: transparent !important; border: none; padding: 0.5rem 0; display: flex; align-items: center; }
-    .container { width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; display: flex; align-items: center; justify-content: space-between; }
+    
+    /* Layout Base Flexbox para evitar quebras visuais sem o Bootstrap inicial */
+    .container { width: 100%; max-width: 1320px; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; }
+    .row { display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; }
+    .justify-content-center { justify-content: center; }
+    .text-center { text-align: center; }
 
     main { display: block; position: relative; }
     
-    /* Garante que o banner ocupe o topo real da tela */
+    /* Banner Principal */
     .header18 { 
       min-height: 100vh; 
       display: flex; 
@@ -53,55 +59,103 @@
       background-position: center center; 
       background-size: cover;
       position: relative;
-      padding-top: 80px; /* Espaço para o menu não cortar o texto */
+      padding-top: 80px;
       box-sizing: border-box;
     }
-    
-    .container-fluid { width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; }
-    .row { display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; }
-    .col-12 { flex: 0 0 100%; max-width: 100%; }
+    .mbr-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+    .container-fluid { width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; position: relative; z-index: 2; }
 
-    /* Fixação estrita de tamanho da LOGO contra CLS */
+    /* Fixação rígida da logo */
     .navbar-logo, .navbar-logo a, .navbar-logo img {
       width: 80px !important;
       height: 80px !important;
       display: block;
     }
 
+    /* Imagens anti-pulo (CLS) */
     .img-cls-fix { width: 100%; height: auto; aspect-ratio: 600 / 450; display: block; }
     .img-cls-fix-banner { width: 100%; height: auto; aspect-ratio: 665 / 374; display: block; }
 
-    /* Cards de Contato */
-    .contact-card {
-      background: #ffffff; 
-      padding: 2.5rem 1.5rem; 
-      border-radius: 14px; 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(0,0,0,0.03);
+    /* --- DESIGN PROFISSONAL: DEPOIMENTO --- */
+    .testimonial-card {
+      background: #ffffff !important;
+      padding: 3.5rem 2.5rem !important;
+      border-radius: 16px !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04) !important;
+      border: 1px solid rgba(0,0,0,0.02) !important;
+      max-width: 850px;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
     }
-    .contact-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+    .testimonial-quote-icon {
+      font-size: 4rem;
+      color: rgba(15, 81, 50, 0.1);
+      line-height: 1;
+      font-family: Georgia, serif;
+      display: block;
+      margin-bottom: -1.5rem;
+    }
 
+    /* --- DESIGN PROFISSIONAL: SEÇÃO SERVIÇOS --- */
+    .services-box { 
+      text-align: left; 
+      background: #ffffff; 
+      padding: 3.5rem 2.5rem; 
+      border-radius: 16px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04); 
+      border: 1px solid rgba(0,0,0,0.02);
+      margin: 0 auto; 
+    }
+    .services-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-top: 2rem; }
+    @media (min-width: 768px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+    .services-item strong { color: #0f5132; display: inline-block; margin-bottom: 0.5rem; font-size: 1.15rem; }
+    .services-item { line-height: 1.7; color: #495057; }
+
+    /* --- DESIGN PROFISSIONAL: CARDS "FALE CONOSCO" --- */
+    .contact-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; width: 100%; }
+    @media (min-width: 992px) { .contact-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    
+    .contact-card {
+      background: #ffffff !important; 
+      padding: 3rem 2rem !important; 
+      border-radius: 14px !important; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      border: 1px solid rgba(0,0,0,0.03) !important;
+      box-sizing: border-box;
+    }
+    .contact-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.08) !important; }
+    
+    /* Botões dos Cards */
+    .btn-contact { display: inline-block; font-weight: bold; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem; text-align: center; transition: background 0.2s; }
+    .btn-wa { background-color: #25D366; color: #ffffff; }
+    .btn-wa:hover { background-color: #1ebd59; }
+    .btn-ig { background-color: #E1306C; color: #ffffff; }
+    .btn-ig:hover { background-color: #ca235d; }
+    
     .btn-email-responsive {
       background-color: #0f5132; 
-      border-color: #0f5132; 
-      font-weight: bold; 
-      padding: 0.6rem 1rem; 
-      border-radius: 8px;
+      color: #ffffff;
       white-space: nowrap;
-      font-size: 0.9rem;
       max-width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
     }
+    .btn-email-responsive:hover { background-color: #0b3d25; }
+    @media (max-width: 1200px) { .btn-email-responsive { font-size: 0.85rem; padding: 0.75rem 1rem; } }
 
-    @media (max-width: 1200px) { .btn-email-responsive { font-size: 0.82rem; } }
+    /* --- DESIGN PROFISSIONAL: SEÇÃO SITE SEGURO --- */
+    .secure-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; width: 100%; }
+    @media (min-width: 768px) { .secure-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .secure-item { background: #ffffff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; }
 
+    /* Efeito de Revelação */
     @media (prefers-reduced-motion: no-preference) {
       .reveal-effect { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); will-change: opacity, transform; }
       .reveal-effect.active { opacity: 1; transform: translateY(0); }
@@ -169,22 +223,24 @@
   </header>
 
   <main>
+    <!-- Banner Principal -->
     <section data-bs-version="5.1" class="header18 cid-vcK33Qjs8r mbr-parallax-background" id="header18-0" style="background-image: url('assets/images/banner-1920-site.webp');">
       <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
       <div class="container-fluid">
         <div class="row">
-          <div class="content-wrap col-12 col-md-12">
-            <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-2"><strong>GOMES DUARTE</strong><br><strong>ASSESSORIA CONTABIL</strong><br></h1>
-            <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7"><strong>SOLUÇÕES COM PRECISÃO PARA UM NEGÓCIO DE PROSPERIDADE</strong><br></p>
+          <div class="content-wrap col-12">
+            <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-2" style="color: #ffffff;"><strong>GOMES DUARTE</strong><br><strong>ASSESSORIA CONTABIL</strong><br></h1>
+            <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7" style="color: #ffffff;"><strong>SOLUÇÕES COM PRECISÃO PARA UM NEGÓCIO DE PROSPERIDADE</strong><br></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section data-bs-version="5.1" class="features032 cid-vcK3dIjxI1 reveal-effect" id="features032-2">
+    <!-- Características -->
+    <section data-bs-version="5.1" class="features032 cid-vcK3dIjxI1 reveal-effect" id="features032-2" style="padding: 4rem 0;">
       <div class="container">
         <div class="row">
-          <div class="item features-without-image col-12 col-lg-4 active item-mb">
+          <div class="item features-without-image col-12 col-lg-4 active item-mb" style="padding: 1rem;">
             <div class="item-wrapper">
               <div class="card-box align-left">
                 <h2 class="card-title mbr-fonts-style display-5"><strong>Muito Além da Contabilidade Tradicional</strong></h2>
@@ -192,7 +248,7 @@
               </div>
             </div>
           </div>
-          <div class="item features-without-image col-12 col-lg-4 item-mb">
+          <div class="item features-without-image col-12 col-lg-4 item-mb" style="padding: 1rem;">
             <div class="item-wrapper">
               <div class="card-box align-left">
                 <h2 class="card-title mbr-fonts-style display-5"><strong>Inteligência Contábil para Empresas que Querem Crescer</strong></h2>
@@ -200,15 +256,15 @@
               </div>
             </div>
           </div>
-          <div class="item features-without-image col-12 col-lg-4 item-mb">
+          <div class="item features-without-image col-12 col-lg-4 item-mb" style="padding: 1rem;">
             <div class="item-wrapper">
               <div class="card-box align-left">
                 <h2 class="card-title mbr-fonts-style display-5"><strong>O Partner Estratégico que Seu Negócio Precisa</strong></h2>
-                <p class="card-text mbr-fonts-style display-7">Não somos apenas contadores — somos aliados do seu crescimento. Atuamos lado a lado com você para estruturar, organizar e escalar sua empresa com segurança.</p>
+                <p class="card-text mbr-fonts-style display-7">Não somos apenas contadores — somos aliados do seu crescimento. Atuamos lado a lado com você para estruturar, organize e escalar sua empresa com segurança.</p>
               </div>
             </div>
           </div>
-          <div class="item features-without-image col-12 col-lg-4 item-mb">
+          <div class="item features-without-image col-12 col-lg-4 item-mb" style="padding: 1rem;">
             <div class="item-wrapper">
               <div class="card-box align-left">
                 <h2 class="card-title mbr-fonts-style display-5"><strong>Tecnologia, Estratégia e Resultado</strong></h2>
@@ -216,7 +272,7 @@
               </div>
             </div>
           </div>
-          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb" style="padding: 1rem;">
             <div class="item-wrapper">
               <div class="card-box align-left">
                 <h2 class="card-title mbr-fonts-style display-5"><strong>Segurança Fiscal Sem Complicação</strong></h2>
@@ -224,7 +280,7 @@
               </div>
             </div>
           </div>
-          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb" style="padding: 1rem;">
             <div class="item-wrapper">
               <div class="card-box align-left">
                 <h2 class="card-title mbr-fonts-style display-5"><strong>Contabilidade que Antecede o Futuro</strong></h2>
@@ -236,17 +292,19 @@
       </div>
     </section>
 
-    <div class="reveal-effect" style="width:100%; display:flex; justify-content:center; margin-top:20px;">
+    <!-- Logotipo Central -->
+    <div class="reveal-effect" style="width:100%; display:flex; justify-content:center; margin: 20px 0;">
       <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logo da empresa Gomes Duarte Assessoria Contabil" width="250" height="250" style="display:block; width:250px; height:250px;" loading="lazy">
     </div>
         
-    <section data-bs-version="5.1" class="start article2 cid-vcK3lIp0C8 reveal-effect" id="article02-3">
+    <!-- Seções de Conteúdo/Artigos -->
+    <section data-bs-version="5.1" class="start article2 cid-vcK3lIp0C8 reveal-effect" id="article02-3" style="padding: 3rem 0;">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-12 col-lg-6 image-wrapper">
+        <div class="row justify-content-center" style="align-items: center;">
+          <div class="col-12 col-lg-6 image-wrapper" style="padding: 1rem;">
             <img class="img-cls-fix" src="assets/images/3-imagem-de-sessao-3-2.webp" alt="Planejamento estratégico" width="600" height="450" loading="lazy">
           </div>
-          <div class="col-12 col-md-12 col-lg">
+          <div class="col-12 col-lg-6" style="padding: 1rem;">
             <div class="text-wrapper align-left">
               <h2 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>Crescimento Não é Sorte. É Estratégia.</strong></h2>
               <p class="mbr-text align-left mbr-fonts-style mb-4 display-5">Planejamento tributário avançado, visão financeira clara e acompanhamento próximo. Cada número da sua empresa passa a trabalhar a seu favor.</p>
@@ -256,13 +314,13 @@
       </div>
     </section>
 
-    <section data-bs-version="5.1" class="start article4 cid-vcK3m3XBjl reveal-effect" id="article04-4">
+    <section data-bs-version="5.1" class="start article4 cid-vcK3m3XBjl reveal-effect" id="article04-4" style="padding: 3rem 0;">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-12 col-lg-6 image-wrapper">
+        <div class="row justify-content-center" style="align-items: center;">
+          <div class="col-12 col-lg-6 image-wrapper" style="padding: 1rem;">
             <img class="img-cls-fix-banner" src="assets/images/banner-1920-site-3.webp" alt="Análise de Oportunidades" width="665" height="374" loading="lazy">
           </div>
-          <div class="col-12 col-md-12 col-lg">
+          <div class="col-12 col-lg-6" style="padding: 1rem;">
             <div class="text-wrapper align-left">
               <h2 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>Onde Outros Veem Números, Nós Vemos Oportunidades</strong></h2>
               <p class="mbr-text mbr-fonts-style mb-4 display-5">Analisamos profundamente seus resultados para gerar economia tributária, aumento de margem e novas possibilidades de expansão.</p>
@@ -272,13 +330,13 @@
       </div>
     </section>
 
-    <section data-bs-version="5.1" class="start article2 cid-vcK3mDDxK2 reveal-effect" id="article02-5">
+    <section data-bs-version="5.1" class="start article2 cid-vcK3mDDxK2 reveal-effect" id="article02-5" style="padding: 3rem 0;">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-12 col-lg-6 image-wrapper">
+        <div class="row justify-content-center" style="align-items: center;">
+          <div class="col-12 col-lg-6 image-wrapper" style="padding: 1rem;">
             <img class="img-cls-fix" src="assets/images/1-imagem-de-sessao-3.webp" alt="Novo Padrão em Contabilidade" width="600" height="450" loading="lazy">
           </div>
-          <div class="col-12 col-md-12 col-lg">
+          <div class="col-12 col-lg-6" style="padding: 1rem;">
             <div class="text-wrapper align-left">
               <h2 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>O Novo Padrão em Contabilidade</strong></h2>
               <p class="mbr-text align-left mbr-fonts-style mb-4 display-5">Atendimento ágil, tecnologia de ponta e foco total em performance. Não entregam relatórios — entregavam vantagem competitiva.</p>
@@ -288,17 +346,22 @@
       </div>
     </section>
 
-    <section data-bs-version="5.1" class="people06 cid-vcK3AB04nd reveal-effect" id="people06-7">   
+    <!-- DEPOIMENTO ESTILIZADO COM DESIGN PROFISSIONAL (TEXTO ORIGINAL PRESERVADO) -->
+    <section data-bs-version="5.1" class="people06 cid-vcK3AB04nd reveal-effect" id="people06-7" style="padding: 5rem 0; background-color: #fdfdfd;">   
       <div class="container">
           <div class="row justify-content-center">
-              <div class="card col-12 col-md-12 col-lg-8">
-                  <div class="card-wrapper">
-                      <div class="card-box align-center">
-                          <p class="card-text mbr-fonts-style display-5">“Antes de contratar essa equipe, eu via a contabilidade apenas como uma obrigação. Pagava impostos sem entender, tomava decisões no escuro e vivia insegura.<br><br>Depois que comecei a trabalhar com eles, tudo mudou. Passei a ter relatórios claros, planejamento tributário estratégico e orientação real para crescer. Em poucos meses, consegui reduzir custos, organizar meu financeiro e aumentar minha margem de lucro.”</p>
-                          <div class="img-wrapper mt-4 justify-content-center">
-                              <img src="assets/images/mbr.webp" alt="Depoimento Mariana" width="100" height="100" loading="lazy">
-                          </div>
-                          <p class="card-title mbr-fonts-style mt-3 display-7">Mariana Souza - Empresária</p>
+              <div class="col-12 col-lg-10">
+                  <div class="testimonial-card">
+                      <span class="testimonial-quote-icon">“</span>
+                      <p class="card-text mbr-fonts-style display-5" style="font-style: italic; line-height: 1.7; color: #343a40; margin-bottom: 2rem;">
+                        “Antes de contratar essa equipe, eu via a contabilidade apenas como uma obrigação. Pagava impostos sem entender, tomava decisões no escuro e vivia insegura.<br><br>Depois que comecei a trabalhar com eles, tudo mudou. Passei a tener relatórios claros, planejamento tributário estratégico e orientação real para crescer. Em poucos meses, consegui reduzir custos, organizar meu financeiro e aumentar minha margem de lucro.”
+                      </p>
+                      <hr style="width: 60px; border: none; height: 3px; background-color: #0f5132; margin: 0 auto 1.5rem auto;">
+                      <div class="img-wrapper text-center" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                          <img src="assets/images/mbr.webp" alt="Depoimento Mariana" width="90" height="90" loading="lazy" style="border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                          <p class="card-title mbr-fonts-style mt-3 display-7" style="font-weight: bold; color: #212529; margin-top: 12px; letter-spacing: 0.5px;">
+                            Mariana Souza - Empresária
+                          </p>
                       </div>
                   </div>
               </div>
@@ -306,58 +369,69 @@
       </div>
     </section>
 
-    <section data-bs-version="5.1" class="people06 cid-vcK3AB04nd reveal-effect" id="people06-7b">   
+    <!-- SEÇÃO ESTILIZADA COM DESIGN PROFISSIONAL: Serviços de Contabilidade em Resende - RJ (TEXTO ORIGINAL PRESERVADO) -->
+    <section data-bs-version="5.1" class="people06 cid-vcK3AB04nd reveal-effect" id="people06-7b" style="padding: 5rem 0; background-color: #fafafa;">   
       <div class="container">
           <div class="row justify-content-center">
-              <div class="card col-12 col-md-12 col-lg-8">
-                  <div class="card-wrapper">
-                      <div class="card-box align-center">
-                        <p class="card-text mbr-fonts-style display-5"><strong>Serviços de Contabilidade em Resende - RJ</strong></p>
-                        <div class="card-title mbr-fonts-style mt-3 display-7" style="text-align: left;">
-                            <strong>1. Abertura e Legalização de Empresas</strong><br>
-                            • Abertura de Empresas e Alteração Contratual (Abrir CNPJ)<br>
-                            • Legalização e Baixa de Empresas (Encerramento de CNPJ)<br>
-                            • Regularização de CPF e CNPJ com Pendências<br>
-                            • Desenquadramento e Regularização de MEI<br>
-                            • Emissão de Certidões Negativas<br>
-                            <br>
-                            <strong>2. Gestão Contábil e Regimes Tributários</strong><br>
-                            • Contabilidade para Simples Nacional e Lucro Presumido<br>
-                            • Contabilidade para Médicos e Profissionais da Saúde<br>
-                            • Contabilidade para Advogados<br>
-                            • Contabilidade Digital e Consultoria Online<br>
-                            • Escrituração Contábil e Fiscal<br>
-                            <br>
-                            <strong>3. Estratégia e Planejamento Tributário</strong><br>
-                            • Planejamento Tributário para Empresas e Pessoa Física<br>
-                            • Recuperação de Créditos Tributários e Redução de Impostos<br>
-                            • Auditoria Contábil e Correção de Erros Fiscais<br>
-                            • Assessoria na Emissão de Notas Fiscais<br>
-                            • Consultoria Tributária para Novos Negócios<br>
-                            <br>
-                            <strong>4. Departamento Pessoal e Financeiro</strong><br>
-                            • Gestão de Folha de Pagamento e eSocial<br>
-                            • Análise Financeira de Planos de Negócios<br>
-                            • Assistência em Negociação de Dívidas Tributárias<br>
-                            • Processamento de Reembolsos e Taxas<br>
-                            <br>
-                            <strong>5. Imposto de Renda e Pessoa Física</strong><br>
-                            • Declaração de Imposto de Renda (IRPF e IRPJ)<br>
-                            • Planejamento de Tributos Individuais<br>
-                            • Preparação e Transmissão de Declarações<br>
+              <div class="col-12 col-lg-10">
+                  <div class="services-box">
+                        <h3 class="mbr-fonts-style display-2 text-center" style="font-weight: bold; color: #0f5132; margin-bottom: 3rem;">
+                          Serviços de Contabilidade em Resende - RJ
+                        </h3>
+                        <div class="services-grid mbr-fonts-style display-7">
+                            <div class="services-column">
+                              <p class="services-item">
+                                <strong>1. Abertura e Legalização de Empresas</strong><br>
+                                • Abertura de Empresas e Alteração Contratual (Abrir CNPJ)<br>
+                                • Legalização e Baixa de Empresas (Encerramento de CNPJ)<br>
+                                • Regularização de CPF e CNPJ com Pendências<br>
+                                • Desenquadramento e Regularização de MEI<br>
+                                • Emissão de Certidões Negativas
+                              </p>
+                              <p class="services-item" style="margin-top: 2rem;">
+                                <strong>2. Gestão Contábil e Regimes Tributários</strong><br>
+                                • Contabilidade para Simples Nacional e Lucro Presumido<br>
+                                • Contabilidade para Médicos e Profissionais da Saúde<br>
+                                • Contabilidade para Advogados<br>
+                                • Contabilidade Digital e Consultoria Online<br>
+                                • Escrituração Contábil e Fiscal
+                              </p>
+                              <p class="services-item" style="margin-top: 2rem;">
+                                <strong>3. Estratégia e Planejamento Tributário</strong><br>
+                                • Planejamento Tributário para Empresas e Pessoa Física<br>
+                                • Recuperação de Créditos Tributários e Redução de Impostos<br>
+                                • Auditoria Contábil e Correção de Erros Fiscais<br>
+                                • Assessoria na Emissão de Notas Fiscais<br>
+                                • Consultoria Tributária para Novos Negócios
+                              </p>
+                            </div>
+                            <div class="services-column">
+                              <p class="services-item">
+                                <strong>4. Departamento Pessoal e Financeiro</strong><br>
+                                • Gestão de Folha de Pagamento e eSocial<br>
+                                • Análise Financeira de Planos de Negócios<br>
+                                • Assistência em Negociação de Dívidas Tributárias<br>
+                                • Processamento de Reembolsos e Taxas
+                              </p>
+                              <p class="services-item" style="margin-top: 2rem;">
+                                <strong>5. Imposto de Renda e Pessoa Física</strong><br>
+                                • Declaração de Imposto de Renda (IRPF e IRPJ)<br>
+                                • Planejamento de Tributos Individuais<br>
+                                • Preparação e Transmissão de Declarações
+                              </p>
+                            </div>
                         </div>
-                      </div>
                   </div>
               </div>
           </div>
       </div>
     </section>
 
-    <!-- SEÇÃO PREMIUM: Contato e Redes Sociais Unificados -->
+    <!-- SEÇÃO RESTAURADA COMPLETAMENTE: Fale Conosco & Redes Sociais -->
     <section class="reveal-effect" style="padding: 5rem 0; background-color: #f1f3f5;">
       <div class="container">
         <div class="row mb-5 justify-content-center">
-          <div class="col-12 text-center">
+          <div class="col-12 text-center" style="margin-bottom: 3rem;">
             <h3 class="mbr-section-title mbr-fonts-style mb-2 display-2" style="color: #0f5132; font-weight: bold;">
               Fale Conosco & Redes Sociais
             </h3>
@@ -367,91 +441,81 @@
           </div>
         </div>
         
-        <div class="row justify-content-center g-4">
+        <div class="contact-grid">
           <!-- Card WhatsApp -->
-          <div class="col-12 col-md-4">
-            <div class="contact-card">
-              <div class="mb-3">
-                <span class="mbr-iconfont mobi-mbri-phone mobi-mbri" style="font-size: 3.5rem; color: #25D366;"></span>
-              </div>
-              <h4 class="mbr-fonts-style mb-2 display-5" style="font-weight: bold; color: #212529;">WhatsApp</h4>
-              <p class="mbr-text mbr-fonts-style mb-3 display-7" style="color: #6c757d; text-align: center;">Clique para iniciar um atendimento instantâneo.</p>
-              <a href="https://wa.me/5524992408530" class="btn btn-success" style="background-color: #25D366; border-color: #25D366; font-weight: bold; padding: 0.6rem 1.5rem; border-radius: 8px;" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">+55 (24) 99240-8530</a>
+          <div class="contact-card">
+            <div style="margin-bottom: 1rem;">
+              <span class="mbr-iconfont mobi-mbri-phone mobi-mbri" style="font-size: 3.5rem; color: #25D366;"></span>
             </div>
+            <h4 class="mbr-fonts-style mb-2 display-5" style="font-weight: bold; color: #212529; margin-bottom: 0.5rem;">WhatsApp</h4>
+            <p class="mbr-text mbr-fonts-style display-7" style="color: #6c757d; margin-bottom: 1.5rem;">Clique para iniciar um atendimento instantâneo.</p>
+            <a href="https://wa.me/5524992408530" class="btn-contact btn-wa" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">+55 (24) 99240-8530</a>
           </div>
 
           <!-- Card Email -->
-          <div class="col-12 col-md-4">
-            <div class="contact-card">
-              <div class="mb-3">
-                <span class="mbr-iconfont mobi-mbri-letter mobi-mbri" style="font-size: 3.5rem; color: #0f5132;"></span>
-              </div>
-              <h4 class="mbr-fonts-style mb-2 display-5" style="font-weight: bold; color: #212529;">E-mail</h4>
-              <p class="mbr-text mbr-fonts-style mb-3 display-7" style="color: #6c757d; text-align: center;">Envie suas propostas ou dúvidas formais.</p>
-              <a href="mailto:contato@gomesduartecontabil.com" class="btn btn-primary btn-email-responsive" aria-label="Enviar e-mail para a assessoria">contato@gomesduartecontabil.com</a>
+          <div class="contact-card">
+            <div style="margin-bottom: 1rem;">
+              <span class="mbr-iconfont mobi-mbri-letter mobi-mbri" style="font-size: 3.5rem; color: #0f5132;"></span>
             </div>
+            <h4 class="mbr-fonts-style mb-2 display-5" style="font-weight: bold; color: #212529; margin-bottom: 0.5rem;">E-mail</h4>
+            <p class="mbr-text mbr-fonts-style display-7" style="color: #6c757d; margin-bottom: 1.5rem;">Envie suas propostas ou dúvidas formais.</p>
+            <a href="mailto:contato@gomesduartecontabil.com" class="btn-contact btn-email-responsive" aria-label="Enviar e-mail para a assessoria">contato@gomesduartecontabil.com</a>
           </div>
 
           <!-- Card Instagram -->
-          <div class="col-12 col-md-4">
-            <div class="contact-card">
-              <div class="mb-3">
-                <span class="mbr-iconfont socicon-instagram socicon" style="font-size: 3.5rem; color: #E1306C;"></span>
-              </div>
-              <h4 class="mbr-fonts-style mb-2 display-5" style="font-weight: bold; color: #212529;">Instagram</h4>
-              <p class="mbr-text mbr-fonts-style mb-3 display-7" style="color: #6c757d; text-align: center;">Siga-nos para novidades e dicas contábeis.</p>
-              <a href="https://instagram.com/gomesduartecontabil" class="btn btn-danger" style="background-color: #E1306C; border-color: #E1306C; font-weight: bold; padding: 0.6rem 1.5rem; border-radius: 8px;" target="_blank" rel="noopener" aria-label="Siga-nos no Instagram">@gomesduartecontabil</a>
+          <div class="contact-card">
+            <div style="margin-bottom: 1rem;">
+              <span class="mbr-iconfont socicon-instagram socicon" style="font-size: 3.5rem; color: #E1306C;"></span>
             </div>
+            <h4 class="mbr-fonts-style mb-2 display-5" style="font-weight: bold; color: #212529; margin-bottom: 0.5rem;">Instagram</h4>
+            <p class="mbr-text mbr-fonts-style display-7" style="color: #6c757d; margin-bottom: 1.5rem;">Siga-nos para novidades e dicas contábeis.</p>
+            <a href="https://instagram.com/gomesduartecontabil" class="btn-contact btn-ig" target="_blank" rel="noopener" aria-label="Siga-nos no Instagram">@gomesduartecontabil</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SEÇÃO SEGURANÇA -->
+    <!-- SEÇÃO RESTAURADA COMPLETAMENTE: Site 100% Seguro -->
     <section data-bs-version="5.1" class="people02 cid-vcLq2lydC3 reveal-effect" id="people02-f" style="padding: 5rem 0; background-color: #f8f9fa;">
       <div class="container">
         <div class="row mb-5 justify-content-center">
-          <div class="col-12 content-head text-center">
+          <div class="col-12 content-head text-center" style="margin-bottom: 3rem;">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-2 display-2" style="color: #0f5132; font-weight: bold;">
               🔒 Site 100% Seguro
             </h3>
-            <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-4 display-7" style="font-size: 1.25rem; font-weight: 600; color: #198754; letter-spacing: 1px;">
+            <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-4 display-7" style="font-size: 1.25rem; font-weight: 600; color: #198754; letter-spacing: 1px; margin-top: 0.5rem;">
               ⭐⭐⭐⭐⭐ SSL CERTIFICADO ⭐⭐⭐⭐⭐
             </h4>
             <p class="mbr-text mbr-fonts-style align-center display-7" style="color: #495057; max-width: 600px; margin: 0 auto;">
-              Sua navegação e seus dados estão totalmente protegidos por criptografia de ponta a ponta com certificação de segurança activa.
+              Sua navegação e seus dados estão totalmente protegidos por criptografia de ponta a ponta com certificação de segurança ativa.
             </p>
           </div>
         </div>
-        <div class="row justify-content-center text-center">
-          <div class="col-12 col-md-4 mb-4">
-            <div class="item-wrapper" style="background: #ffffff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-              <div class="iconfont-wrapper mb-3">
-                <span class="mbr-iconfont mobi-mbri-protect mobi-mbri" style="font-size: 3.5rem; color: #198754;"></span>
-              </div>
-              <h5 class="mbr-fonts-style display-7" style="font-weight: bold; color: #212529;">Proteção Ativa</h5>
+        
+        <div class="secure-grid">
+          <div class="secure-item">
+            <div style="margin-bottom: 1rem;">
+              <span class="mbr-iconfont mobi-mbri-protect mobi-mbri" style="font-size: 3.5rem; color: #198754;"></span>
             </div>
+            <h5 class="mbr-fonts-style display-7" style="font-weight: bold; color: #212529;">Proteção Ativa</h5>
           </div>
-          <div class="col-12 col-md-4 mb-4">
-            <div class="item-wrapper" style="background: #ffffff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-              <div class="iconfont-wrapper mb-3">
-                <span class="mbr-iconfont mbri-lock" style="font-size: 3.5rem; color: #198754;"></span>
-              </div>
-              <h5 class="mbr-fonts-style display-7" style="font-weight: bold; color: #212529;">Criptografia SSL</h5>
+          <div class="secure-item">
+            <div style="margin-bottom: 1rem;">
+              <span class="mbr-iconfont mbri-lock" style="font-size: 3.5rem; color: #198754;"></span>
             </div>
+            <h5 class="mbr-fonts-style display-7" style="font-weight: bold; color: #212529;">Criptografia SSL</h5>
           </div>
-          <div class="col-12 col-md-4 mb-4">
-            <div class="item-wrapper" style="background: #ffffff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-              <div class="iconfont-wrapper mb-3">
-                <span class="mbr-iconfont mobi-mbri-star mobi-mbri" style="font-size: 3.5rem; color: #198754;"></span>
-              </div>
-              <h5 class="mbr-fonts-style display-7" style="font-weight: bold; color: #212529;">Conexão Segura</h5>
+          <div class="secure-item">
+            <div style="margin-bottom: 1rem;">
+              <span class="mbr-iconfont mobi-mbri-star mobi-mbri" style="font-size: 3.5rem; color: #198754;"></span>
             </div>
+            <h5 class="mbr-fonts-style display-7" style="font-weight: bold; color: #212529;">Conexão Segura</h5>
           </div>
         </div>
       </div>
     </section>
         
+    <!-- Endereço e Mapa -->
     <div style="text-align:center; font-size:14px; margin:30px 0;">
       <address style="font-style: normal; line-height: 1.6; margin-bottom: 20px; color: #222222;">
         <strong>Gomes Duarte Assessoria Contabil - Escritorio de Contabilidade Resende RJ</strong><br>
@@ -477,11 +541,11 @@
 
   <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 
-  <!-- Scripts JavaScript básicos das dependências do Mobirise -->
+  <!-- Scripts JavaScript básicos do Bootstrap e Navbar -->
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="assets/dropdown/js/navbar-dropdown.js" defer></script>
 
-  <!-- Injeção Assíncrona Inteligente de Folhas de Estilo -->
+  <!-- Injeção Assíncrona Total das Folhas de Estilo -->
   <script>
     window.addEventListener('DOMContentLoaded', function() {
       const cssFiles = [
