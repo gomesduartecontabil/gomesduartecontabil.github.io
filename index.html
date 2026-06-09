@@ -9,20 +9,39 @@
   
   <title>Gomes Duarte Assessoria Contabil - Escritorio de Contabilidade Resende RJ</title>
 
-  <link rel="icon" href="assets/images/logotipo-gd-contabil-1-circulo.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="assets/images/logotipo-gd-contabil-1-circulo.png">
+  <!-- Pré-conexão de Origem e Otimização LCP Prerender -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Força o carregamento ultra-rápido da imagem de destaque (LCP Fix com a nova imagem WebP) -->
+  <link rel="preload" as="image" href="assets/images/banner-1920-site.webp" fetchpriority="high">
 
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp" type="image/webp" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp">
+
+  <!-- CSS Crítico: Carregado Normalmente -->
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/parallax/jarallax.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=XjiJoI">
+
+  <!-- CSS Secundário/Ícones: Carregamento Não-Bloqueante -->
+  <link rel="preload" href="assets/web/assets/mobirise-icons2/mobirise2.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/web/assets/mobirise-icons/mobirise-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/parallax/jarallax.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/dropdown/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/socicon/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fontes de forma assíncrona -->
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=XjiJoI">
-  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=XjiJoI" type="text/css">
+  
+  <noscript>
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="assets/parallax/jarallax.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
+  </noscript>
 
   <script type="application/ld+json">
   {
@@ -41,8 +60,8 @@
         "url": "https://gomesduartecontabil.com",
         "telephone": "+55-24-99240-8530",
         "priceRange": "Sob Consulta",
-        "logo": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.png",
-        "image": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.png",
+        "logo": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.webp",
+        "image": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.webp",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Rua das Azaléias, 55 - Bairro Cidade Alegria",
@@ -61,9 +80,7 @@
   }
   </script>
 
-  <!-- CSS de Alta Performance: Animações e Otimização de Parallax Mobile -->
   <style>
-    /* 1. Configuração do Efeito de Revelação (Scroll Reveal) */
     @media (prefers-reduced-motion: no-preference) {
       .reveal-effect {
         opacity: 0;
@@ -77,17 +94,16 @@
       }
     }
 
-    /* 2. Otimização do Parallax para Celulares e Tablets (Impacto Zero no Lighthouse) */
+    /* Otimização Agressiva Mobile: Remove scripts de paralaxe que causam Reflow Forçado */
     @media (max-width: 991px) {
       .mbr-parallax-background {
+        background-image: url('assets/images/banner-1920-site.webp') !important;
         background-attachment: scroll !important;
         background-position: center center !important;
         background-size: cover !important;
         transform: none !important;
       }
-      /* Desativa os cálculos repetitivos e pesados do script Jarallax no Mobile */
-      .jarallax-container, 
-      [id^="jarallax-container-"] {
+      .jarallax-container, [id^="jarallax-container-"] {
         display: none !important;
       }
     }
@@ -102,7 +118,7 @@
           <div class="navbar-brand">
             <span class="navbar-logo">
               <a href="https://gomesduartecontabil.com" aria-label="Gomes Duarte Assessoria Contábil">
-                <img src="assets/images/logotipo-gd-contabil-1-circulo.png" alt="Gomes Duarte Assessoria Contabil - Escritorio de Contabilidade Resende RJ" style="height: 5rem;" width="80" height="80">
+                <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Gomes Duarte Assessoria Contabil" style="height: 5rem;" width="80" height="80">
               </a>
             </span>
           </div>
@@ -111,10 +127,9 @@
     </section>
   </header>
 
-  <!-- Ponto de Referência Principal para Leitores de Tela (Acessibilidade Práticas Recomendadas) -->
   <main>
-    <!-- Topo da página limpo para carregar instantaneamente -->
-    <section data-bs-version="5.1" class="header18 cid-vcK33Qjs8r mbr-parallax-background" id="header18-0">
+    <!-- Seção LCP principal otimizada com a imagem em WebP -->
+    <section data-bs-version="5.1" class="header18 cid-vcK33Qjs8r mbr-parallax-background" id="header18-0" style="background-image: url('assets/images/banner-1920-site.webp');">
       <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
       <div class="container-fluid">
         <div class="row">
@@ -126,10 +141,8 @@
       </div>
     </section>
 
-    <!-- Seções com efeito de revelação fluida ao rolar a página -->
     <section data-bs-version="5.1" class="features032 cid-vcK3dIjxI1 reveal-effect" id="features032-2">
       <div class="container">
-        <div class="row justify-content-center"></div>
         <div class="row">
           <div class="item features-without-image col-12 col-lg-4 active item-mb">
             <div class="item-wrapper">
@@ -184,14 +197,15 @@
     </section>
 
     <div class="reveal-effect" style="width:100%; display:flex; justify-content:center; margin-top:20px;">
-      <img src="assets/images/logotipo-gd-contabil-1-circulo.png" alt="Logo da empresa Gomes Duarte Assessoria Contabil" style="width:400px; height:auto;" width="400" height="400" loading="lazy">
+      <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logo da empresa Gomes Duarte Assessoria Contabil" style="width:250px; height:auto;" width="250" height="250" loading="lazy">
     </div>
         
     <section data-bs-version="5.1" class="start article2 cid-vcK3lIp0C8 reveal-effect" id="article02-3">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-md-12 col-lg-6 image-wrapper">
-            <img class="w-100" src="assets/images/3-imagem-de-sessao-3-2.png" alt="Planejamento estratégico" width="600" style="height: auto;" loading="lazy">
+            <!-- Atualizado para o tamanho correto e responsivo em WebP -->
+            <img class="w-100" src="assets/images/3-imagem-de-sessao-3-2.webp" alt="Planejamento estratégico" width="600" height="450" style="height: auto; max-width: 100%;" loading="lazy">
           </div>
           <div class="col-12 col-md-12 col-lg">
             <div class="text-wrapper align-left">
@@ -207,7 +221,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-md-12 col-lg-6 image-wrapper">
-            <img class="w-100" src="assets/images/banner-1920-site-3.png" alt="Análise de Oportunidades" width="1920" style="height: auto;" loading="lazy">
+            <img class="w-100" src="assets/images/banner-1920-site-3.webp" alt="Análise de Oportunidades" width="665" height="374" style="height: auto; max-width: 100%;" loading="lazy">
           </div>
           <div class="col-12 col-md-12 col-lg">
             <div class="text-wrapper align-left">
@@ -223,7 +237,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-md-12 col-lg-6 image-wrapper">
-            <img class="w-100" src="assets/images/1-imagem-de-sessao-3.png" alt="Novo Padrão em Contabilidade" width="600" style="height: auto;" loading="lazy">
+            <img class="w-100" src="assets/images/1-imagem-de-sessao-3.webp" alt="Novo Padrão em Contabilidade" width="600" style="height: auto;" loading="lazy">
           </div>
           <div class="col-12 col-md-12 col-lg">
             <div class="text-wrapper align-left">
@@ -243,7 +257,7 @@
                       <div class="card-box align-center">
                           <p class="card-text mbr-fonts-style display-5">“Antes de contratar essa equipe, eu via a contabilidade apenas como uma obrigação. Pagava impostos sem entender, tomava decisões no escuro e vivia insegura.<br><br>Depois que comecei a trabalhar com eles, tudo mudou. Passei a ter relatórios claros, planejamento tributário estratégico e orientação real para crescer. Em poucos meses, consegui reduzir custos, organizar meu financeiro e aumentar minha margem de lucro.<br><br>Hoje eu tenho tranquilidade, segurança e visão de futuro.”</p>
                           <div class="img-wrapper mt-4 justify-content-center">
-                              <img src="assets/images/mbr.jpg" alt="Depoimento Mariana" width="100" height="100" loading="lazy">
+                              <img src="assets/images/mbr.webp" alt="Depoimento Mariana" width="100" height="100" loading="lazy">
                           </div>
                           <p class="card-title mbr-fonts-style mt-3 display-7">Mariana Souza - Empresária</p>
                       </div>
@@ -366,7 +380,6 @@
         <div class="row mb-5 justify-content-center">
           <div class="col-12 content-head">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"><strong>Site 100% Seguro</strong></h3>
-            <!-- Ajuste de Hierarquia de Título de H5 para H4 (Resolve o erro do Lighthouse) -->
             <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-4 display-7" style="font-size: 1.1rem; font-weight: normal; color: #444444;">SSL Certificado</h4>
           </div>
         </div>
@@ -408,7 +421,7 @@
         Rua das Azaléias, 55 - Bairro Cidade Alegria<br>
         Resende – RJ<br>
         CEP 27525-090<br>
-        <!-- Cor alterada para tom mais escuro e legível (Ajuste de Contraste para nota 100) -->
+        <!-- Contraste perfeito ajustado para Acessibilidade -->
         Tel: <a href="tel:+5524992408530" style="color: #0a3622; font-weight: bold;" aria-label="Ligar para o escritório Gomes Duarte Assessoria Contábil">(24) 99240-8530</a>
       </address>
 
@@ -418,7 +431,6 @@
     </div>
   </main>
 
-  <!-- Rodapé Semântico padrão -->
   <footer>
     <p style="text-align: center; color: #444444; font-size: 12px; margin-top: 40px; margin-bottom: 20px;">
       © <span id="current-year"></span> Gomes Duarte Assessoria Contábil. Desenvolvido via Mobirise.
@@ -427,12 +439,22 @@
 
   <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 
-  <!-- Scripts do Mobirise Essenciais -->
+  <!-- Scripts adiados (defer) para evitar travamento de processamento -->
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="assets/parallax/jarallax.js" defer></script>
   <script src="assets/smoothscroll/smooth-scroll.js" defer></script>
   <script src="assets/dropdown/js/navbar-dropdown.js" defer></script>
   <script src="assets/theme/js/script.js" defer></script>
+
+  <!-- Ativa o Jarallax de forma segura apenas em desktops (Garante estabilidade no celular) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.innerWidth > 991) {
+        var script = document.createElement('script');
+        script.src = "assets/parallax/jarallax.js";
+        document.body.appendChild(script);
+      }
+    });
+  </script>
 
   <!-- Script Ultra Leve de Scroll Reveal -->
   <script>
@@ -442,8 +464,8 @@
         
         const observerOptions = {
           root: null,
-          rootMargin: "0px 0px -80px 0px",
-          threshold: 0.15
+          rootMargin: "0px 0px -50px 0px",
+          threshold: 0.1
         };
 
         const revealObserver = new IntersectionObserver(function (entries, observer) {
