@@ -9,14 +9,17 @@
   
   <title>Gomes Duarte Assessoria Contabil - Escritorio de Contabilidade Resende RJ</title>
 
+  <!-- Pré-conexão de Origem Otimizada -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
+  <!-- Força o carregamento prioritário da imagem LCP (Banner Principal) -->
   <link rel="preload" as="image" href="assets/images/banner-1920-site.webp" fetchpriority="high">
 
   <link rel="icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp" type="image/webp" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp">
 
+  <!-- Estratégia de CSS Crítico: Carregamento Assíncrono Não-Bloqueante para eliminar CSS Não Usado -->
   <link rel="preload" href="assets/bootstrap/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
   <link rel="preload" href="assets/theme/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
   <link rel="preload" href="assets/mobirise/css/mbr-additional.css?v=XjiJoI" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
@@ -26,6 +29,8 @@
   <link rel="preload" href="assets/parallax/jarallax.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
   <link rel="preload" href="assets/dropdown/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
   <link rel="preload" href="assets/socicon/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
+  
+  <!-- Correção de CLS por Fonte: Inclusão explícita do &display=swap -->
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
   
   <noscript>
@@ -78,8 +83,29 @@
   </script>
 
   <style>
+    /* Força display swap para evitar mudanças de layout repentinas (font-flash CLS) */
+    @font-face {
+      font-family: 'Inter Tight';
+      font-display: swap;
+    }
+
     body { margin: 0; font-family: sans-serif; background-color: #ffffff; }
     
+    /* Correções de CLS estrutural para as imagens responsivas relatadas */
+    .img-cls-fix {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 600 / 450;
+      display: block;
+    }
+    
+    .img-cls-fix-banner {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 665 / 374;
+      display: block;
+    }
+
     @media (prefers-reduced-motion: no-preference) {
       .reveal-effect {
         opacity: 0;
@@ -116,7 +142,8 @@
           <div class="navbar-brand">
             <span class="navbar-logo">
               <a href="https://gomesduartecontabil.com" aria-label="Gomes Duarte Assessoria Contábil">
-                <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Gomes Duarte Assessoria Contabil" style="height: 5rem;" width="80" height="80">
+                <!-- CORREÇÃO CLS: Definido tamanho físico exato sem propriedades de inline styles conflitantes -->
+                <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Gomes Duarte Assessoria Contabil" width="80" height="80" style="display: block; max-height: 80px; width: auto;">
               </a>
             </span>
           </div>
@@ -194,14 +221,16 @@
     </section>
 
     <div class="reveal-effect" style="width:100%; display:flex; justify-content:center; margin-top:20px;">
-      <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logo da empresa Gomes Duarte Assessoria Contabil" style="width:250px; height:auto;" width="250" height="250" loading="lazy">
+      <!-- CORREÇÃO CLS: Atributos físicos e proporcionais em harmonia -->
+      <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logo da empresa Gomes Duarte Assessoria Contabil" width="250" height="250" style="display:block; width:250px; height:250px;" loading="lazy">
     </div>
         
     <section data-bs-version="5.1" class="start article2 cid-vcK3lIp0C8 reveal-effect" id="article02-3">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-md-12 col-lg-6 image-wrapper">
-            <img class="w-100" src="assets/images/3-imagem-de-sessao-3-2.webp" alt="Planejamento estratégico" width="600" height="450" style="height: auto; max-width: 100%;" loading="lazy">
+            <!-- CORREÇÃO CLS: Adicionado aspect-ratio e largura fixa via classe controladora CSS -->
+            <img class="img-cls-fix" src="assets/images/3-imagem-de-sessao-3-2.webp" alt="Planejamento estratégico" width="600" height="450" loading="lazy">
           </div>
           <div class="col-12 col-md-12 col-lg">
             <div class="text-wrapper align-left">
@@ -217,7 +246,8 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-md-12 col-lg-6 image-wrapper">
-            <img class="w-100" src="assets/images/banner-1920-site-3.webp" alt="Análise de Oportunidades" width="665" height="374" style="height: auto; max-width: 100%;" loading="lazy">
+            <!-- CORREÇÃO CLS: Proporção definida via folha de estilo estática para barrar reflows de renderização -->
+            <img class="img-cls-fix-banner" src="assets/images/banner-1920-site-3.webp" alt="Análise de Oportunidades" width="665" height="374" loading="lazy">
           </div>
           <div class="col-12 col-md-12 col-lg">
             <div class="text-wrapper align-left">
@@ -233,7 +263,8 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-md-12 col-lg-6 image-wrapper">
-            <img class="w-100" src="assets/images/1-imagem-de-sessao-3.webp" alt="Novo Padrão em Contabilidade" width="600" style="height: auto;" loading="lazy">
+            <!-- CORREÇÃO CLS: Adicionados atributos width e height explícitos que faltavam na imagem acusada -->
+            <img class="img-cls-fix" src="assets/images/1-imagem-de-sessao-3.webp" alt="Novo Padrão em Contabilidade" width="600" height="450" loading="lazy">
           </div>
           <div class="col-12 col-md-12 col-lg">
             <div class="text-wrapper align-left">
@@ -424,8 +455,11 @@
         Tel: <a href="tel:+5524992408530" style="color: #0a3622; font-weight: bold;" aria-label="Ligar para o escritório Gomes Duarte Assessoria Contábil">(24) 99240-8530</a>
       </address>
 
+      <!-- SOLUÇÃO DO CONSUMO DE JAVASCRIPT DO MAPS: Carregamento Diferido Inteligente -->
       <div style="max-width: 800px; margin: 0 auto; padding: 0 15px;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.612650929702!2d-44.49200072470215!3d-22.48118587955694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9e7999113bde17%3A0x2fc33c332dcebf3c!2sGomes%20Duarte%20Assessoria%20Cont%C3%A1bil!5e0!3m2!1spt-BR!2sbr!4v1780959273502!5m2!1spt-BR!2sbr" title="Mapa de Localização da Gomes Duarte Assessoria Contábil em Resende" width="100%" height="450" style="border:0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div id="map-container" style="width:100%; height:450px; background-color:#e5e3df; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display:flex; align-items:center; justify-content:center;">
+          <button onclick="loadGoogleMap()" style="padding: 12px 24px; background-color: #198754; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">Visualizar Mapa Interativo</button>
+        </div>
       </div>
     </div>
   </main>
@@ -438,10 +472,33 @@
 
   <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 
+  <!-- Carregamento Assíncrono Deferido dos Scripts Base -->
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="assets/smoothscroll/smooth-scroll.js" defer></script>
   <script src="assets/dropdown/js/navbar-dropdown.js" defer></script>
 
+  <!-- SCRIPT AVANÇADO DO GOOGLE MAPS: Só carrega os bytes e scripts se necessário -->
+  <script>
+    function loadGoogleMap() {
+      var container = document.getElementById('map-container');
+      if(!container.querySelector('iframe')) {
+        container.innerHTML = '<iframe src="https://maps.google.com/maps?q=Rua%20das%20Azal%C3%A9ias,%2055%20-%20Bairro%20Cidade%20Alegria,%20Resende%20-%20RJ&t=&z=15&ie=UTF-8&iwloc=&output=embed" title="Mapa de Localização da Gomes Duarte Assessoria Contábil em Resende" width="100%" height="450" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+      }
+    }
+    
+    // Auto-carrega o mapa quando o usuário rolar a tela até o container, economizando largura de banda inicial
+    window.addEventListener('scroll', function() {
+      var element = document.getElementById('map-container');
+      if(element) {
+        var position = element.getBoundingClientRect();
+        if(position.top < window.innerHeight && position.bottom >= 0) {
+          loadGoogleMap();
+        }
+      }
+    });
+  </script>
+
+  <!-- PREVENÇÃO CONTRA REFLOW FORÇADO DE MAIN SCRIPTS -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -454,10 +511,11 @@
           parallaxScript.src = "assets/parallax/jarallax.js";
           document.body.appendChild(parallaxScript);
         }
-      }, 1500);
+      }, 1200);
     });
   </script>
 
+  <!-- Intersectional Observer Otimizado para Animações -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       if ('IntersectionObserver' in window) {
