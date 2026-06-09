@@ -75,7 +75,7 @@
     .main-title-block {
       max-width: 950px;
       margin: 0 auto;
-      text-align: center; /* Centralização do Bloco */
+      text-align: center;
       text-shadow: 0 2px 12px rgba(0,0,0,0.4);
     }
     .brand-title {
@@ -83,7 +83,7 @@
       line-height: 1.2;
       font-weight: 800;
       letter-spacing: -0.5px;
-      color: #1ebd59 !important; /* Verde mais claro e corporativo solicitado */
+      color: #1ebd59 !important;
       margin: 0 0 2rem 0;
     }
     .brand-subtitle {
@@ -117,7 +117,7 @@
     .item-mb { padding: 1rem; box-sizing: border-box; }
     .card-box { background: #ffffff; padding: 2rem; border-radius: 12px; height: 100%; box-sizing: border-box; }
 
-    /* Estilização: Depoimento de Cliente */
+    /* Estilização: Depoimento de Cliente (Foto Corrigida) */
     .testimonial-card {
       background: #ffffff !important;
       padding: 3.5rem 2.2rem !important;
@@ -146,10 +146,20 @@
       margin-bottom: 2rem;
       text-transform: uppercase;
     }
+    .testimonial-avatar {
+      width: 90px !important;
+      height: 90px !important;
+      aspect-ratio: 1 / 1;
+      border-radius: 50% !important;
+      object-fit: cover !important; /* Impede que a foto estique torta */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      display: block;
+      margin: 0 auto;
+    }
 
-    /* Estilização: Serviços em Coluna Única Centralizada */
+    /* Estilização: Serviços 100% Centralizados */
     .services-box { 
-      text-align: left; 
+      text-align: center; /* Alinha o bloco inteiro ao centro */
       background: #ffffff; 
       padding: 3.5rem 2.5rem; 
       border-radius: 16px; 
@@ -164,9 +174,10 @@
       flex-direction: column;
       gap: 2.5rem; 
       margin-top: 2rem; 
+      text-align: center; /* Garante que os parágrafos fiquem centralizados */
     }
     .services-item strong { color: #1ebd59; display: inline-block; margin-bottom: 0.5rem; font-size: 1.2rem; }
-    .services-item { line-height: 1.7; color: #495057; font-size: 1.05rem; margin: 0; }
+    .services-item { line-height: 1.7; color: #495057; font-size: 1.05rem; margin: 0; list-style-position: inside; }
 
     /* Grid Fale Conosco */
     .contact-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; width: 100%; box-sizing: border-box; }
@@ -332,7 +343,7 @@
           <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
             <div class="card-box">
               <h2 class="card-title display-5"><strong>Contabilidade que Antecede o Futuro</strong></h2>
-              <p class="card-text display-7">Não trabalhamos apenas com números — trabalhamos com decisões inteligentes. Utilizamos tecnologia, estratégia e visão de mercado para transformar sua contabilidade em uma ferramenta de crescimento real.</p>
+              <p class="card-text display-7">Não trabalhamos apenas com números — trabalhamos com decisões inteligentes. Utilizamos tecnologia, estratégia e visão de mercado para transformar sua contabilidade in uma ferramenta de crescimento real.</p>
             </div>
           </div>
         </div>
@@ -387,7 +398,7 @@
       </div>
     </section>
 
-    <!-- DEPOIMENTO ESTILIZADO -->
+    <!-- DEPOIMENTO ESTILIZADO (FOTO MARIANA AJUSTADA) -->
     <section class="people06 cid-vcK3AB04nd reveal-effect" id="people06-7" style="padding: 5rem 0; background-color: #fdfdfd;">   
       <div class="container">
           <div class="row justify-content-center">
@@ -400,7 +411,7 @@
                       </p>
                       <hr style="width: 60px; border: none; height: 3px; background-color: #1ebd59; margin: 0 auto 1.5rem auto;">
                       <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                          <img src="assets/images/mbr.webp" alt="Depoimento Mariana" width="90" height="90" loading="lazy" style="border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                          <img src="assets/images/mbr.webp" alt="Depoimento Mariana" width="90" height="90" loading="lazy" class="testimonial-avatar">
                           <p class="mt-3 display-7" style="font-weight: bold; color: #212529; margin-top: 12px; letter-spacing: 0.5px;">
                             Mariana Souza - Empresária
                           </p>
@@ -411,7 +422,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO: Serviços de Contabilidade em Resende - RJ (Coluna Única e Centralizada) -->
+    <!-- SEÇÃO: Serviços de Contabilidade em Resende - RJ (TUDO CENTRALIZADO) -->
     <section class="people06 cid-vcK3AB04nd reveal-effect" id="people06-7b" style="padding: 5rem 0; background-color: #fafafa;">   
       <div class="container">
           <div class="row justify-content-center">
@@ -423,40 +434,40 @@
                         <div class="services-single-column display-7">
                               <p class="services-item">
                                 <strong>1. Abertura e Legalização de Empresas</strong><br>
-                                • Abertura de Empresas e Alteração Contratual (Abrir CNPJ)<br>
-                                • Legalização e Baixa de Empresas (Encerramento de CNPJ)<br>
-                                • Regularização de CPF e CNPJ com Pendências<br>
-                                • Desenquadramento e Regularização de MEI<br>
-                                • Emissão de Certidões Negativas
+                                Abertura de Empresas e Alteração Contratual (Abrir CNPJ)<br>
+                                Legalização e Baixa de Empresas (Encerramento de CNPJ)<br>
+                                Regularização de CPF e CNPJ com Pendências<br>
+                                Desenquadramento e Regularização de MEI<br>
+                                Emissão de Certidões Negativas
                               </p>
                               <p class="services-item">
                                 <strong>2. Gestão Contábil e Regimes Tributários</strong><br>
-                                • Contabilidade para Simples Nacional e Lucro Presumido<br>
-                                • Contabilidade para Médicos e Profissionais da Saúde<br>
-                                • Contabilidade para Advogados<br>
-                                • Contabilidade Digital e Consultoria Online<br>
-                                • Escrituração Contábil e Fiscal
+                                Contabilidade para Simples Nacional e Lucro Presumido<br>
+                                Contabilidade para Médicos e Profissionais da Saúde<br>
+                                Contabilidade para Advogados<br>
+                                Contabilidade Digital e Consultoria Online<br>
+                                Escrituração Contábil e Fiscal
                               </p>
                               <p class="services-item">
                                 <strong>3. Estratégia e Planejamento Tributário</strong><br>
-                                • Planejamento Tributário para Empresas e Pessoa Física<br>
-                                • Recuperação de Créditos Tributários e Redução de Impostos<br>
-                                • Auditoria Contábil e Coreção de Erros Fiscais<br>
-                                • Assessoria na Emissão de Notas Fiscais<br>
-                                • Consultoria Tributária para Novos Negócios
+                                Planejamento Tributário para Empresas e Pessoa Física<br>
+                                Recuperação de Créditos Tributários e Redução de Impostos<br>
+                                Auditoria Contábil e Coreção de Erros Fiscais<br>
+                                Assessoria na Emissão de Notas Fiscais<br>
+                                Consultoria Tributária para Novos Negócios
                               </p>
                               <p class="services-item">
                                 <strong>4. Departamento Pessoal e Financeiro</strong><br>
-                                • Gestão de Folha de Pagamento e eSocial<br>
-                                • Análise Financeira de Planos de Negócios<br>
-                                • Assistência em Negociação de Dívidas Tributárias<br>
-                                • Processamento de Reembolsos e Taxas
+                                Gestão de Folha de Pagamento e eSocial<br>
+                                Análise Financeira de Planos de Negócios<br>
+                                Assistência em Negociação de Dívidas Tributárias<br>
+                                Processamento de Reembolsos e Taxas
                               </p>
                               <p class="services-item">
                                 <strong>5. Imposto de Renda e Pessoa Física</strong><br>
-                                • Declaração de Imposto de Renda (IRPF e IRPJ)<br>
-                                • Planejamento de Tributos Individuais<br>
-                                • Preparação e Transmissão de Declarações
+                                Declaração de Imposto de Renda (IRPF e IRPJ)<br>
+                                Planejamento de Tributos Individuais<br>
+                                Preparação e Transmissão de Declarações
                               </p>
                         </div>
                   </div>
@@ -522,7 +533,7 @@
               🔒 Site 100% Seguro
             </h3>
             <h4 class="mb-4 display-7" style="font-size: 1.25rem; font-weight: 600; color: #198754; letter-spacing: 1px; margin-top: 0.5rem;">
-              ⭐⭐⭐⭐⭐ SSL CERTIFICADO ⭐⭐⭐⭐⭐
+              ⭐⭐⭐⭐• SSL CERTIFICADO •⭐⭐⭐⭐
             </h4>
             <p class="display-7" style="color: #495057; max-width: 600px; margin: 0 auto;">
               Sua navegação e seus dados estão totalmente protegidos por criptografia de ponta a ponta com certificação de segurança ativa.
