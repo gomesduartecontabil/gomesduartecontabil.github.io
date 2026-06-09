@@ -109,7 +109,7 @@
     </nav>
   </section>
 
-  <!-- Topo da página limpo para carregar instantaneamente (Excelente para a métrica LCP do Google) -->
+  <!-- Topo da página limpo para carregar instantaneamente -->
   <section data-bs-version="5.1" class="header18 cid-vcK33Qjs8r mbr-parallax-background" id="header18-0">
     <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
     <div class="container-fluid">
@@ -122,7 +122,7 @@
     </div>
   </section>
 
-  <!-- Seções abaixo ganharam a classe "reveal-effect" para surgirem de forma fluida ao rolar a página -->
+  <!-- Seções com efeito de revelação fluida ao rolar a página -->
   <section data-bs-version="5.1" class="features032 cid-vcK3dIjxI1 reveal-effect" id="features032-2">
     <div class="container">
       <div class="row justify-content-center"></div>
@@ -208,7 +208,7 @@
         <div class="col-12 col-md-12 col-lg">
           <div class="text-wrapper align-left">
             <h2 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>Onde Outros Veem Números, Nós Vemos Oportunidades</strong></h2>
-            <p class="mbr-text mbr-fonts-style mb-4 display-5">Analisamos profundamente seus resultados para gerar economia tributária, aumento de margem e novas possibilidades de expansão.</p>
+            <p class="mbr-text mbr-fonts-style mb-4 display-5">Analisamos profundamente seus resultados para gerar economia tributária, aumento de margem and novas possibilidades de expansão.</p>
           </div>
         </div>
       </div>
@@ -396,12 +396,6 @@
       </div>
     </div>
   </section>
-
-  <p style="text-align: center; color: #444444; font-size: 12px; margin-top: 30px;">
-    © <span id="current-year"></span> Gomes Duarte Assessoria Contábil. Desenvolvido via Mobirise.
-  </p>
-  
-  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
       
   <div style="text-align:center; font-size:14px; margin:30px 0;">
     <address style="font-style: normal; line-height: 1.6; margin-bottom: 20px; color: #222222;">
@@ -417,7 +411,13 @@
     </div>
   </div>
 
-  <!-- Scripts do Mobirise Essenciais (Removidos YTPlayer e SocialLikes inúteis) -->
+  <!-- O trecho de Copyright foi realocado com sucesso para a última linha visual do site -->
+  <p style="text-align: center; color: #444444; font-size: 12px; margin-top: 40px; margin-bottom: 20px;">
+    © <span id="current-year"></span> Gomes Duarte Assessoria Contábil. Desenvolvido via Mobirise.
+  </p>
+  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+
+  <!-- Scripts do Mobirise Essenciais -->
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="assets/parallax/jarallax.js" defer></script>
   <script src="assets/smoothscroll/smooth-scroll.js" defer></script>
@@ -432,15 +432,15 @@
         
         const observerOptions = {
           root: null,
-          rootMargin: "0px 0px -80px 0px", // Ativa o efeito pouco antes do bloco entrar na tela
-          threshold: 0.15 // Requer que 15% do bloco esteja visível para disparar
+          rootMargin: "0px 0px -80px 0px",
+          threshold: 0.15
         };
 
         const revealObserver = new IntersectionObserver(function (entries, observer) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
               entry.target.classList.add('active');
-              observer.unobserve(entry.target); // Libera a memória do celular após animar
+              observer.unobserve(entry.target);
             }
           });
         }, observerOptions);
@@ -449,7 +449,6 @@
           revealObserver.observe(element);
         });
       } else {
-        // Fallback: Exibe tudo direto caso o navegador seja antigo
         document.querySelectorAll('.reveal-effect').forEach(el => el.classList.add('active'));
       }
     });
