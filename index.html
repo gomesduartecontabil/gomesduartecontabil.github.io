@@ -39,7 +39,7 @@
       -webkit-font-smoothing: antialiased;
     }
     
-    /* LOGO CENTRALIZADO NO TOPO */
+    /* FIX DEFINITIVO: LOGO CENTRALIZADO NO TOPO */
     header { 
       position: absolute; 
       width: 100%; 
@@ -52,34 +52,43 @@
       background: transparent !important; 
       border: none; 
       padding: 1.5rem 0 0.5rem 0; 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
+      display: flex !important; 
+      justify-content: center !important; 
+      align-items: center !important; 
       width: 100%;
     }
     .navbar .container { 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      width: 100%;
+      display: flex !important; 
+      justify-content: center !important; 
+      align-items: center !important; 
+      width: 100% !important;
       max-width: 1320px; 
       padding-right: 15px; 
       padding-left: 15px; 
-      margin-right: auto; 
-      margin-left: auto; 
+      margin-right: auto !important; 
+      margin-left: auto !important; 
       box-sizing: border-box; 
     }
     .navbar-brand {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
     }
-    .navbar-logo, .navbar-logo a, .navbar-logo img {
+    .navbar-logo {
+      margin: 0 auto !important;
+      display: block !important;
+    }
+    .navbar-logo a {
+      display: block !important;
+      margin: 0 auto !important;
+    }
+    .navbar-logo img {
       width: 80px !important;
       height: 80px !important;
-      display: block;
-      margin: 0 auto;
+      display: block !important;
+      margin: 0 auto !important;
     }
 
     .container { width: 100%; max-width: 1320px; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; box-sizing: border-box; }
@@ -98,7 +107,7 @@
       background-position: center center; 
       background-size: cover;
       position: relative;
-      padding-top: 140px; /* Ajustado para dar espaço ao logo centralizado */
+      padding-top: 140px; 
       padding-bottom: 60px;
       box-sizing: border-box;
       width: 100%;
@@ -259,7 +268,7 @@
     }
   </style>
 
-  <!-- DADOS ESTRUTURADOS DE SEO -->
+  <!-- DADOS ESTRUTURADOS DE SEO (MANTIDO AS COORDENADAS ORIGINAIS EXATAS) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -406,7 +415,7 @@
           </div>
           <div class="col-12 col-lg-6" style="padding: 1rem;">
             <h2 class="mb-4 display-2"><strong>Onde Outros Veem Números, Nós Vemos Oportunidades</strong></h2>
-            <p class="mb-4 display-5">Analisamos profundamente seus resultados para gerar economia tributária, aumento de margem e novas possibilidades de expansão.</p>
+            <p class="mb-4 display-5">Analisamos profundamente seus resultados para gerar economia tributária, aumento de margem e novas possibilities de expansão.</p>
           </div>
         </div>
       </div>
