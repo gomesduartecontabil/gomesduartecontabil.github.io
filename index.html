@@ -106,7 +106,7 @@
     /* Estilo Profissional Unificado para os Cards de Contato */
     .contact-card {
       background: #ffffff; 
-      padding: 2.5rem 2rem; 
+      padding: 2.5rem 1.5rem; 
       border-radius: 14px; 
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -121,6 +121,26 @@
     .contact-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+
+    /* Ajuste específico para o e-mail longo não quebrar linha */
+    .btn-email-responsive {
+      background-color: #0f5132; 
+      border-color: #0f5132; 
+      font-weight: bold; 
+      padding: 0.6rem 1rem; 
+      border-radius: 8px;
+      white-space: nowrap;
+      font-size: 0.9rem; /* Diminui levemente para caber perfeitamente */
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (max-width: 1200px) {
+      .btn-email-responsive {
+        font-size: 0.82rem; /* Ajuste extra para telas intermediárias */
+      }
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -212,7 +232,7 @@
             <div class="item-wrapper">
               <div class="card-box align-left">
                 <h2 class="card-title mbr-fonts-style display-5"><strong>Tecnologia, Estratégia e Resultado</strong></h2>
-                <p class="card-text mbr-fonts-style display-7">Unimos inovação tecnológica com experiência contábil para entregar performance e eficiência.</p>
+                <p class="card-text mbr-fonts-style display-7">Unimos inovação tecnológica com experience contábil para entregar performance e eficiência.</p>
               </div>
             </div>
           </div>
@@ -281,7 +301,7 @@
           <div class="col-12 col-md-12 col-lg">
             <div class="text-wrapper align-left">
               <h2 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>O Novo Padrão em Contabilidade</strong></h2>
-              <p class="mbr-text align-left mbr-fonts-style mb-4 display-5">Atendimento ágil, tecnologia de ponta e foco total em performance. Não entregavam relatórios — entregavam vantagem competitiva.</p>
+              <p class="mbr-text align-left mbr-fonts-style mb-4 display-5">Atendimento ágil, tecnologia de ponta e foco total em performance. Não entregam relatórios — entregavam vantagem competitiva.</p>
             </div>
           </div>
         </div>
@@ -294,7 +314,7 @@
               <div class="card col-12 col-md-12 col-lg-8">
                   <div class="card-wrapper">
                       <div class="card-box align-center">
-                          <p class="card-text mbr-fonts-style display-5">“Antes de contratar essa equipe, eu via a contabilidade apenas como uma obrigação. Pagava impostos sem entender, tomava decisões no escuro e vivia insegura.<br><br>Depois que comecei a trabalhar com eles, tudo mudou. Passei a ter relatórios claros, planejamento tributário estratégico e orientação real para crescer. Em poucos meses, consegui reduzir custos, organizar meu financeiro e aumentar minha margem di lucro.”</p>
+                          <p class="card-text mbr-fonts-style display-5">“Antes de contratar essa equipe, eu via a contabilidade apenas como uma obrigação. Pagava impostos sem entender, tomava decisões no escuro e vivia insegura.<br><br>Depois que comecei a trabalhar com eles, tudo mudou. Passei a ter relatórios claros, planejamento tributário estratégico e orientação real para crescer. Em poucos meses, consegui reduzir custos, organizar meu financeiro e aumentar minha margem de lucro.”</p>
                           <div class="img-wrapper mt-4 justify-content-center">
                               <img src="assets/images/mbr.webp" alt="Depoimento Mariana" width="100" height="100" loading="lazy">
                           </div>
@@ -353,7 +373,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO PREMIUM: Contato e Redes Sociais Unificados (Design Lindo baseado no Caixa de Segurança) -->
+    <!-- SEÇÃO PREMIUM: Contato e Redes Sociais Unificados (Com Correção de Quebra de Linha de E-mail) -->
     <section class="reveal-effect" style="padding: 5rem 0; background-color: #f1f3f5;">
       <div class="container">
         <div class="row mb-5 justify-content-center">
@@ -380,7 +400,7 @@
             </div>
           </div>
 
-          <!-- Card Email -->
+          <!-- Card Email (Corrigido para Linha Única) -->
           <div class="col-12 col-md-4">
             <div class="contact-card">
               <div class="mb-3">
@@ -388,7 +408,7 @@
               </div>
               <h4 class="mbr-fonts-style mb-2 display-5" style="font-weight: bold; color: #212529;">E-mail</h4>
               <p class="mbr-text mbr-fonts-style mb-3 display-7" style="color: #6c757d; text-align: center;">Envie suas propostas ou dúvidas formais.</p>
-              <a href="mailto:contato@gomesduartecontabil.com" class="btn btn-primary" style="background-color: #0f5132; border-color: #0f5132; font-weight: bold; padding: 0.6rem 1.5rem; border-radius: 8px;" aria-label="Enviar e-mail para a assessoria">contato@gomesduartecontabil.com</a>
+              <a href="mailto:contato@gomesduartecontabil.com" class="btn btn-primary btn-email-responsive" aria-label="Enviar e-mail para a assessoria">contato@gomesduartecontabil.com</a>
             </div>
           </div>
 
