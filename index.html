@@ -19,30 +19,88 @@
   <link rel="icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp" type="image/webp" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp">
 
-  <!-- Estratégia de CSS Crítico -->
-  <link rel="preload" href="assets/bootstrap/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
-  <link rel="preload" href="assets/theme/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
-  <link rel="preload" href="assets/mobirise/css/mbr-additional.css?v=XjiJoI" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
-  
-  <link rel="preload" href="assets/web/assets/mobirise-icons2/mobirise2.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
-  <link rel="preload" href="assets/web/assets/mobirise-icons/mobirise-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
-  <link rel="preload" href="assets/parallax/jarallax.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
-  <link rel="preload" href="assets/dropdown/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
-  <link rel="preload" href="assets/socicon/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
-  
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'">
-  
-  <noscript>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/theme/css/style.css">
-    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=XjiJoI">
-    <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
-    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
-    <link rel="stylesheet" href="assets/parallax/jarallax.css">
-    <link rel="stylesheet" href="assets/dropdown/css/style.css">
-    <link rel="stylesheet" href="assets/socicon/css/styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
-  </noscript>
+  <!-- CSS ESSENCIAL EM LINHA (Evita FCP/LCP e bloqueio de renderização do Bootstrap) -->
+  <style>
+    /* Correção de CLS: Força swap e block nas fontes antes do carregamento */
+    @font-face { font-family: 'Inter Tight'; font-display: swap; }
+    @font-face { font-family: 'MobiriseIcons'; font-display: block; }
+    @font-face { font-family: 'mobi2'; font-display: block; }
+    @font-face { font-family: 'Socicon'; font-display: block; }
+
+    body { margin: 0; font-family: sans-serif; background-color: #ffffff; overflow-x: hidden; }
+    
+    /* Fixação estrita de tamanho da LOGO para eliminar o erro de CLS */
+    .navbar-logo, .navbar-logo a, .navbar-logo img {
+      width: 80px !important;
+      height: 80px !important;
+      display: block;
+    }
+
+    .img-cls-fix {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 600 / 450;
+      display: block;
+    }
+    
+    .img-cls-fix-banner {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 665 / 374;
+      display: block;
+    }
+
+    .contact-card {
+      background: #ffffff; 
+      padding: 2.5rem 1.5rem; 
+      border-radius: 14px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+    .contact-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+
+    .btn-email-responsive {
+      background-color: #0f5132; 
+      border-color: #0f5132; 
+      font-weight: bold; 
+      padding: 0.6rem 1rem; 
+      border-radius: 8px;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (max-width: 1200px) { .btn-email-responsive { font-size: 0.82rem; } }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal-effect { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); will-change: opacity, transform; }
+      .reveal-effect.active { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 991px) {
+      .mbr-parallax-background { background-image: url('assets/images/banner-1920-site.webp') !important; background-attachment: scroll !important; background-position: center center !important; background-size: cover !important; transform: none !important; }
+      .jarallax-container, [id^="jarallax-container-"] { display: none !important; }
+    }
+  </style>
+
+  <!-- CARREGAMENTO ADIADO DE TODOS OS CSS (Resolve 100% o erro de "Reduza o CSS não usado" acima da dobra) -->
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/theme/css/style.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=XjiJoI" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/parallax/jarallax.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" media="print" onload="this.media='all'">
 
   <script type="application/ld+json">
   {
@@ -80,95 +138,6 @@
     ]
   }
   </script>
-
-  <style>
-    @font-face {
-      font-family: 'Inter Tight';
-      font-display: swap;
-    }
-
-    body { margin: 0; font-family: sans-serif; background-color: #ffffff; }
-    
-    .img-cls-fix {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 600 / 450;
-      display: block;
-    }
-    
-    .img-cls-fix-banner {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 665 / 374;
-      display: block;
-    }
-
-    /* Estilo Profissional Unificado para os Cards de Contato */
-    .contact-card {
-      background: #ffffff; 
-      padding: 2.5rem 1.5rem; 
-      border-radius: 14px; 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(0,0,0,0.03);
-    }
-    
-    .contact-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    }
-
-    /* Ajuste específico para o e-mail longo não quebrar linha */
-    .btn-email-responsive {
-      background-color: #0f5132; 
-      border-color: #0f5132; 
-      font-weight: bold; 
-      padding: 0.6rem 1rem; 
-      border-radius: 8px;
-      white-space: nowrap;
-      font-size: 0.9rem; /* Diminui levemente para caber perfeitamente */
-      max-width: 100%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    @media (max-width: 1200px) {
-      .btn-email-responsive {
-        font-size: 0.82rem; /* Ajuste extra para telas intermediárias */
-      }
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .reveal-effect {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-        will-change: opacity, transform;
-      }
-      .reveal-effect.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 991px) {
-      .mbr-parallax-background {
-        background-image: url('assets/images/banner-1920-site.webp') !important;
-        background-attachment: scroll !important;
-        background-position: center center !important;
-        background-size: cover !important;
-        transform: none !important;
-      }
-      .jarallax-container, [id^="jarallax-container-"] {
-        display: none !important;
-      }
-    }
-  </style>
 </head>
 <body style="z-index: 0">
   
@@ -179,7 +148,8 @@
           <div class="navbar-brand">
             <span class="navbar-logo">
               <a href="https://gomesduartecontabil.com" aria-label="Gomes Duarte Assessoria Contábil">
-                <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Gomes Duarte Assessoria Contabil" width="80" height="80" style="display: block; max-height: 80px; width: auto;">
+                <!-- TAMANHO DEFINIDO E ESTILIZADO DE FORMA FIXA CONTRA CLS -->
+                <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Gomes Duarte Assessoria Contabil" width="80" height="80">
               </a>
             </span>
           </div>
@@ -232,7 +202,7 @@
             <div class="item-wrapper">
               <div class="card-box align-left">
                 <h2 class="card-title mbr-fonts-style display-5"><strong>Tecnologia, Estratégia e Resultado</strong></h2>
-                <p class="card-text mbr-fonts-style display-7">Unimos inovação tecnológica com experience contábil para entregar performance e eficiência.</p>
+                <p class="card-text mbr-fonts-style display-7">Unimos inovação tecnológica com experiência contábil para entregar performance e eficiência.</p>
               </div>
             </div>
           </div>
@@ -373,7 +343,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO PREMIUM: Contato e Redes Sociais Unificados (Com Correção de Quebra de Linha de E-mail) -->
+    <!-- SEÇÃO PREMIUM: Contato e Redes Sociais Unificados -->
     <section class="reveal-effect" style="padding: 5rem 0; background-color: #f1f3f5;">
       <div class="container">
         <div class="row mb-5 justify-content-center">
@@ -400,7 +370,7 @@
             </div>
           </div>
 
-          <!-- Card Email (Corrigido para Linha Única) -->
+          <!-- Card Email (Fixado sem quebra) -->
           <div class="col-12 col-md-4">
             <div class="contact-card">
               <div class="mb-3">
@@ -501,7 +471,6 @@
   <script src="assets/smoothscroll/smooth-scroll.js" defer></script>
   <script src="assets/dropdown/js/navbar-dropdown.js" defer></script>
 
-  <!-- SCRIPT DO MAPA COM O LINK DA SUA FICHA DO GOOGLE MEU NEGÓCIO -->
   <script>
     function loadGoogleMap() {
       var container = document.getElementById('map-container');
