@@ -19,7 +19,7 @@
   <link rel="icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp" type="image/webp" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp">
 
-  <!-- CSS CRÍTICO E ESTRUTURAL (Corrige o menu e garante o visual original das seções) -->
+  <!-- CSS CRÍTICO E ESTRUTURAL -->
   <style>
     @font-face { font-family: 'Inter Tight'; font-display: swap; }
     @font-face { font-family: 'MobiriseIcons'; font-display: block; }
@@ -41,7 +41,7 @@
     .menu { background: transparent !important; }
     .navbar { background: transparent !important; border: none; padding: 0.5rem 0; display: flex; align-items: center; }
     
-    /* Layout Base Flexbox para evitar quebras visuais sem o Bootstrap inicial */
+    /* Layout Base Flexbox */
     .container { width: 100%; max-width: 1320px; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; }
     .navbar .container { display: flex; align-items: center; justify-content: space-between; }
     .row { display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; }
@@ -50,7 +50,7 @@
 
     main { display: block; position: relative; }
     
-    /* Banner Principal */
+    /* Banner Principal Estilizado Profissionalmente */
     .header18 { 
       min-height: 100vh; 
       display: flex; 
@@ -59,11 +59,41 @@
       background-position: center center; 
       background-size: cover;
       position: relative;
-      padding-top: 80px;
+      padding-top: 120px;
+      padding-bottom: 60px;
       box-sizing: border-box;
     }
     .mbr-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-    .container-fluid { width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; position: relative; z-index: 2; }
+    .container-fluid { width: 100%; padding-right: 30px; padding-left: 30px; margin-right: auto; margin-left: auto; position: relative; z-index: 2; }
+
+    /* Estilização Premium do Topo */
+    .main-title-block {
+      max-width: 900px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .brand-title {
+      font-size: 3.8rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #12693d !important; /* Verde corporativo completo */
+      margin-bottom: 2rem;
+    }
+    .brand-subtitle {
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ffffff;
+      border-left: 4px solid #12693d;
+      padding-left: 15px;
+      margin-top: 1.5rem;
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .brand-title { font-size: 2.3rem; }
+      .brand-subtitle { font-size: 0.95rem; letter-spacing: 1px; }
+    }
 
     /* Fixação rígida da logo */
     .navbar-logo, .navbar-logo a, .navbar-logo img {
@@ -90,14 +120,22 @@
     }
     .testimonial-quote-icon {
       font-size: 4rem;
-      color: rgba(15, 81, 50, 0.1);
+      color: rgba(18, 105, 61, 0.1);
       line-height: 1;
       font-family: Georgia, serif;
       display: block;
-      margin-bottom: -1.5rem;
+      margin-bottom: -1rem;
+    }
+    .testimonial-intro {
+      font-size: 1.1rem;
+      color: #12693d;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
     }
 
-    /* --- DESIGN PROFISSIONAL: SEÇÃO SERVIÇOS --- */
+    /* --- DESIGN PROFISSIONAL: SEÇÃO SERVIÇOS EM UMA COLUNA CENTRALIZADA --- */
     .services-box { 
       text-align: left; 
       background: #ffffff; 
@@ -105,12 +143,17 @@
       border-radius: 16px; 
       box-shadow: 0 10px 30px rgba(0,0,0,0.04); 
       border: 1px solid rgba(0,0,0,0.02);
+      max-width: 800px;
       margin: 0 auto; 
     }
-    .services-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-top: 2rem; }
-    @media (min-width: 768px) { .services-grid { grid-template-columns: 1fr 1fr; } }
-    .services-item strong { color: #0f5132; display: inline-block; margin-bottom: 0.5rem; font-size: 1.15rem; }
-    .services-item { line-height: 1.7; color: #495057; }
+    .services-single-column { 
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem; 
+      margin-top: 2rem; 
+    }
+    .services-item strong { color: #12693d; display: inline-block; margin-bottom: 0.5rem; font-size: 1.2rem; }
+    .services-item { line-height: 1.7; color: #495057; font-size: 1.05rem; }
 
     /* --- DESIGN PROFISSIONAL: CARDS "FALE CONOSCO" --- */
     .contact-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; width: 100%; }
@@ -140,14 +183,14 @@
     .btn-ig:hover { background-color: #ca235d; }
     
     .btn-email-responsive {
-      background-color: #0f5132; 
+      background-color: #12693d; 
       color: #ffffff;
       white-space: nowrap;
       max-width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .btn-email-responsive:hover { background-color: #0b3d25; }
+    .btn-email-responsive:hover { background-color: #0b4327; }
     @media (max-width: 1200px) { .btn-email-responsive { font-size: 0.85rem; padding: 0.75rem 1rem; } }
 
     /* --- DESIGN PROFISSIONAL: SEÇÃO SITE SEGURO --- */
@@ -223,14 +266,20 @@
   </header>
 
   <main>
-    <!-- Banner Principal -->
+    <!-- Topo Reformulado Profissionalmente (Nome 100% Verde e Título Destacado) -->
     <section data-bs-version="5.1" class="header18 cid-vcK33Qjs8r mbr-parallax-background" id="header18-0" style="background-image: url('assets/images/banner-1920-site.webp');">
-      <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
+      <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"></div>
       <div class="container-fluid">
         <div class="row">
           <div class="content-wrap col-12">
-            <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-2" style="color: #ffffff;"><strong>GOMES DUARTE</strong><br><strong>ASSESSORIA CONTABIL</strong><br></h1>
-            <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7" style="color: #ffffff;"><strong>SOLUÇÕES COM PRECISÃO PARA UM NEGÓCIO DE PROSPERIDADE</strong><br></p>
+            <div class="main-title-block">
+              <h1 class="brand-title">
+                GOMES DUARTE<br>ASSESSORIA CONTABIL
+              </h1>
+              <p class="brand-subtitle">
+                SOLUÇÕES COM PRECISÃO PARA UM NEGÓCIO DE PROSPERIDADE
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -260,7 +309,7 @@
             <div class="item-wrapper">
               <div class="card-box align-left">
                 <h2 class="card-title mbr-fonts-style display-5"><strong>O Partner Estratégico que Seu Negócio Precisa</strong></h2>
-                <p class="card-text mbr-fonts-style display-7">Não somos apenas contadores — somos aliados do seu crescimento. Atuamos lado a lado com você para estruturar, organize e escalar sua empresa com segurança.</p>
+                <p class="card-text mbr-fonts-style display-7">Não somos apenas contadores — somos aliados do seu crescimento. Atuamos lado a lado com você para estruturar, organizar e escalar sua empresa com segurança.</p>
               </div>
             </div>
           </div>
@@ -346,17 +395,18 @@
       </div>
     </section>
 
-    <!-- DEPOIMENTO ESTILIZADO COM DESIGN PROFISSIONAL (TEXTO ORIGINAL PRESERVADO) -->
+    <!-- DEPOIMENTO ESTILIZADO COM FRASE INSTITUCIONAL INTRODUTÓRIA -->
     <section data-bs-version="5.1" class="people06 cid-vcK3AB04nd reveal-effect" id="people06-7" style="padding: 5rem 0; background-color: #fdfdfd;">   
       <div class="container">
           <div class="row justify-content-center">
               <div class="col-12 col-lg-10">
                   <div class="testimonial-card">
                       <span class="testimonial-quote-icon">“</span>
+                      <div class="testimonial-intro">O sucesso dos nossos parceiros é o reflexo da nossa precisão técnica. Veja o depoimento de uma de nossas clientes:</div>
                       <p class="card-text mbr-fonts-style display-5" style="font-style: italic; line-height: 1.7; color: #343a40; margin-bottom: 2rem;">
                         “Antes de contratar essa equipe, eu via a contabilidade apenas como uma obrigação. Pagava impostos sem entender, tomava decisões no escuro e vivia insegura.<br><br>Depois que comecei a trabalhar com eles, tudo mudou. Passei a tener relatórios claros, planejamento tributário estratégico e orientação real para crescer. Em poucos meses, consegui reduzir custos, organizar meu financeiro e aumentar minha margem de lucro.”
                       </p>
-                      <hr style="width: 60px; border: none; height: 3px; background-color: #0f5132; margin: 0 auto 1.5rem auto;">
+                      <hr style="width: 60px; border: none; height: 3px; background-color: #12693d; margin: 0 auto 1.5rem auto;">
                       <div class="img-wrapper text-center" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
                           <img src="assets/images/mbr.webp" alt="Depoimento Mariana" width="90" height="90" loading="lazy" style="border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
                           <p class="card-title mbr-fonts-style mt-3 display-7" style="font-weight: bold; color: #212529; margin-top: 12px; letter-spacing: 0.5px;">
@@ -369,17 +419,16 @@
       </div>
     </section>
 
-    <!-- SEÇÃO ESTILIZADA COM DESIGN PROFISSIONAL: Serviços de Contabilidade em Resende - RJ (TEXTO ORIGINAL PRESERVADO) -->
+    <!-- SEÇÃO ESTILIZADA: Serviços de Contabilidade em Resende - RJ (EM UMA SÓ COLUNA CENTRALIZADA) -->
     <section data-bs-version="5.1" class="people06 cid-vcK3AB04nd reveal-effect" id="people06-7b" style="padding: 5rem 0; background-color: #fafafa;">   
       <div class="container">
           <div class="row justify-content-center">
               <div class="col-12 col-lg-10">
                   <div class="services-box">
-                        <h3 class="mbr-fonts-style display-2 text-center" style="font-weight: bold; color: #0f5132; margin-bottom: 3rem;">
+                        <h3 class="mbr-fonts-style display-2 text-center" style="font-weight: bold; color: #12693d; margin-bottom: 3rem;">
                           Serviços de Contabilidade em Resende - RJ
                         </h3>
-                        <div class="services-grid mbr-fonts-style display-7">
-                            <div class="services-column">
+                        <div class="services-single-column mbr-fonts-style display-7">
                               <p class="services-item">
                                 <strong>1. Abertura e Legalização de Empresas</strong><br>
                                 • Abertura de Empresas e Alteração Contratual (Abrir CNPJ)<br>
@@ -388,7 +437,7 @@
                                 • Desenquadramento e Regularização de MEI<br>
                                 • Emissão de Certidões Negativas
                               </p>
-                              <p class="services-item" style="margin-top: 2rem;">
+                              <p class="services-item">
                                 <strong>2. Gestão Contábil e Regimes Tributários</strong><br>
                                 • Contabilidade para Simples Nacional e Lucro Presumido<br>
                                 • Contabilidade para Médicos e Profissionais da Saúde<br>
@@ -396,7 +445,7 @@
                                 • Contabilidade Digital e Consultoria Online<br>
                                 • Escrituração Contábil e Fiscal
                               </p>
-                              <p class="services-item" style="margin-top: 2rem;">
+                              <p class="services-item">
                                 <strong>3. Estratégia e Planejamento Tributário</strong><br>
                                 • Planejamento Tributário para Empresas e Pessoa Física<br>
                                 • Recuperação de Créditos Tributários e Redução de Impostos<br>
@@ -404,8 +453,6 @@
                                 • Assessoria na Emissão de Notas Fiscais<br>
                                 • Consultoria Tributária para Novos Negócios
                               </p>
-                            </div>
-                            <div class="services-column">
                               <p class="services-item">
                                 <strong>4. Departamento Pessoal e Financeiro</strong><br>
                                 • Gestão de Folha de Pagamento e eSocial<br>
@@ -413,13 +460,12 @@
                                 • Assistência em Negociação de Dívidas Tributárias<br>
                                 • Processamento de Reembolsos e Taxas
                               </p>
-                              <p class="services-item" style="margin-top: 2rem;">
+                              <p class="services-item">
                                 <strong>5. Imposto de Renda e Pessoa Física</strong><br>
                                 • Declaração de Imposto de Renda (IRPF e IRPJ)<br>
                                 • Planejamento de Tributos Individuais<br>
                                 • Preparação e Transmissão de Declarações
                               </p>
-                            </div>
                         </div>
                   </div>
               </div>
@@ -427,12 +473,12 @@
       </div>
     </section>
 
-    <!-- SEÇÃO RESTAURADA COMPLETAMENTE: Fale Conosco & Redes Sociais -->
+    <!-- SEÇÃO: Fale Conosco & Redes Sociais -->
     <section class="reveal-effect" style="padding: 5rem 0; background-color: #f1f3f5;">
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-12 text-center" style="margin-bottom: 3rem;">
-            <h3 class="mbr-section-title mbr-fonts-style mb-2 display-2" style="color: #0f5132; font-weight: bold;">
+            <h3 class="mbr-section-title mbr-fonts-style mb-2 display-2" style="color: #12693d; font-weight: bold;">
               Fale Conosco & Redes Sociais
             </h3>
             <p class="mbr-text mbr-fonts-style display-7" style="color: #495057; max-width: 600px; margin: 0 auto;">
@@ -455,7 +501,7 @@
           <!-- Card Email -->
           <div class="contact-card">
             <div style="margin-bottom: 1rem;">
-              <span class="mbr-iconfont mobi-mbri-letter mobi-mbri" style="font-size: 3.5rem; color: #0f5132;"></span>
+              <span class="mbr-iconfont mobi-mbri-letter mobi-mbri" style="font-size: 3.5rem; color: #12693d;"></span>
             </div>
             <h4 class="mbr-fonts-style mb-2 display-5" style="font-weight: bold; color: #212529; margin-bottom: 0.5rem;">E-mail</h4>
             <p class="mbr-text mbr-fonts-style display-7" style="color: #6c757d; margin-bottom: 1.5rem;">Envie suas propostas ou dúvidas formais.</p>
@@ -475,12 +521,12 @@
       </div>
     </section>
 
-    <!-- SEÇÃO RESTAURADA COMPLETAMENTE: Site 100% Seguro -->
+    <!-- SEÇÃO: Site 100% Seguro -->
     <section data-bs-version="5.1" class="people02 cid-vcLq2lydC3 reveal-effect" id="people02-f" style="padding: 5rem 0; background-color: #f8f9fa;">
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-12 content-head text-center" style="margin-bottom: 3rem;">
-            <h3 class="mbr-section-title mbr-fonts-style align-center mb-2 display-2" style="color: #0f5132; font-weight: bold;">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-2 display-2" style="color: #12693d; font-weight: bold;">
               🔒 Site 100% Seguro
             </h3>
             <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-4 display-7" style="font-size: 1.25rem; font-weight: 600; color: #198754; letter-spacing: 1px; margin-top: 0.5rem;">
