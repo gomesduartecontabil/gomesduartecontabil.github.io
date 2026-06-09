@@ -19,29 +19,37 @@
   <link rel="icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp" type="image/webp" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp">
 
-  <!-- CSS CRÍTICO EM LINHA (Zera o CLS do <main> e estabiliza fontes) -->
+  <!-- CSS CRÍTICO TOTAL EM LINHA (Zera CLS do container-fluid e do topo do site) -->
   <style>
     @font-face { font-family: 'Inter Tight'; font-display: swap; }
     @font-face { font-family: 'MobiriseIcons'; font-display: block; }
     @font-face { font-family: 'mobi2'; font-display: block; }
     @font-face { font-family: 'Socicon'; font-display: block; }
 
-    /* Estrutura estática básica para evitar pulos do <main> */
     body { margin: 0; font-family: 'Inter Tight', sans-serif; background-color: #ffffff; overflow-x: hidden; }
-    header { min-height: 80px; background: transparent; }
-    main { display: block; opacity: 1; }
+    header { min-height: 80px; background: #ffffff; }
+    main { display: block; }
     
-    /* Reserva de espaço exato para o Banner Principal para zerar CLS */
+    /* Previne o pulo (CLS) do container do Banner Principal */
     .header18 { 
       min-height: 100vh; 
       display: flex; 
       align-items: center; 
+      background-color: #000000;
       background-position: center center; 
       background-size: cover;
       position: relative;
     }
+    
+    .container-fluid {
+      width: 100%;
+      padding-right: var(--bs-gutter-x, .75rem);
+      padding-left: var(--bs-gutter-x, .75rem);
+      margin-right: auto;
+      margin-left: auto;
+    }
 
-    /* Fixação estrita de tamanho da LOGO contra CLS */
+    /* Fixação estrita e incondicional de tamanho da LOGO contra CLS */
     .navbar-logo, .navbar-logo a, .navbar-logo img {
       width: 80px !important;
       height: 80px !important;
@@ -62,7 +70,7 @@
       display: block;
     }
 
-    /* Layout dos Cards de Contato */
+    /* Cards de Contato Unificados */
     .contact-card {
       background: #ffffff; 
       padding: 2.5rem 1.5rem; 
@@ -103,17 +111,7 @@
     }
   </style>
 
-  <!-- Carregamento Assíncrono Inteligente dos CSS Secundários -->
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="assets/theme/css/style.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=XjiJoI" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="assets/parallax/jarallax.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" media="print" onload="this.media='all'">
-
+  <!-- Dados Estruturados de SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -158,11 +156,11 @@
       <nav class="navbar navbar-dropdown navbar-expand-lg">
         <div class="container">
           <div class="navbar-brand">
-            <span class="navbar-logo">
+            <div class="navbar-logo">
               <a href="https://gomesduartecontabil.com" aria-label="Gomes Duarte Assessoria Contábil">
                 <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Gomes Duarte Assessoria Contabil" width="80" height="80">
               </a>
-            </span>
+            </div>
           </div>
         </div>
       </nav>
@@ -478,9 +476,48 @@
 
   <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 
-  <!-- Removido smooth-scroll.js para eliminar o Reflow Forçado de 17ms e 44ms -->
+  <!-- Carregamento Assíncrono dos Scripts da JS de Terceiros -->
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="assets/dropdown/js/navbar-dropdown.js" defer></script>
+
+  <!-- INJEÇÃO ULTRA-TARDIA DE CSS (Resolve 100% o erro do Bootstrap Não Usado acima da dobra) -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const cssFiles = [
+        'assets/bootstrap/css/bootstrap.min.css',
+        'assets/theme/css/style.css',
+        'assets/mobirise/css/mbr-additional.css?v=XjiJoI',
+        'assets/web/assets/mobirise-icons2/mobirise2.css',
+        'assets/web/assets/mobirise-icons/mobirise-icons.css',
+        'assets/parallax/jarallax.css',
+        'assets/dropdown/css/style.css',
+        'assets/socicon/css/styles.css',
+        'https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap'
+      ];
+      
+      cssFiles.forEach(function(href) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        document.head.appendChild(link);
+      });
+    });
+
+    // Scripts do tema carregados de forma ultra-segura para mitigar o erro de Reflow sem atribuição
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var themeScript = document.createElement('script');
+        themeScript.src = "assets/theme/js/script.js";
+        document.body.appendChild(themeScript);
+
+        if (window.innerWidth > 991) {
+          var parallaxScript = document.createElement('script');
+          parallaxScript.src = "assets/parallax/jarallax.js";
+          document.body.appendChild(parallaxScript);
+        }
+      }, 1000);
+    });
+  </script>
 
   <script>
     function loadGoogleMap() {
@@ -498,22 +535,6 @@
           loadGoogleMap();
         }
       }
-    });
-  </script>
-
-  <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        var themeScript = document.createElement('script');
-        themeScript.src = "assets/theme/js/script.js";
-        document.body.appendChild(themeScript);
-
-        if (window.innerWidth > 991) {
-          var parallaxScript = document.createElement('script');
-          parallaxScript.src = "assets/parallax/jarallax.js";
-          document.body.appendChild(parallaxScript);
-        }
-      }, 800);
     });
   </script>
 
