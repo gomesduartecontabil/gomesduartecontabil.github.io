@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v6.1.12, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
   <meta name="description" content="SOLUÇÕES COM PRECISÃO PARA UM NEGÓCIO DE PROSPERIDADE">
   
   <title>Gomes Duarte Assessoria Contabil - Escritorio de Contabilidade Resende RJ</title>
@@ -19,7 +19,7 @@
   <link rel="icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp" type="image/webp" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp">
 
-  <!-- CSS CRÍTICO TOTAL EM LINHA (Zera CLS do container-fluid e do topo do site) -->
+  <!-- CSS CRÍTICO TOTAL EM LINHA (Zera a faixa branca e estabiliza o topo) -->
   <style>
     @font-face { font-family: 'Inter Tight'; font-display: swap; }
     @font-face { font-family: 'MobiriseIcons'; font-display: block; }
@@ -27,10 +27,24 @@
     @font-face { font-family: 'Socicon'; font-display: block; }
 
     body { margin: 0; font-family: 'Inter Tight', sans-serif; background-color: #ffffff; overflow-x: hidden; }
-    header { min-height: 80px; background: #ffffff; }
-    main { display: block; }
     
-    /* Previne o pulo (CLS) do container do Banner Principal */
+    /* Corrige a faixa branca: força o menu a sobrepor o banner de forma transparente */
+    header { 
+      position: absolute; 
+      width: 100%; 
+      top: 0; 
+      left: 0; 
+      z-index: 1030; 
+      background: transparent !important; 
+    }
+    
+    .menu { background: transparent !important; }
+    .navbar { background: transparent !important; border: none; padding: 0.5rem 0; display: flex; align-items: center; }
+    .container { width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; display: flex; align-items: center; justify-content: space-between; }
+
+    main { display: block; position: relative; }
+    
+    /* Garante que o banner ocupe o topo real da tela */
     .header18 { 
       min-height: 100vh; 
       display: flex; 
@@ -39,38 +53,25 @@
       background-position: center center; 
       background-size: cover;
       position: relative;
+      padding-top: 80px; /* Espaço para o menu não cortar o texto */
+      box-sizing: border-box;
     }
     
-    .container-fluid {
-      width: 100%;
-      padding-right: var(--bs-gutter-x, .75rem);
-      padding-left: var(--bs-gutter-x, .75rem);
-      margin-right: auto;
-      margin-left: auto;
-    }
+    .container-fluid { width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; }
+    .row { display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; }
+    .col-12 { flex: 0 0 100%; max-width: 100%; }
 
-    /* Fixação estrita e incondicional de tamanho da LOGO contra CLS */
+    /* Fixação estrita de tamanho da LOGO contra CLS */
     .navbar-logo, .navbar-logo a, .navbar-logo img {
       width: 80px !important;
       height: 80px !important;
       display: block;
     }
 
-    .img-cls-fix {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 600 / 450;
-      display: block;
-    }
-    
-    .img-cls-fix-banner {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 665 / 374;
-      display: block;
-    }
+    .img-cls-fix { width: 100%; height: auto; aspect-ratio: 600 / 450; display: block; }
+    .img-cls-fix-banner { width: 100%; height: auto; aspect-ratio: 665 / 374; display: block; }
 
-    /* Cards de Contato Unificados */
+    /* Cards de Contato */
     .contact-card {
       background: #ffffff; 
       padding: 2.5rem 1.5rem; 
@@ -418,7 +419,7 @@
               ⭐⭐⭐⭐⭐ SSL CERTIFICADO ⭐⭐⭐⭐⭐
             </h4>
             <p class="mbr-text mbr-fonts-style align-center display-7" style="color: #495057; max-width: 600px; margin: 0 auto;">
-              Sua navegação e seus dados estão totalmente protegidos por criptografia de ponta a ponta com certificação de segurança ativa.
+              Sua navegação e seus dados estão totalmente protegidos por criptografia de ponta a ponta com certificação de segurança activa.
             </p>
           </div>
         </div>
@@ -476,11 +477,11 @@
 
   <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 
-  <!-- Carregamento Assíncrono dos Scripts da JS de Terceiros -->
+  <!-- Scripts JavaScript básicos das dependências do Mobirise -->
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="assets/dropdown/js/navbar-dropdown.js" defer></script>
 
-  <!-- INJEÇÃO ULTRA-TARDIA DE CSS (Resolve 100% o erro do Bootstrap Não Usado acima da dobra) -->
+  <!-- Injeção Assíncrona Inteligente de Folhas de Estilo -->
   <script>
     window.addEventListener('DOMContentLoaded', function() {
       const cssFiles = [
@@ -503,7 +504,7 @@
       });
     });
 
-    // Scripts do tema carregados de forma ultra-segura para mitigar o erro de Reflow sem atribuição
+    // Scripts dinâmicos do tema executados com delay controlado
     window.addEventListener('load', function() {
       setTimeout(function() {
         var themeScript = document.createElement('script');
