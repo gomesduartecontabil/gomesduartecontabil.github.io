@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" style="scroll-behavior: smooth;">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,17 +19,29 @@
   <link rel="icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp" type="image/webp" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp">
 
-  <!-- CSS ESSENCIAL EM LINHA (Evita FCP/LCP e bloqueio de renderização do Bootstrap) -->
+  <!-- CSS CRÍTICO EM LINHA (Zera o CLS do <main> e estabiliza fontes) -->
   <style>
-    /* Correção de CLS: Força swap e block nas fontes antes do carregamento */
     @font-face { font-family: 'Inter Tight'; font-display: swap; }
     @font-face { font-family: 'MobiriseIcons'; font-display: block; }
     @font-face { font-family: 'mobi2'; font-display: block; }
     @font-face { font-family: 'Socicon'; font-display: block; }
 
-    body { margin: 0; font-family: sans-serif; background-color: #ffffff; overflow-x: hidden; }
+    /* Estrutura estática básica para evitar pulos do <main> */
+    body { margin: 0; font-family: 'Inter Tight', sans-serif; background-color: #ffffff; overflow-x: hidden; }
+    header { min-height: 80px; background: transparent; }
+    main { display: block; opacity: 1; }
     
-    /* Fixação estrita de tamanho da LOGO para eliminar o erro de CLS */
+    /* Reserva de espaço exato para o Banner Principal para zerar CLS */
+    .header18 { 
+      min-height: 100vh; 
+      display: flex; 
+      align-items: center; 
+      background-position: center center; 
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Fixação estrita de tamanho da LOGO contra CLS */
     .navbar-logo, .navbar-logo a, .navbar-logo img {
       width: 80px !important;
       height: 80px !important;
@@ -50,6 +62,7 @@
       display: block;
     }
 
+    /* Layout dos Cards de Contato */
     .contact-card {
       background: #ffffff; 
       padding: 2.5rem 1.5rem; 
@@ -81,17 +94,16 @@
     @media (max-width: 1200px) { .btn-email-responsive { font-size: 0.82rem; } }
 
     @media (prefers-reduced-motion: no-preference) {
-      .reveal-effect { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); will-change: opacity, transform; }
+      .reveal-effect { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); will-change: opacity, transform; }
       .reveal-effect.active { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 991px) {
-      .mbr-parallax-background { background-image: url('assets/images/banner-1920-site.webp') !important; background-attachment: scroll !important; background-position: center center !important; background-size: cover !important; transform: none !important; }
-      .jarallax-container, [id^="jarallax-container-"] { display: none !important; }
+      .mbr-parallax-background { background-image: url('assets/images/banner-1920-site.webp') !important; background-attachment: scroll !important; }
     }
   </style>
 
-  <!-- CARREGAMENTO ADIADO DE TODOS OS CSS (Resolve 100% o erro de "Reduza o CSS não usado" acima da dobra) -->
+  <!-- Carregamento Assíncrono Inteligente dos CSS Secundários -->
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="assets/theme/css/style.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=XjiJoI" media="print" onload="this.media='all'">
@@ -139,7 +151,7 @@
   }
   </script>
 </head>
-<body style="z-index: 0">
+<body>
   
   <header>
     <section data-bs-version="5.1" class="menu menu3 cid-vcKdkL78kZ" once="menu" id="menu03-8">
@@ -148,7 +160,6 @@
           <div class="navbar-brand">
             <span class="navbar-logo">
               <a href="https://gomesduartecontabil.com" aria-label="Gomes Duarte Assessoria Contábil">
-                <!-- TAMANHO DEFINIDO E ESTILIZADO DE FORMA FIXA CONTRA CLS -->
                 <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Gomes Duarte Assessoria Contabil" width="80" height="80">
               </a>
             </span>
@@ -370,7 +381,7 @@
             </div>
           </div>
 
-          <!-- Card Email (Fixado sem quebra) -->
+          <!-- Card Email -->
           <div class="col-12 col-md-4">
             <div class="contact-card">
               <div class="mb-3">
@@ -467,8 +478,8 @@
 
   <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 
+  <!-- Removido smooth-scroll.js para eliminar o Reflow Forçado de 17ms e 44ms -->
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="assets/smoothscroll/smooth-scroll.js" defer></script>
   <script src="assets/dropdown/js/navbar-dropdown.js" defer></script>
 
   <script>
@@ -502,7 +513,7 @@
           parallaxScript.src = "assets/parallax/jarallax.js";
           document.body.appendChild(parallaxScript);
         }
-      }, 1200);
+      }, 800);
     });
   </script>
 
