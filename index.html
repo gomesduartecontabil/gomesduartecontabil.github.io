@@ -23,6 +23,7 @@
   <link rel="icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp" type="image/webp" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp">
 
+  <!-- CSS Base carregado no topo para evitar o bug do clarão -->
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css">
@@ -176,14 +177,17 @@
       .btn-shortcut { padding: 0.6rem 1.5rem; font-size: 0.85rem; }
     }
  
-    .img-cls-fix { width: 100%; height: auto; aspect-ratio: 600 / 450; display: block; border-radius: 8px; }
-    .img-cls-fix-banner { width: 100%; height: auto; aspect-ratio: 665 / 374; display: block; border-radius: 8px; }
-    .img-logo-middle { width: 250px; height: 250px; aspect-ratio: 1 / 1; display: block; object-fit: contain; }
+    /* Preservação exata do formato das imagens */
+    .img-cls-fix { width: 100% !important; max-width: 100% !important; height: auto !important; aspect-ratio: auto !important; display: block; border-radius: 8px; }
+    .img-cls-fix-banner { width: 100% !important; max-width: 100% !important; height: auto !important; aspect-ratio: auto !important; display: block; border-radius: 8px; }
+    .img-logo-middle { width: 250px !important; height: 250px !important; display: block; margin: 0 auto; }
  
     .item-mb { padding: 1rem; box-sizing: border-box; width: 100%; }
-    .card-box { background: #ffffff; padding: 2rem; border-radius: 12px; height: 100%; box-sizing: border-box; }
-    .card-title { font-size: 1.5rem; font-weight: bold; margin-top: 0; margin-bottom: 1rem; }
-    .card-text { color: #1a1a1a !important; }
+    
+    /* Correção dos Cards da Primeira Seção para o formato original */
+    .features032 .card-box { background: transparent !important; padding: 0 !important; border-radius: 0 !important; height: auto !important; box-shadow: none !important; border: none !important; }
+    .features032 .card-title { font-size: 1.5rem; font-weight: bold; margin-top: 0; margin-bottom: 1rem; }
+    .features032 .card-text { color: #1a1a1a !important; }
  
     .testimonial-card {
       background: #ffffff !important;
@@ -403,7 +407,7 @@
             <div class="main-title-block" style="width: 100%;">
               <h1 class="brand-title">GOMES DUARTE<br>ASSESSORIA CONTÁBIL</h1>
               <p class="brand-subtitle" style="color: #1ebd59 !important; font-weight: 500 !important; text-shadow: none; margin-bottom: 0.5rem;">Escritório de Contabilidade em Resende - RJ</p>
-              <p class="brand-subtitle">Soluções com precisão para um negócio de prosperity.</p>
+              <p class="brand-subtitle">Soluções com precisão para um negócio de prosperidade.</p>
                
               <div class="nav-shortcuts">
                 <a href="#servicos" class="btn-shortcut" aria-label="Ir para seção de serviços oferecidos">Serviços</a>
@@ -682,7 +686,6 @@
   <script src="assets/dropdown/js/navbar-dropdown.js" defer></script>
  
   <script>
-    // Carregamento assíncrono mantido apenas para arquivos de ícones ou secundários
     window.addEventListener('DOMContentLoaded', function() {
       const nonCriticalCss = [
         'assets/web/assets/mobirise-icons2/mobirise2.css',
