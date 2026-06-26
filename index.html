@@ -428,52 +428,70 @@
  
       </div>
     </section>
- 
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const secaoCaracteristicas = document.getElementById("features032-2");
+    
+    const sensor = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // Se a seção apareceu pelo menos 15% na tela do usuário
+        if (entry.isIntersecting) {
+          secaoCaracteristicas.style.opacity = "1";
+          secaoCaracteristicas.style.transform = "translateY(0)";
+          sensor.unobserve(secaoCaracteristicas); // Desliga o sensor após animar para economizar memória
+        }
+      });
+    }, { threshold: 0.15 });
+
+    sensor.observe(secaoCaracteristicas);
+  });
+</script>
+
     <!-- Logotipo Central -->
-    <div style="width:100%; display:flex; justify-content:center; margin: 20px 0;">
-      <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logo da empresa Gomes Duarte Assessoria Contábil em Resende" width="250" height="250" style="display:block; width:250px; height:250px; object-fit: contain;" loading="lazy">
+    <div class="reveal-effect" style="width:100%; display:flex; justify-content:center; margin: 20px 0;">
+      <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logo da empresa Gomes Duarte Assessoria Contabil" width="250" height="250" style="display:block; width:250px; height:250px; object-fit: contain;" loading="lazy">
     </div>
- 
-    <!-- Seções de Conteúdo/Artigos - Bloco 1 (Planejamento) -->
-    <section class="cid-vcK3lIp0C8" style="padding: 3rem 0; display: block !important; position: relative !important;">
+        
+    <!-- Seções de Conteúdo/Artigos -->
+    <section class="start article2 cid-vcK3lIp0C8 reveal-effect" id="article02-3" style="padding: 3rem 0;">
       <div class="container">
         <div class="row justify-content-center" style="align-items: center;">
           <div class="col-12 col-lg-6 item-mb">
-            <img class="img-cls-fix" src="assets/images/3-imagem-de-sessao-3-2.webp" alt="Planejamento tributário estratégico em Resende" width="600" height="450" loading="lazy" style="display: block !important; width: 100% !important; max-width: 600px !important;">
+            <img class="img-cls-fix" src="assets/images/3-imagem-de-sessao-3-2.webp" alt="Planejamento estratégico" width="600" height="450" loading="lazy">
           </div>
           <div class="col-12 col-lg-6" style="padding: 1rem;">
-            <h3 class="mb-4 display-2" style="font-weight: 700; color: #232323;">Crescimento Não é Sorte. É Estratégia.</h3>
-            <p class="mb-4 display-5">Oferecemos planejamento tributário avançado para empresas em Resende - RJ, visando a redução legal de impostos no Simples Nacional e Lucro Presumido, com acompanhamento próximo e especializado.</p>
+            <h2 class="mb-4 display-2"><strong>Crescimento Não é Sorte. É Estratégia.</strong></h2>
+            <p class="mb-4 display-5">Planejamento tributário avançado, visão financeira clara e acompanhamento próximo. Cada número da sua empresa passa a trabalhar a seu favor.</p>
           </div>
         </div>
       </div>
     </section>
- 
-    <!-- Seções de Conteúdo/Artigos - Bloco 2 (Economia) -->
-    <section class="cid-vcK3m3XBjl" style="padding: 3rem 0; display: block !important; position: relative !important;">
+
+    <section class="start article4 cid-vcK3m3XBjl reveal-effect" id="article04-4" style="padding: 3rem 0;">
       <div class="container">
         <div class="row justify-content-center" style="align-items: center;">
           <div class="col-12 col-lg-6 item-mb">
-            <img class="img-cls-fix-banner" src="assets/images/banner-1920-site-3.webp" alt="Análise de Oportunidades Fiscais no Sul Fluminense" width="665" height="374" loading="lazy" style="display: block !important; width: 100% !important; max-width: 665px !important;">
+            <img class="img-cls-fix-banner" src="assets/images/banner-1920-site-3.webp" alt="Análise de Oportunidades" width="665" height="374" loading="lazy">
           </div>
           <div class="col-12 col-lg-6" style="padding: 1rem;">
-            <h3 class="mb-4 display-2" style="font-weight: 700; color: #232323;">Transformamos Números em Oportunidades</h3>
-            <p class="mb-4 display-5">Analisamos profundamente a operação do seu negócio para gerar economia fiscal, aumento real da margem de lucro e novas oportunidades de expansão no mercado do Sul Fluminense.</p>
+            <h2 class="mb-4 display-2"><strong>Onde Outros Veem Números, Nós Vemos Oportunidades</strong></h2>
+            <p class="mb-4 display-5">Analisamos profundamente seus resultados para gerar economia tributária, aumento de margem e novas possibilities de expansão.</p>
           </div>
         </div>
       </div>
     </section>
- 
-    <!-- Seções de Conteúdo/Artigos - Bloco 3 (Padrão de Atendimento) -->
-    <section class="cid-vcK3mDDxK2" style="padding: 3rem 0; display: block !important; position: relative !important;">
+
+    <section class="start article2 cid-vcK3mDDxK2 reveal-effect" id="article02-5" style="padding: 3rem 0;">
       <div class="container">
         <div class="row justify-content-center" style="align-items: center;">
           <div class="col-12 col-lg-6 item-mb">
-            <img class="img-cls-fix" src="assets/images/1-imagem-de-sessao-3.webp" alt="Escritório de contabilidade digital em Resende" width="600" height="450" loading="lazy" style="display: block !important; width: 100% !important; max-width: 600px !important;">
+            <img class="img-cls-fix" src="assets/images/1-imagem-de-sessao-3.webp" alt="Novo Padrão em Contabilidade" width="600" height="450" loading="lazy">
           </div>
           <div class="col-12 col-lg-6" style="padding: 1rem;">
-            <h3 class="mb-4 display-2" style="font-weight: 700; color: #232323;">O Novo Padrão em Contabilidade Digital</h3>
-            <p class="mb-4 display-5">Unimos atendimento ágil via WhatsApp, tecnologia de ponta e foco total em performance. Nosso escritório em Resende não entrega apenas relatórios — entrega vantagem competitiva para o seu negócio.</p>
+            <h2 class="mb-4 display-2"><strong>O Novo Padrão em Contabilidade</strong></h2>
+            <p class="mb-4 display-5">Atendimento ágil, tecnologia de ponta e foco total em performance. Não entregamos relatórios — entregamos vantagem competitiva.</p>
           </div>
         </div>
       </div>
