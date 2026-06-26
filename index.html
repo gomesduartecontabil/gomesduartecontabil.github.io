@@ -448,32 +448,49 @@
     sensor.observe(secaoCaracteristicas);
   });
 </script>
+    
+<!-- ======================================================== -->
+<!-- 1. CÓDIGO DE CORREÇÃO VISUAL (REMOVE O SALTO DAS IMAGENS)-->
+<!-- ======================================================== -->
 <style>
+  /* Define o estado inicial sem causar conflito ou saltos nas imagens */
   .reveal-effect {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(40px); /* Movimento mais curto e firme */
     transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    
+    /* SEGURANÇA DA PERFORMANCE: Remove tremores, saltos e borrões em imagens */
     will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
   }
+
+  /* Ativa o estado final de forma perfeitamente suave */
   .reveal-effect.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0); /* Força o uso do motor 3D da placa de vídeo */
+  }
+
+  /* Garante que as imagens de dentro das seções não dão saltos de tamanho */
+  .reveal-effect img {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: none !important; /* Impede que a imagem tente se animar sozinha */
   }
 </style>
+
+<!-- ======================================================== -->
+<!-- 2. AS SUAS SEÇÕES DE CONTEÚDO COM A HIERARQUIA DE SEO    -->
+<!-- ======================================================== -->
 
 <!-- Logotipo Central -->
 <div class="reveal-effect" style="width:100%; display:flex; justify-content:center; margin: 20px 0;">
   <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logo da empresa Gomes Duarte Assessoria Contabil" width="250" height="250" style="display:block; width:250px; height:250px; object-fit: contain;" loading="lazy">
 </div>
-
-<!-- ======================================================== -->
-<!-- TÍTULO PRINCIPAL DA SEÇÃO (H2: O grande capítulo do site) -->
-<!-- ======================================================== -->
-<div class="container text-center my-5 reveal-effect">
-  <h2 class="display-1"><strong>Nossas Soluções e Estratégias</strong></h2>
-</div>
     
-<!-- Seções de Conteúdo/Artigos (Agora corrigidos para H3) -->
+<!-- Artigo 1 -->
 <section class="start article2 cid-vcK3lIp0C8 reveal-effect" id="article02-3" style="padding: 2rem 0;">
   <div class="container">
     <div class="row justify-content-center" style="align-items: center;">
@@ -481,7 +498,6 @@
         <img class="img-cls-fix" src="assets/images/3-imagem-de-sessao-3-2.webp" alt="Planejamento estratégico" width="600" height="450" loading="lazy">
       </div>
       <div class="col-12 col-lg-6" style="padding: 1rem;">
-        <!-- CORRIGIDO PARA H3: É um subtópico da seção de soluções -->
         <h3 class="mb-4 display-2"><strong>Crescimento Não é Sorte. É Estratégia.</strong></h3>
         <p class="mb-4 display-5">Oferecemos planejamento tributário avançado para empresas em Resende - RJ, visando a redução legal de impostos no Simples Nacional e Lucro Presumido, com acompanhamento próximo e especializado.</p>
       </div>
@@ -489,6 +505,7 @@
   </div>
 </section>
 
+<!-- Artigo 2 -->
 <section class="start article4 cid-vcK3m3XBjl reveal-effect" id="article04-4" style="padding: 2rem 0;">
   <div class="container">
     <div class="row justify-content-center" style="align-items: center;">
@@ -496,7 +513,6 @@
         <img class="img-cls-fix-banner" src="assets/images/banner-1920-site-3.webp" alt="Análise de Oportunidades" width="665" height="374" loading="lazy">
       </div>
       <div class="col-12 col-lg-6" style="padding: 1rem;">
-        <!-- CORRIGIDO PARA H3: Segundo subtópico -->
         <h3 class="mb-4 display-2"><strong>Transformamos Números em Oportunidades.</strong></h3>
         <p class="mb-4 display-5">Analisamos profundamente a operação do seu negócio para gerar economia fiscal, aumento real da margem de lucro e novas oportunidades de expansão no mercado do Sul Fluminense.</p>
       </div>
@@ -504,6 +520,7 @@
   </div>
 </section>
 
+<!-- Artigo 3 -->
 <section class="start article2 cid-vcK3mDDxK2 reveal-effect" id="article02-5" style="padding: 2rem 0;">
   <div class="container">
     <div class="row justify-content-center" style="align-items: center;">
@@ -511,7 +528,6 @@
         <img class="img-cls-fix" src="assets/images/1-imagem-de-sessao-3.webp" alt="Novo Padrão em Contabilidade" width="600" height="450" loading="lazy">
       </div>
       <div class="col-12 col-lg-6" style="padding: 1rem;">
-        <!-- CORRIGIDO PARA H3: Terceiro subtópico -->
         <h3 class="mb-4 display-2"><strong>O Novo Padrão em Contabilidade Digital.</strong></h3>
         <p class="mb-4 display-5">Unimos atendimento ágil via WhatsApp, tecnologia de ponta e foco total em performance. Nosso escritório em Resende não entrega apenas relatórios — entrega vantagem competitiva para o seu negócio.</p>
       </div>
@@ -519,6 +535,9 @@
   </div>
 </section>
 
+<!-- ======================================================== -->
+<!-- 3. O SCRIPT DE CONTROLE DO SCROLL (FICA NO FINAL)        -->
+<!-- ======================================================== -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const config = { root: null, rootMargin: "0px 0px -50px 0px", threshold: 0.1 };
