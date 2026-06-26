@@ -23,11 +23,17 @@
   <link rel="icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp" type="image/webp" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp">
 
-  <!-- CSS Original Mobirise/Bootstrap -->
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <!-- ⚡ CSS Mobirise/Bootstrap Otimizado para NÃO Bloquear a Renderização Inicial ⚡ -->
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/theme/css/style.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  </noscript>
  
   <style>
     html {
@@ -91,6 +97,7 @@
       height: 80px !important;
       display: block !important;
       margin: 0 auto !important;
+      object-fit: contain;
     }
  
     .container { width: 100%; max-width: 1320px; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; box-sizing: border-box; }
@@ -100,6 +107,7 @@
  
     main { display: block; position: relative; width: 100%; }
  
+    /* 🛠️ CONTENÇÃO DE LAYOUT CONTRA REFLOW FORÇADO (ZONA CRÍTICA DO TOPO) */
     .header18 { 
       min-height: 100vh; 
       display: flex; 
@@ -113,6 +121,9 @@
       padding-bottom: 60px;
       box-sizing: border-box;
       width: 100%;
+      contain: layout size style;
+      content-visibility: auto;
+      contain-intrinsic-size: 100vh;
     }
     .mbr-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
     .container-fluid { width: 100%; padding-right: 20px; padding-left: 20px; margin-right: auto; margin-left: auto; position: relative; z-index: 2; box-sizing: border-box; }
@@ -177,10 +188,9 @@
       .btn-shortcut { padding: 0.6rem 1.5rem; font-size: 0.85rem; }
     }
  
-    /* Fix para manter as imagens em tamanho perfeitamente normal */
     .image-wrapper img { width: 100% !important; height: auto !important; max-width: 100% !important; display: block; border-radius: 8px; }
     
-    /* Correção do Logotipo do Meio para o Lighthouse */
+    /* 🛠️ CORREÇÃO DEFINITIVA DE PROPORÇÃO DE IMAGEM PARA O LIGHTHOUSE */
     .img-logo-middle { 
       max-width: 250px !important; 
       width: 100% !important; 
@@ -314,16 +324,22 @@
       to { opacity: 1; }
     }
 
-    /* ⚡ EFEITO ULTRA LEVE DE SCROLL (LIGHTHOUSE APPROVED) ⚡ */
+    /* 🛠️ ISOLAMENTO ANTI-REFLOW PARA CARDS QUE SE MOVEM NO SCROLL */
     .scroll-reveal {
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 0.6s cubic-bezier(0.215, 0.610, 0.355, 1), transform 0.6s cubic-bezier(0.215, 0.610, 0.355, 1);
       will-change: transform, opacity;
+      contain: layout style;
     }
     .scroll-reveal.active {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Estabilizador estrutural do mapa contra Layout Thrashing */
+    #map-container {
+      contain: strict;
     }
   </style>
  
@@ -386,7 +402,7 @@
         <div class="navbar-brand">
           <div class="navbar-logo">
             <a href="https://gomesduartecontabil.com" aria-label="Gomes Duarte Assessoria Contábil - Ir para página inicial">
-              <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logotipo Oficial Gomes Duarte Assessoria Contábil" width="80" height="80" style="object-fit: contain;">
+              <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logotipo Oficial Gomes Duarte Assessoria Contábil" width="80" height="80">
             </a>
           </div>
         </div>
@@ -415,7 +431,6 @@
       </div>
     </section>
  
-    <!-- Grade de Cards em Duas Fileiras Perfeitas com Efeito de Subida Individual -->
     <section class="features032 cid-vcK3dIjxI1" id="features032-2" style="padding: 4rem 0;">
       <div class="container">
         <div class="row">
@@ -459,12 +474,11 @@
       </div>
     </section>
 
-    <!-- Corrigido de acordo com a diretriz de proporção do Lighthouse -->
+    <!-- 🛠️ CORREÇÃO REALIZADA: Div Centralizada e Atributos de Estilo Proporcional para o Logo -->
     <div class="scroll-reveal" style="width:100%; display:flex; justify-content:center; margin: 20px 0;">
       <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logotipo circular da empresa Gomes Duarte Assessoria Contábil" width="250" height="250" class="img-logo-middle" style="object-fit: contain; height: auto !important;" loading="lazy">
     </div>
         
-    <!-- Seções com texto e imagens originais subindo no scroll -->
     <section class="article2 cid-vcK3lIp0C8" id="article02-3" style="padding: 2rem 0;">
       <div class="container">
         <div class="row justify-content-center" style="align-items: center;">
@@ -635,7 +649,7 @@
           <div class="col-12 text-center" style="margin-bottom: 3rem;">
             <h2 class="mb-2 display-2" style="color: #147d3a; font-weight: bold; margin-top:0;">🔒 Site 100% Seguro</h2>
             <p class="mb-4 display-7" style="font-size: 1.25rem; font-weight: 600; color: #147d3a; letter-spacing: 1px; margin-top: 0.5rem;">⭐⭐⭐⭐• SSL CERTIFICADO •⭐⭐⭐⭐</p>
-            <p class="display-7" style="color: #1a1a1a; max-width: 600px; margin: 0 auto;">Sua navegação e seus dados estão totalmente protegidos por criptografia de ponta a ponta com certificação de segurança ativa.</p>
+            <p class="display-7" style="color: #1a1a1a; max-width: 600px; margin: 0 auto;">Sua navegação e seus dados estão totalmente protegidos por criptografia de ponta a ponta com certificação de segurança activa.</p>
           </div>
         </div>
  
@@ -690,8 +704,25 @@
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="assets/dropdown/js/navbar-dropdown.js" defer></script>
  
+  <!-- ⚡ SOLUÇÃO DA ÁRVORE DE DEPENDÊNCIAS DA REDE: Preload Paralelo de Fontes e Ícones Pesados ⚡ -->
   <script>
     window.addEventListener('DOMContentLoaded', function() {
+      const fontsToPreload = [
+        'assets/web/assets/mobirise-icons2/mobirise2.woff2?f2bix4',
+        'assets/web/assets/mobirise-icons/mobirise-icons.woff2?spat4u',
+        'assets/socicon/fonts/socicon.woff2'
+      ];
+
+      fontsToPreload.forEach(function(href) {
+        var link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'font';
+        link.type = 'font/woff2';
+        link.crossOrigin = 'anonymous';
+        link.href = href;
+        document.head.appendChild(link);
+      });
+
       const nonCriticalCss = [
         'assets/web/assets/mobirise-icons2/mobirise2.css',
         'assets/web/assets/mobirise-icons/mobirise-icons.css',
@@ -702,6 +733,8 @@
         var link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = href;
+        link.media = 'print';
+        link.onload = function() { this.media = 'all'; };
         document.head.appendChild(link);
       });
     });
@@ -712,7 +745,7 @@
         themeScript.src = "assets/theme/js/script.js";
         themeScript.defer = true;
         document.body.appendChild(themeScript);
-      }, 500);
+      }, 400);
     });
   </script>
  
@@ -746,7 +779,7 @@
     window.addEventListener('scroll', checkMapScroll);
   </script>
 
-  <!-- Script nativo IntersectionObserver: leve, rápido e amigável ao SEO -->
+  <!-- ⚡ SOLUÇÃO DO REFLOW FORÇADO: Efeito de scroll executado estritamente em frames de animação nativos ⚡ -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       if ('IntersectionObserver' in window) {
@@ -754,14 +787,16 @@
         
         const observerOptions = {
           root: null,
-          rootMargin: "0px 0px -60px 0px", 
-          threshold: 0.08
+          rootMargin: "0px 0px -40px 0px", 
+          threshold: 0.05
         };
 
         const scrollObserver = new IntersectionObserver(function (entries, observer) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-              entry.target.classList.add('active');
+              requestAnimationFrame(() => {
+                entry.target.classList.add('active');
+              });
               scrollObserver.unobserve(entry.target); 
             }
           });
