@@ -429,13 +429,13 @@
       </div>
     </section>
 
-<!-- Logotipo Central (Animação integrada ao sensor leve) -->
-    <div id="logo-central-bloco" style="width:100%; display:flex; justify-content:center; margin: 20px 0; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out;">
+<!-- Logotipo Central -->
+    <div style="width:100%; display:flex; justify-content:center; margin: 20px 0; animation: subidaSuave 0.6s ease-out forwards;">
       <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logo da empresa Gomes Duarte Assessoria Contábil em Resende" width="250" height="250" style="display:block; width:250px; height:250px; object-fit: contain;" loading="lazy">
     </div>
         
     <!-- Seções de Conteúdo/Artigos - Bloco 1 (Planejamento) -->
-    <section class="start article2 cid-vcK3lIp0C8" id="article02-3" style="padding: 3rem 0; opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+    <section class="start article2 cid-vcK3lIp0C8" style="padding: 3rem 0; animation: subidaSuave 0.8s ease-out forwards;">
       <div class="container">
         <div class="row justify-content-center" style="align-items: center;">
           <div class="col-12 col-lg-6 item-mb">
@@ -450,7 +450,7 @@
     </section>
 
     <!-- Seções de Conteúdo/Artigos - Bloco 2 (Economia) -->
-    <section class="start article4 cid-vcK3m3XBjl" id="article04-4" style="padding: 3rem 0; opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+    <section class="start article4 cid-vcK3m3XBjl" style="padding: 3rem 0; animation: subidaSuave 0.8s ease-out forwards;">
       <div class="container">
         <div class="row justify-content-center" style="align-items: center;">
           <div class="col-12 col-lg-6 item-mb">
@@ -465,7 +465,7 @@
     </section>
 
     <!-- Seções de Conteúdo/Artigos - Bloco 3 (Padrão de Atendimento) -->
-    <section class="start article2 cid-vcK3mDDxK2" id="article02-5" style="padding: 3rem 0; opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+    <section class="start article2 cid-vcK3mDDxK2" style="padding: 3rem 0; animation: subidaSuave 0.8s ease-out forwards;">
       <div class="container">
         <div class="row justify-content-center" style="align-items: center;">
           <div class="col-12 col-lg-6 item-mb">
@@ -479,33 +479,19 @@
       </div>
     </section>
 
-<!-- Novo Script Multi-Sensor de Rolagem (Ativa os blocos um por um, na hora certa) -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const elementosParaAnimar = [
-      { id: "logo-central-bloco", threshold: 0.1 },
-      { id: "article02-3", threshold: 0.15 },
-      { id: "article04-4", threshold: 0.15 },
-      { id: "article02-5", threshold: 0.15 }
-    ];
-
-    const sensor = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          el.style.opacity = "1";
-          el.style.transform = "translateY(0)";
-          sensor.unobserve(el); // Desliga para economizar memória do celular
-        }
-      });
-    }, { rootMargin: "0px 0px -50px 0px" }); // Ativa um pouco antes de entrar totalmente na tela
-
-    elementosParaAnimar.forEach(item => {
-      const el = document.getElementById(item.id);
-      if (el) sensor.observe(el);
-    });
-  });
-</script>
+<!-- Código de animação nativo, leve e sem falhas -->
+<style>
+@keyframes subidaSuave {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
 
     <!-- DEPOIMENTO ESTILIZADO -->
     <section class="people06 cid-vcK3AB04nd reveal-effect" id="people06-7" style="padding: 5rem 0; background-color: #fdfdfd;">   
