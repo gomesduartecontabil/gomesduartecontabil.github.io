@@ -271,43 +271,56 @@
   </style>
 
   <!-- DADOS ESTRUTURADOS DE SEO (MANTIDO AS COORDENADAS ORIGINAIS EXATAS) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://gomesduartecontabil.com/#website",
-        "url": "https://gomesduartecontabil.com/",
-        "name": "Gomes Duarte Assessoria Contábil"
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://gomesduartecontabil.com/#website",
+      "url": "https://gomesduartecontabil.com/",
+      "name": "Gomes Duarte Assessoria Contábil"
+    },
+    {
+      "@type": "AccountingService",
+      "@id": "https://gomesduartecontabil.com/#organization",
+      "name": "Gomes Duarte Assessoria Contábil",
+      "url": "https://gomesduartecontabil.com/",
+      "telephone": "+55-24-99240-8530",
+      "priceRange": "$$",
+      "logo": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.webp",
+      "image": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua das Azaléias, 55",
+        "addressLocality": "Resende",
+        "addressRegion": "RJ",
+        "postalCode": "27525-090",
+        "addressCountry": "BR"
       },
-      {
-        "@type": "AccountingService",
-        "@id": "https://gomesduartecontabil.com/#organization",
-        "name": "Gomes Duarte Assessoria Contábil",
-        "url": "https://gomesduartecontabil.com",
-        "telephone": "+55-24-99240-8530",
-        "priceRange": "Sob Consulta",
-        "openingHours": "Mo-Fr 09:00-18:00",
-        "logo": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.webp",
-        "image": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.webp",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Rua das Azaléias, 55 - Bairro Cidade Alegria",
-          "addressLocality": "Resende",
-          "addressRegion": "RJ",
-          "postalCode": "27525-090",
-          "addressCountry": "BR"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -22.4811858,
-          "longitude": -44.4920007
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -22.4811858,
+        "longitude": -44.4920007
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
         }
-      }
-    ]
-  }
-  </script>
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   
