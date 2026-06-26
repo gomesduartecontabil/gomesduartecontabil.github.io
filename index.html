@@ -33,7 +33,7 @@
       width: 100%; 
       font-family: 'Inter Tight', sans-serif; 
       background-color: #ffffff; 
-      color: #232323;
+      color: #1a1a1a; 
       -webkit-font-smoothing: antialiased;
     }
  
@@ -117,7 +117,7 @@
       max-width: 950px;
       margin: 0 auto;
       text-align: center;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+      text-shadow: 0 2px 14px rgba(0,0,0,0.6);
     }
     .brand-title {
       font-size: 3.6rem;
@@ -142,7 +142,7 @@
     .nav-shortcuts {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
       margin-top: 2.5rem;
       flex-wrap: wrap;
     }
@@ -150,7 +150,7 @@
       background-color: transparent;
       color: #ffffff;
       border: 2px solid #1ebd59;
-      padding: 0.75rem 2rem;
+      padding: 0.75rem 2.5rem;
       font-size: 1rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -162,23 +162,25 @@
     }
     .btn-shortcut:hover {
       background-color: #1ebd59;
-      color: #ffffff;
+      color: #000000;
       transform: scale(1.05);
     }
 
     @media (max-width: 768px) {
       .brand-title { font-size: 2.2rem; }
       .brand-subtitle { font-size: 0.95rem; letter-spacing: 1px; }
-      .nav-shortcuts { gap: 10px; margin-top: 2rem; }
-      .btn-shortcut { padding: 0.6rem 1.3rem; font-size: 0.85rem; }
+      .nav-shortcuts { gap: 12px; margin-top: 2rem; }
+      .btn-shortcut { padding: 0.6rem 1.5rem; font-size: 0.85rem; }
     }
  
     .img-cls-fix { width: 100%; height: auto; aspect-ratio: 600 / 450; display: block; border-radius: 8px; }
     .img-cls-fix-banner { width: 100%; height: auto; aspect-ratio: 665 / 374; display: block; border-radius: 8px; }
+    .img-logo-middle { width: 250px; height: 250px; aspect-ratio: 1 / 1; display: block; object-fit: contain; }
  
     .item-mb { padding: 1rem; box-sizing: border-box; }
     .card-box { background: #ffffff; padding: 2rem; border-radius: 12px; height: 100%; box-sizing: border-box; }
     .card-title { font-size: 1.5rem; font-weight: bold; margin-top: 0; margin-bottom: 1rem; }
+    .card-text { color: #1a1a1a !important; }
  
     .testimonial-card {
       background: #ffffff !important;
@@ -194,7 +196,7 @@
     }
     .testimonial-quote-icon {
       font-size: 4rem;
-      color: rgba(30, 189, 89, 0.1);
+      color: rgba(20, 125, 58, 0.1);
       line-height: 1;
       font-family: Georgia, serif;
       display: block;
@@ -202,7 +204,7 @@
     }
     .testimonial-intro {
       font-size: 1.1rem;
-      color: #1ebd59;
+      color: #147d3a; 
       font-weight: 600;
       letter-spacing: 0.5px;
       margin-bottom: 2rem;
@@ -235,14 +237,14 @@
     .services-single-column { display: block !important; text-align: center !important; }
     .services-item { 
       line-height: 1.7; 
-      color: #495057; 
+      color: #1a1a1a; 
       font-size: 1.05rem; 
       margin: 0 auto 2.5rem auto !important; 
       text-align: center !important;
       max-width: 100%;
     }
-    .services-item strong { 
-      color: #1ebd59; 
+    .services-item h3 { 
+      color: #147d3a !important; 
       display: inline-block; 
       margin-bottom: 0.6rem; 
       font-size: 1.25rem; 
@@ -269,26 +271,32 @@
     .contact-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.07) !important; }
  
     .btn-contact { display: inline-block; font-weight: bold; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem; text-align: center; transition: background 0.2s; max-width: 100%; box-sizing: border-box; }
-    .btn-wa { background-color: #25D366; color: #ffffff; }
-    .btn-wa:hover { background-color: #1ebd59; }
-    .btn-ig { background-color: #E1306C; color: #ffffff; }
-    .btn-ig:hover { background-color: #ca235d; }
+    .btn-wa { background-color: #128C7E; color: #ffffff; } 
+    .btn-wa:hover { background-color: #0b534a; }
+    .btn-ig { background-color: #C13584; color: #ffffff; } 
+    .btn-ig:hover { background-color: #832559; }
  
     .btn-email-responsive {
-      background-color: #1ebd59; 
+      background-color: #147d3a; 
       color: #ffffff;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .btn-email-responsive:hover { background-color: #147d3a; }
+    .btn-email-responsive:hover { background-color: #0b4b22; }
     @media (max-width: 1200px) { .btn-email-responsive { font-size: 0.85rem; padding: 0.75rem 1rem; } }
  
     .secure-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; width: 100%; box-sizing: border-box; }
     @media (min-width: 768px) { .secure-grid { grid-template-columns: 1fr 1fr 1fr; } }
     .secure-item { background: #ffffff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); text-align: center; box-sizing: border-box; }
-    .secure-title { font-size: 1.25rem; font-weight: bold; color: #212529; margin: 0; }
+    .secure-title { font-size: 1.25rem; font-weight: bold; color: #1a1a1a; margin: 0; }
  
+    .mbr-iconfont {
+      display: inline-block;
+      min-width: 56px;
+      min-height: 56px;
+    }
+
     .reveal-effect {
       opacity: 0;
       transform: translateY(25px);
@@ -374,8 +382,8 @@
       <div class="container">
         <div class="navbar-brand">
           <div class="navbar-logo">
-            <a href="https://gomesduartecontabil.com" aria-label="Gomes Duarte Assessoria Contábil">
-              <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Gomes Duarte Assessoria Contabil" width="80" height="80" style="object-fit: contain;">
+            <a href="https://gomesduartecontabil.com" aria-label="Gomes Duarte Assessoria Contábil - Ir para página inicial">
+              <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logotipo Oficial Gomes Duarte Assessoria Contábil" width="80" height="80" style="object-fit: contain;">
             </a>
           </div>
         </div>
@@ -385,19 +393,18 @@
 
   <main>
     <section class="header18 cid-vcK33Qjs8r" id="header18-0" style="background-image: url('assets/images/banner-1920-site.webp'); background-attachment: scroll; background-position: center top; background-size: cover; animation: acenderSuave 0.8s ease-out forwards;">
-      <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"></div>
+      <div class="mbr-overlay" style="opacity: 0.75; background-color: rgb(0, 0, 0);"></div>
       <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-12 text-center">
             <div class="main-title-block" style="width: 100%;">
               <h1 class="brand-title">GOMES DUARTE<br>ASSESSORIA CONTÁBIL</h1>
-              <p class="brand-subtitle" style="color: #1ebd59 !important; font-weight: 400 !important; text-shadow: none; margin-bottom: 0.5rem;">Escritório de Contabilidade em Resende - RJ</p>
+              <p class="brand-subtitle" style="color: #1ebd59 !important; font-weight: 500 !important; text-shadow: none; margin-bottom: 0.5rem;">Escritório de Contabilidade em Resende - RJ</p>
               <p class="brand-subtitle">Soluções com precisão para um negócio de prosperidade.</p>
               
               <div class="nav-shortcuts">
-                <a href="#servicos" class="btn-shortcut">Serviços</a>
-                <a href="#depoimentos" class="btn-shortcut">Depoimento</a>
-                <a href="#fale-conosco" class="btn-shortcut">Fale Conosco</a>
+                <a href="#servicos" class="btn-shortcut" aria-label="Ir para seção de serviços oferecidos">Serviços</a>
+                <a href="#fale-conosco" class="btn-shortcut" aria-label="Ir para seção de canais fale conosco">Fale Conosco</a>
               </div>
             </div>
           </div>
@@ -409,7 +416,7 @@
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-12 text-center">
-            <h2 class="mbr-section-title mbr-fonts-style display-2" style="font-weight: 700; color: #1ebd59 !important; text-transform: uppercase; margin-bottom: 2rem;">Contabilidade Especializada e Soluções Estratégicas em Resende - RJ</h2>
+            <h2 class="mbr-section-title mbr-fonts-style display-2" style="font-weight: 700; color: #147d3a !important; text-transform: uppercase; margin-bottom: 2rem;">Contabilidade Especializada e Soluções Estratégicas em Resende - RJ</h2>
           </div>
         </div>
         <div class="row">
@@ -454,46 +461,46 @@
     </section>
 
     <div class="reveal-effect" style="width:100%; display:flex; justify-content:center; margin: 20px 0;">
-      <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logo da empresa Gomes Duarte Assessoria Contabil" width="250" height="250" style="display:block; width:250px; height:250px; object-fit: contain;" loading="lazy">
+      <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logotipo circular da empresa Gomes Duarte Assessoria Contábil" width="250" height="250" class="img-logo-middle" loading="lazy">
     </div>
         
-    <section class="start article2 cid-vcK3lIp0C8 reveal-effect" id="article02-3" style="padding: 2rem 0;">
+    <section class="article2 cid-vcK3lIp0C8 reveal-effect" id="article02-3" style="padding: 2rem 0;">
       <div class="container">
         <div class="row justify-content-center" style="align-items: center;">
           <div class="col-12 col-lg-6 item-mb">
-            <img class="img-cls-fix" src="assets/images/3-imagem-de-sessao-3-2.webp" alt="Planejamento estratégico" width="600" height="450" loading="lazy">
+            <img class="img-cls-fix" src="assets/images/3-imagem-de-sessao-3-2.webp" alt="Gráficos analíticos e documentos de planejamento estratégico" width="600" height="450" loading="lazy">
           </div>
-          <div class="col-12 col-lg-6" style="padding: 1rem;">
-            <h3 class="mb-4 display-2"><strong>Crescimento Não é Sorte. É Estratégia.</strong></h3>
-            <p class="mb-4 display-5">Oferecemos planejamento tributário avançado para empresas em Resende - RJ, visando a redução legal de impostos no Simples Nacional e Lucro Presumido, com acompanhamento próximo e especializado.</p>
+          <div class="col-12 col-lg-6 item-mb">
+            <h2 class="mb-4 display-2"><strong>Crescimento Não é Sorte. É Estratégia.</strong></h2>
+            <p class="mb-4 display-5" style="color: #1a1a1a;">Oferecemos planejamento tributário avançado para empresas em Resende - RJ, visando a redução legal de impostos no Simples Nacional e Lucro Presumido, com acompanhamento próximo e especializado.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="start article4 cid-vcK3m3XBjl reveal-effect" id="article04-4" style="padding: 2rem 0;">
+    <section class="article4 cid-vcK3m3XBjl reveal-effect" id="article04-4" style="padding: 2rem 0;">
       <div class="container">
         <div class="row justify-content-center" style="align-items: center;">
           <div class="col-12 col-lg-6 item-mb">
-            <img class="img-cls-fix-banner" src="assets/images/banner-1920-site-3.webp" alt="Análise de Oportunidades" width="665" height="374" loading="lazy">
+            <img class="img-cls-fix-banner" src="assets/images/banner-1920-site-3.webp" alt="Profissionais analisando relatórios e oportunidades contábeis" width="665" height="374" loading="lazy">
           </div>
-          <div class="col-12 col-lg-6" style="padding: 1rem;">
-            <h3 class="mb-4 display-2"><strong>Transformamos Números em Oportunidades.</strong></h3>
-            <p class="mb-4 display-5">Analisamos profundamente a operação do seu negócio para gerar economia fiscal, aumento real da margem de lucro e novas oportunidades de expansão no mercado do Sul Fluminense.</p>
+          <div class="col-12 col-lg-6 item-mb">
+            <h2 class="mb-4 display-2"><strong>Transformamos Números em Oportunidades.</strong></h2>
+            <p class="mb-4 display-5" style="color: #1a1a1a;">Analisamos profundamente a operação do seu negócio para gerar economia fiscal, aumento real da margem de lucro e novas oportunidades de expansão no mercado do Sul Fluminense.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="start article2 cid-vcK3mDDxK2 reveal-effect" id="article02-5" style="padding: 2rem 0;">
+    <section class="article2 cid-vcK3mDDxK2 reveal-effect" id="article02-5" style="padding: 2rem 0;">
       <div class="container">
         <div class="row justify-content-center" style="align-items: center;">
           <div class="col-12 col-lg-6 item-mb">
-            <img class="img-cls-fix" src="assets/images/1-imagem-de-sessao-3.webp" alt="Novo Padrão em Contabilidade" width="600" height="450" loading="lazy">
+            <img class="img-cls-fix" src="assets/images/1-imagem-de-sessao-3.webp" alt="Interface de software moderno de contabilidade digital" width="600" height="450" loading="lazy">
           </div>
-          <div class="col-12 col-lg-6" style="padding: 1rem;">
-            <h3 class="mb-4 display-2"><strong>O Novo Padrão em Contabilidade Digital.</strong></h3>
-            <p class="mb-4 display-5">Unimos atendimento ágil via WhatsApp, tecnologia de ponta e foco total em performance. Nosso escritório em Resende não entrega apenas relatórios — entrega vantagem competitiva para o seu negócio.</p>
+          <div class="col-12 col-lg-6 item-mb">
+            <h2 class="mb-4 display-2"><strong>O Novo Padrão em Contabilidade Digital.</strong></h2>
+            <p class="mb-4 display-5" style="color: #1a1a1a;">Unimos atendimento ágil via WhatsApp, tecnologia de ponta e foco total em performance. Nosso escritório em Resende não entrega apenas relatórios — entrega vantagem competitiva para o seu negócio.</p>
           </div>
         </div>
       </div>
@@ -504,15 +511,15 @@
           <div class="row justify-content-center">
               <div class="col-12 col-lg-10">
                   <div class="testimonial-card">
-                      <span class="testimonial-quote-icon">“</span>
-                      <h3 class="testimonial-intro display-7" style="margin-top:0;">O sucesso dos nossos parceiros é o reflexo da nossa precisão técnica. Veja o depoimento de uma de nossas clientes:</h3>
-                      <p class="display-5" style="font-style: italic; line-height: 1.7; color: #212529; margin-bottom: 2rem;">
+                      <span class="testimonial-quote-icon" aria-hidden="true">“</span>
+                      <h2 class="testimonial-intro display-7" style="margin-top:0;">O success dos nossos parceiros é o reflexo da nossa precisão técnica. Veja o depoimento de uma de nossas clientes:</h2>
+                      <p class="display-5" style="font-style: italic; line-height: 1.7; color: #1a1a1a; margin-bottom: 2rem;">
                         “Antes de contratar essa equipe, eu via a contabilidade apenas como uma obrigação. Pagava impostos sem entender, tomava decisões no escuro e vivia insegura.<br><br>Depois que comecei a trabalhar com eles, tudo mudou. Passei a ter relatórios claros, planejamento tributário estratégico e orientação real para crescer. Em poucos meses, consegui reduzir custos, organizar meu financeiro e aumentar minha margem de lucro.”
                       </p>
-                      <hr style="width: 60px; border: none; height: 3px; background-color: #1ebd59; margin: 0 auto 1.5rem auto;">
+                      <hr style="width: 60px; border: none; height: 3px; background-color: #147d3a; margin: 0 auto 1.5rem auto;">
                       <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                          <img src="assets/images/mbr.webp" alt="Depoimento Mariana" width="90" height="90" loading="lazy" class="testimonial-avatar">
-                          <p class="mt-3 display-7" style="font-weight: bold; color: #212529; margin-top: 12px; letter-spacing: 0.5px;">
+                          <img src="assets/images/mbr.webp" alt="Retrato da empresária parceira Mariana Souza" width="90" height="90" loading="lazy" class="testimonial-avatar">
+                          <p class="mt-3 display-7" style="font-weight: bold; color: #1a1a1a; margin-top: 12px; letter-spacing: 0.5px;">
                             Mariana Souza - Empresária
                           </p>
                       </div>
@@ -527,12 +534,12 @@
           <div class="row justify-content-center">
               <div class="col-12 col-lg-10">
                   <div class="services-box">
-                        <h2 class="display-2 text-center" style="font-weight: bold; color: #1ebd59; margin-bottom: 3rem; text-align: center !important; margin-top:0;">
+                        <h2 class="display-2 text-center" style="font-weight: bold; color: #147d3a; margin-bottom: 3rem; text-align: center !important; margin-top:0;">
                           Serviços de Contabilidade em Resende - RJ
                         </h2>
                         <div class="services-single-column display-7">
                               <div class="services-item">
-                                <h4 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #1ebd59; text-align: center !important;"><strong>1. Abertura e Legalização de Empresas</strong></h4>
+                                <h3 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #147d3a; text-align: center !important;"><strong>1. Abertura e Legalização de Empresas</strong></h3><br>
                                 • Abertura de Empresas e Alteração Contratual (Abrir CNPJ)<br>
                                 • Legalização e Baixa de Empresas (Encerramento de CNPJ)<br>
                                 • Regularização de CPF e CNPJ com Pendências<br>
@@ -540,7 +547,7 @@
                                 • Emissão de Certidões Negativas
                               </div>
                               <div class="services-item" style="margin-top: 2.5rem;">
-                                <h4 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #1ebd59; text-align: center !important;"><strong>2. Gestão Contábil e Regimes Tributários</strong></h4>
+                                <h3 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #147d3a; text-align: center !important;"><strong>2. Gestão Contábil e Regimes Tributários</strong></h3><br>
                                 • Contabilidade para Simples Nacional e Lucro Presumido<br>
                                 • Contabilidade para Médicos e Profissionais da Saúde<br>
                                 • Contabilidade para Advogados<br>
@@ -548,7 +555,7 @@
                                 • Escrituração Contábil e Fiscal
                               </div>
                               <div class="services-item" style="margin-top: 2.5rem;">
-                                <h4 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #1ebd59; text-align: center !important;"><strong>3. Estratégia e Planejamento Tributário</strong></h4>
+                                <h3 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #147d3a; text-align: center !important;"><strong>3. Estratégia e Planejamento Tributário</strong></h3><br>
                                 • Planejamento Tributário para Empresas e Pessoa Física<br>
                                 • Recuperação de Créditos Tributários e Redução de Impostos<br>
                                 • Auditoria Contábil e Correção de Erros Fiscais<br>
@@ -556,14 +563,14 @@
                                 • Consultoria Tributária para Novos Negócios
                               </div>
                               <div class="services-item" style="margin-top: 2.5rem;">
-                                <h4 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #1ebd59; text-align: center !important;"><strong>4. Departamento Pessoal e Financeiro</strong></h4>
+                                <h3 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #147d3a; text-align: center !important;"><strong>4. Departamento Pessoal e Financeiro</strong></h3><br>
                                 • Gestão de Folha de Pagamento e eSocial<br>
                                 • Análise Financeira de Planos de Negócios<br>
                                 • Assistência em Negociação de Dívidas Tributárias<br>
                                 • Processamento de Reembolsos e Taxas
                               </div>
                               <div class="services-item" style="margin-top: 2.5rem;">
-                                <h4 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #1ebd59; text-align: center !important;"><strong>5. Imposto de Renda e Pessoa Física</strong></h4>
+                                <h3 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #147d3a; text-align: center !important;"><strong>5. Imposto de Renda e Pessoa Física</strong></h3><br>
                                 • Declaração de Imposto de Renda (IRPF e IRPJ)<br>
                                 • Planejamento de Tributos Individuais<br>
                                 • Preparação e Transmissão de Declarações
@@ -579,37 +586,37 @@
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-12 text-center" style="margin-bottom: 3rem;">
-            <h2 class="mb-2 display-2" style="color: #1ebd59; font-weight: bold; margin-top:0;">Fale Conosco & Redes Sociais</h2>
-            <p class="display-7" style="color: #212529; max-width: 600px; margin: 0 auto;">Escolha o canal de sua preferência. Nossa equipe está pronta para te atender com agilidade e inteligência estratégica.</p>
+            <h2 class="mb-2 display-2" style="color: #147d3a; font-weight: bold; margin-top:0;">Fale Conosco &amp; Redes Sociais</h2>
+            <p class="display-7" style="color: #1a1a1a; max-width: 600px; margin: 0 auto;">Escolha o canal de sua preferência. Nossa equipe está pronta para te atender com agilidade e inteligência estratégica.</p>
           </div>
         </div>
  
         <div class="contact-grid">
           <div class="contact-card">
             <div style="margin-bottom: 1rem;">
-              <span class="mbr-iconfont mobi-mbri-phone mobi-mbri" style="font-size: 3.5rem; color: #25D366;" aria-hidden="true"></span>
+              <span class="mbr-iconfont mobi-mbri-phone mobi-mbri" style="font-size: 3.5rem; color: #128C7E;" aria-hidden="true"></span>
             </div>
-            <h3 class="card-title" style="color: #212529; margin-top:0;">WhatsApp</h3>
-            <p class="display-7" style="color: #212529; margin-bottom: 1.5rem;">Clique para iniciar um atendimento instantâneo.</p>
-            <a href="https://wa.me/5524992408530" class="btn-contact btn-wa" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">+55 (24) 99240-8530</a>
+            <h3 class="card-title" style="color: #1a1a1a; margin-top:0;">WhatsApp</h3>
+            <p class="display-7" style="color: #1a1a1a; margin-bottom: 1.5rem;">Clique para iniciar um atendimento instantâneo.</p>
+            <a href="https://wa.me/5524992408530" class="btn-contact btn-wa" target="_blank" rel="noopener" aria-label="Iniciar conversa e falar conosco pelo WhatsApp comercial">+55 (24) 99240-8530</a>
           </div>
  
           <div class="contact-card">
             <div style="margin-bottom: 1rem;">
-              <span class="mbr-iconfont mobi-mbri-letter mobi-mbri" style="font-size: 3.5rem; color: #1ebd59;" aria-hidden="true"></span>
+              <span class="mbr-iconfont mobi-mbri-letter mobi-mbri" style="font-size: 3.5rem; color: #147d3a;" aria-hidden="true"></span>
             </div>
-            <h3 class="card-title" style="color: #212529; margin-top:0;">E-mail</h3>
-            <p class="display-7" style="color: #212529; margin-bottom: 1.5rem;">Envie suas propostas ou dúvidas formais.</p>
-            <a href="mailto:contato@gomesduartecontabil.com" class="btn-contact btn-email-responsive" aria-label="Enviar e-mail para a assessoria">contato@gomesduartecontabil.com</a>
+            <h3 class="card-title" style="color: #1a1a1a; margin-top:0;">E-mail</h3>
+            <p class="display-7" style="color: #1a1a1a; margin-bottom: 1.5rem;">Envie suas propostas ou dúvidas formais.</p>
+            <a href="mailto:contato@gomesduartecontabil.com" class="btn-contact btn-email-responsive" aria-label="Enviar um e-mail para o endereço de contato da assessoria gomes duarte">contato@gomesduartecontabil.com</a>
           </div>
  
           <div class="contact-card">
             <div style="margin-bottom: 1rem;">
-              <span class="mbr-iconfont socicon-instagram socicon" style="font-size: 3.5rem; color: #E1306C;" aria-hidden="true"></span>
+              <span class="mbr-iconfont socicon-instagram socicon" style="font-size: 3.5rem; color: #C13584;" aria-hidden="true"></span>
             </div>
-            <h3 class="card-title" style="color: #212529; margin-top:0;">Instagram</h3>
-            <p class="display-7" style="color: #212529; margin-bottom: 1.5rem;">Siga-nos para novidades e dicas contábeis.</p>
-            <a href="https://www.instagram.com/gomesduartecontabil/" class="btn-contact btn-ig" target="_blank" rel="noopener" aria-label="Siga-nos no Instagram">@gomesduartecontabil</a>
+            <h3 class="card-title" style="color: #1a1a1a; margin-top:0;">Instagram</h3>
+            <p class="display-7" style="color: #1a1a1a; margin-bottom: 1.5rem;">Siga-nos para novidades e dicas contábeis.</p>
+            <a href="https://www.instagram.com/gomesduartecontabil/" class="btn-contact btn-ig" target="_blank" rel="noopener" aria-label="Acessar e seguir nosso perfil corporativo no Instagram">@gomesduartecontabil</a>
           </div>
         </div>
       </div>
@@ -619,9 +626,9 @@
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-12 text-center" style="margin-bottom: 3rem;">
-            <h2 class="mb-2 display-2" style="color: #1ebd59; font-weight: bold; margin-top:0;">🔒 Site 100% Seguro</h2>
+            <h2 class="mb-2 display-2" style="color: #147d3a; font-weight: bold; margin-top:0;">🔒 Site 100% Seguro</h2>
             <p class="mb-4 display-7" style="font-size: 1.25rem; font-weight: 600; color: #147d3a; letter-spacing: 1px; margin-top: 0.5rem;">⭐⭐⭐⭐• SSL CERTIFICADO •⭐⭐⭐⭐</p>
-            <p class="display-7" style="color: #212529; max-width: 600px; margin: 0 auto;">Sua navegação e seus dados estão totalmente protegidos por criptografia de ponta a ponta com certificação de segurança activa.</p>
+            <p class="display-7" style="color: #1a1a1a; max-width: 600px; margin: 0 auto;">Sua navegação e seus dados estão totalmente protegidos por criptografia de ponta a ponta com certificação de segurança activa.</p>
           </div>
         </div>
  
@@ -649,24 +656,24 @@
     </section>
  
     <div style="text-align:center; font-size:14px; margin:30px 0;">
-      <address style="font-style: normal; line-height: 1.6; margin-bottom: 20px; color: #212529;">
+      <address style="font-style: normal; line-height: 1.6; margin-bottom: 20px; color: #1a1a1a;">
         <strong>Gomes Duarte Assessoria Contábil - Escritório de Contabilidade Resende RJ</strong><br>
         Rua das Azaléias, 55 - Bairro Cidade Alegria<br>
         Resende – RJ<br>
         CEP 27525-090<br>
-        Tel: <a href="tel:+5524992408530" style="color: #147d3a; font-weight: bold;" aria-label="Ligar para o escritório Gomes Duarte Assessoria Contábil">(24) 99240-8530</a>
+        Tel: <a href="tel:+5524992408530" style="color: #147d3a; font-weight: bold;" aria-label="Ligar por telefone fixo para o escritório Gomes Duarte Assessoria Contábil">(24) 99240-8530</a>
       </address>
  
       <div style="max-width: 800px; margin: 0 auto; padding: 0 15px;">
         <div id="map-container" style="width:100%; height:450px; background-color:#e5e3df; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display:flex; align-items:center; justify-content:center; position: relative;">
-          <button id="map-trigger-btn" onclick="loadGoogleMap()" style="padding: 12px 24px; background-color: #147d3a; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 2;">Visualizar Mapa Interativo</button>
+          <button id="map-trigger-btn" onclick="loadGoogleMap()" style="padding: 12px 24px; background-color: #147d3a; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 2;" aria-label="Carregar e interagir com o mapa de localização dinâmico">Visualizar Mapa Interativo</button>
         </div>
       </div>
     </div>
   </main>
  
   <footer>
-    <p style="text-align: center; color: #212529; font-size: 12px; margin-top: 40px; margin-bottom: 20px;">
+    <p style="text-align: center; color: #1a1a1a; font-size: 12px; margin-top: 40px; margin-bottom: 20px;">
       © <span id="current-year"></span> Gomes Duarte Assessoria Contábil. Desenvolvido via Mobirise.
     </p>
   </footer>
@@ -715,19 +722,23 @@
   </script>
  
   <script>
+    let isMapLoaded = false;
+
     function loadGoogleMap() {
+      if (isMapLoaded) return;
+      isMapLoaded = true;
+
+      window.removeEventListener('scroll', checkMapScroll);
+
       var container = document.getElementById('map-container');
       var button = document.getElementById('map-trigger-btn');
  
-      if(container.querySelector('iframe')) return;
- 
       if(button) button.style.display = 'none';
       
-      // MAPA OFICIAL CORRIGIDO AQUI ABAIXO:
       container.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.61265038536!2d-44.48942580000001!3d-22.4811859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9e7999113bde17%3A0x2fc33c332dcebf3c!2sGomes%20Duarte%20Assessoria%20Cont%C3%A1bil!5e0!3m2!1spt-BR!2sbr!4v1782473395797!5m2!1spt-BR!2sbr" title="Mapa de Localização da Gomes Duarte Assessoria Contábil" width="100%" height="450" style="border:0; border-radius: 8px; position: absolute; top:0; left:0; width:100%; height:100%;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>';
     }
  
-    window.addEventListener('scroll', function() {
+    function checkMapScroll() {
       var element = document.getElementById('map-container');
       if(element) {
         var position = element.getBoundingClientRect();
@@ -735,7 +746,9 @@
           loadGoogleMap();
         }
       }
-    });
+    }
+
+    window.addEventListener('scroll', checkMapScroll);
   </script>
  
   <script>
