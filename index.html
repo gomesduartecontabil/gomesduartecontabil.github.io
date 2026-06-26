@@ -450,39 +450,31 @@
 </script>
     
 <!-- ======================================================== -->
-<!-- 1. CÓDIGO DE CORREÇÃO VISUAL (REMOVE O SALTO DAS IMAGENS)-->
+<!-- 1. CSS COMPACTADO (Otimiza o tempo de leitura do browser)-->
 <!-- ======================================================== -->
 <style>
-  /* Define o estado inicial sem causar conflito ou saltos nas imagens */
   .reveal-effect {
     opacity: 0;
-    transform: translateY(40px); /* Movimento mais curto e firme */
-    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-    
-    /* SEGURANÇA DA PERFORMANCE: Remove tremores, saltos e borrões em imagens */
+    transform: translateY(25px); /* Movimento menor reduz o esforço do processador */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Animação mais curta e leve */
     will-change: transform, opacity;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform-style: preserve-3d;
   }
-
-  /* Ativa o estado final de forma perfeitamente suave */
   .reveal-effect.active {
     opacity: 1;
-    transform: translateY(0) translateZ(0); /* Força o uso do motor 3D da placa de vídeo */
+    transform: translateY(0);
   }
-
-  /* Garante que as imagens de dentro das seções não dão saltos de tamanho */
-  .reveal-effect img {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform: translateZ(0);
-    transition: none !important; /* Impede que a imagem tente se animar sozinha */
+  /* Remove qualquer impacto visual pesado em dispositivos móveis antigos */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-effect {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
   }
 </style>
 
 <!-- ======================================================== -->
-<!-- 2. AS SUAS SEÇÕES DE CONTEÚDO COM A HIERARQUIA DE SEO    -->
+<!-- 2. AS SUAS SEÇÕES DE CONTEÚDO (HTML Puro e Leve)        -->
 <!-- ======================================================== -->
 
 <!-- Logotipo Central -->
@@ -536,21 +528,25 @@
 </section>
 
 <!-- ======================================================== -->
-<!-- 3. O SCRIPT DE CONTROLE DO SCROLL (FICA NO FINAL)        -->
+<!-- 3. SCRIPT ASSÍNCRONO (Não barra o carregamento do site)  -->
 <!-- ======================================================== -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const config = { root: null, rootMargin: "0px 0px -50px 0px", threshold: 0.1 };
-  const observer = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, config);
-  document.querySelectorAll(".reveal-effect").forEach(el => observer.observe(el));
-});
+  // Executa o efeito em segundo plano sem travar a renderização inicial
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -20px 0px' });
+
+    document.querySelectorAll('.reveal-effect').forEach(el => observer.observe(el));
+  } else {
+    // Se o navegador for muito antigo, exibe o conteúdo imediatamente sem travar
+    document.querySelectorAll('.reveal-effect').forEach(el => el.classList.add('active'));
+  }
 </script>
  
     <!-- DEPOIMENTO ESTILIZADO -->
