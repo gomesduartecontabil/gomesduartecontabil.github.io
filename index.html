@@ -177,7 +177,7 @@
       .btn-shortcut { padding: 0.6rem 1.5rem; font-size: 0.85rem; }
     }
  
-    /* Fix para evitar que as imagens da seção fiquem gigantes */
+    /* Fix para manter as imagens em tamanho perfeitamente normal */
     .image-wrapper img { width: 100% !important; height: auto !important; max-width: 100% !important; display: block; border-radius: 8px; }
     .img-logo-middle { width: 250px !important; height: 250px !important; display: block; margin: 0 auto; }
  
@@ -304,6 +304,18 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
+    /* ⚡ EFEITO ULTRA LEVE DE SCROLL (LIGHTHOUSE APPROVED) ⚡ */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(40px); /* Começa um pouco mais abaixo */
+      transition: opacity 0.6s cubic-bezier(0.215, 0.610, 0.355, 1), transform 0.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+      will-change: transform, opacity;
+    }
+    .scroll-reveal.active {
+      opacity: 1;
+      transform: translateY(0); /* Sobe suavemente para a posição certa */
+    }
   </style>
  
   <script type="application/ld+json">
@@ -394,41 +406,41 @@
       </div>
     </section>
  
-    <!-- Grade de Cards Original em Duas Fileiras de Três Lados -->
+    <!-- Grade de Cards em Duas Fileiras Perfeitas com Efeito de Subida Individual -->
     <section class="features032 cid-vcK3dIjxI1" id="features032-2" style="padding: 4rem 0;">
       <div class="container">
         <div class="row">
-          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb scroll-reveal">
             <div class="item-wrapper">
               <h2 class="card-title mbr-fonts-style display-5">Assessoria Contábil para Empresas</h2>
               <p class="card-text display-7">Esqueça o modelo ultrapassado de contabilidade reativa. Oferecemos uma gestão estratégica que antecipa riscos fiscais, identifica oportunidades e posiciona seu negócio à frente da concorrência em Resende.</p>
             </div>
           </div>
-          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb scroll-reveal">
             <div class="item-wrapper">
               <h3 class="card-title mbr-fonts-style display-5">Redução Legal de Impostos</h3>
               <p class="card-text display-7">Nossa missão é aplicar um planejamento tributário eficiente para reduzir impostos de forma legal, otimizar resultados e fornecer relatórios claros para decisões mais lucrativas na região Sul Fluminense.</p>
             </div>
           </div>
-          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb scroll-reveal">
             <div class="item-wrapper">
               <h3 class="card-title mbr-fonts-style display-5">Abertura de CNPJ e Migração de MEI</h3>
               <p class="card-text display-7">Não somos apenas contadores — somos parceiros do seu crescimento. Atuamos lado a lado com você para estruturar, organizar, legalizar e escalar a sua empresa com segurança em Resende, Volta Redonda, Itatiaia, Porto Real e região.</p>
             </div>
           </div>
-          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb scroll-reveal">
             <div class="item-wrapper">
               <h3 class="card-title mbr-fonts-style display-5">Tecnologia e Contabilidade Digital</h3>
               <p class="card-text display-7">Unimos inovação tecnológica com profunda experiência de mercado para entregar performance e eficiência no atendimento a prestadores de serviços, comércios e indústrias da Região das Agulhas Negras.</p>
             </div>
           </div>
-          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb scroll-reveal">
             <div class="item-wrapper">
               <h3 class="card-title mbr-fonts-style display-5">Segurança Fiscal no Simples Nacional</h3>
               <p class="card-text display-7">Cuidamos de toda a burocracia para que você foque no que realmente importa: crescer. Conformidade fiscal rígida, planejamento societário e tranquilidade total perante a Receita Federal.</p>
             </div>
           </div>
-          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+          <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb scroll-reveal">
             <div class="item-wrapper">
               <h3 class="card-title mbr-fonts-style display-5">Declaração de Imposto de Renda</h3>
               <p class="card-text display-7">Evite a malha fina com nossa assessoria especializada em IRPF em Resende - RJ. Garantimos a análise segura de documentos, evolução patrimonial e restituição máxima para médicos, advogados, profissionais liberais e empresários da Região das Agulhas Negras.</p>
@@ -438,20 +450,20 @@
       </div>
     </section>
 
-    <div style="width:100%; display:flex; justify-content:center; margin: 20px 0;">
+    <div class="scroll-reveal" style="width:100%; display:flex; justify-content:center; margin: 20px 0;">
       <img src="assets/images/logotipo-gd-contabil-1-circulo.webp" alt="Logotipo circular da empresa Gomes Duarte Assessoria Contábil" width="250" height="250" class="img-logo-middle" loading="lazy">
     </div>
         
-    <!-- Seções com imagens em tamanho normal e texto ao lado -->
+    <!-- Seções com texto e imagens originais subindo no scroll -->
     <section class="article2 cid-vcK3lIp0C8" id="article02-3" style="padding: 2rem 0;">
       <div class="container">
         <div class="row justify-content-center" style="align-items: center;">
-          <div class="col-12 col-lg-6 item-mb">
+          <div class="col-12 col-lg-6 item-mb scroll-reveal">
             <div class="image-wrapper">
               <img src="assets/images/3-imagem-de-sessao-3-2.webp" alt="Gráficos analíticos e documentos de planejamento estratégico" width="600" height="450" loading="lazy">
             </div>
           </div>
-          <div class="col-12 col-lg-6 item-mb">
+          <div class="col-12 col-lg-6 item-mb scroll-reveal">
             <h2 class="mb-4 display-2"><strong>Crescimento Não é Sorte. É Estratégia.</strong></h2>
             <p class="mb-4 display-5" style="color: #1a1a1a;">Oferecemos planejamento tributário avançado para empresas em Resende - RJ, visando a redução legal de impostos no Simples Nacional e Lucro Presumido, com acompanhamento próximo e especializado.</p>
           </div>
@@ -462,12 +474,12 @@
     <section class="article4 cid-vcK3m3XBjl" id="article04-4" style="padding: 2rem 0;">
       <div class="container">
         <div class="row justify-content-center" style="align-items: center;">
-          <div class="col-12 col-lg-6 item-mb">
+          <div class="col-12 col-lg-6 item-mb scroll-reveal">
             <div class="image-wrapper">
               <img src="assets/images/banner-1920-site-3.webp" alt="Profissionais analisando relatórios e oportunidades contábeis" width="665" height="374" loading="lazy">
             </div>
           </div>
-          <div class="col-12 col-lg-6 item-mb">
+          <div class="col-12 col-lg-6 item-mb scroll-reveal">
             <h2 class="mb-4 display-2"><strong>Transformamos Números em Oportunidades.</strong></h2>
             <p class="mb-4 display-5" style="color: #1a1a1a;">Analisamos profundamente a operação do seu negócio para gerar economia fiscal, aumento real da margem de lucro e novas oportunidades de expansão no mercado do Sul Fluminense.</p>
           </div>
@@ -478,12 +490,12 @@
     <section class="article2 cid-vcK3mDDxK2" id="article02-5" style="padding: 2rem 0;">
       <div class="container">
         <div class="row justify-content-center" style="align-items: center;">
-          <div class="col-12 col-lg-6 item-mb">
+          <div class="col-12 col-lg-6 item-mb scroll-reveal">
             <div class="image-wrapper">
               <img src="assets/images/1-imagem-de-sessao-3.webp" alt="Interface de software moderno de contabilidade digital" width="600" height="450" loading="lazy">
             </div>
           </div>
-          <div class="col-12 col-lg-6 item-mb">
+          <div class="col-12 col-lg-6 item-mb scroll-reveal">
             <h2 class="mb-4 display-2"><strong>O Novo Padrão em Contabilidade Digital.</strong></h2>
             <p class="mb-4 display-5" style="color: #1a1a1a;">Unimos atendimento ágil via WhatsApp, tecnologia de ponta e foco total em performance. Nosso escritório em Resende não entrega apenas relatórios — entrega vantagem competitiva para o seu negócio.</p>
           </div>
@@ -491,7 +503,7 @@
       </div>
     </section>
      
-    <section class="people06 cid-vcK3AB04nd" id="depoimentos" style="padding: 5rem 0; background-color: #fdfdfd;">   
+    <section class="people06 cid-vcK3AB04nd scroll-reveal" id="depoimentos" style="padding: 5rem 0; background-color: #fdfdfd;">   
       <div class="container">
           <div class="row justify-content-center">
               <div class="col-12 col-lg-10">
@@ -514,7 +526,7 @@
       </div>
     </section>
  
-    <section class="services-section" id="servicos" style="padding: 5rem 0; background-color: #fafafa;">   
+    <section class="services-section scroll-reveal" id="servicos" style="padding: 5rem 0; background-color: #fafafa;">   
       <div class="container">
           <div class="row justify-content-center">
               <div class="col-12 col-lg-10">
@@ -567,7 +579,7 @@
       </div>
     </section>
  
-    <section id="fale-conosco" style="padding: 5rem 0; background-color: #f1f3f5;">
+    <section id="fale-conosco" class="scroll-reveal" style="padding: 5rem 0; background-color: #f1f3f5;">
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-12 text-center" style="margin-bottom: 3rem;">
@@ -607,7 +619,7 @@
       </div>
     </section>
  
-    <section class="people02 cid-vcLq2lydC3" id="people02-f" style="padding: 5rem 0; background-color: #f8f9fa;">
+    <section class="people02 cid-vcLq2lydC3 scroll-reveal" id="people02-f" style="padding: 5rem 0; background-color: #f8f9fa;">
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-12 text-center" style="margin-bottom: 3rem;">
@@ -722,6 +734,35 @@
     }
 
     window.addEventListener('scroll', checkMapScroll);
+  </script>
+
+  <!-- Script Moderno, Leve e de Altíssima Performance para o Efeito de Scroll -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if ('IntersectionObserver' in window) {
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px 0px -60px 0px", /* Dispara o efeito um pouco antes de aparecer na tela */
+          threshold: 0.08
+        };
+
+        const scrollObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              scrollObserver.unobserve(entry.target); /* Executa a animação apenas uma vez */
+            }
+          });
+        }, observerOptions);
+
+        revealElements.forEach(el => scrollObserver.observe(el));
+      } else {
+        // Fallback caso o navegador seja antigo: mostra tudo normalmente
+        document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('active'));
+      }
+    });
   </script>
 </body>
 </html>
