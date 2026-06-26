@@ -375,16 +375,16 @@
 }
 </style>
 
-<!-- Características (Otimizadas para SEO Local, Cor Verde, Título no Final e Slide de Baixo) -->
-    <section class="features032 cid-vcK3dIjxI1" id="features032-2" style="padding: 4rem 0; opacity: 0; animation: slideVindoDeBaixo 0.8s ease-out 0.2s forwards;">
+<!-- Características (Animação ativa por Scroll Inteligente, Cor Verde e Título no Final) -->
+    <section class="features032 cid-vcK3dIjxI1" id="features032-2" style="padding: 4rem 0; opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
       <div class="container">
         
-        <!-- Bloco dos Cartões de Características (Mantido no Topo) -->
+        <!-- Bloco dos Cartões de Características -->
         <div class="row">
           <div class="item features-without-image col-12 col-lg-4 item-mb">
             <div class="card-box">
               <h3 class="card-title mbr-fonts-style display-5" style="font-weight: 600;">Assessoria Contábil para Empresas</h3>
-              <p class="card-text display-7">Esqueça o modelo ultrapassado de contabilidade reativa. Oferecemos uma gestão estratégica que antecipa riscos fiscais, identifica oportunidades e posiciona seu negócio à frente da concorrência em Resende.</p>
+              <p class="card-text display-7">Esqueça o model o ultrapassado de contabilidade reativa. Oferecemos uma gestão estratégica que antecipa riscos fiscais, identifica oportunidades e posiciona seu negócio à frente da concorrência em Resende.</p>
             </div>
           </div>
           <div class="item features-without-image col-12 col-lg-4 item-mb">
@@ -419,7 +419,7 @@
           </div>
         </div>
 
-        <!-- Título Principal Reposicionado para Baixo com a Cor Verde Oficial (#1ebd59) -->
+        <!-- Título Principal em Verde Oficial (#1ebd59) -->
         <div class="row justify-content-center mt-5">
           <div class="col-12 text-center">
             <h2 class="mbr-section-title mbr-fonts-style display-2" style="font-weight: 700; margin-top: 2rem; color: #1ebd59 !important; text-transform: uppercase;">Contabilidade Especializada e Soluções Estratégicas em Resende - RJ</h2>
@@ -429,19 +429,25 @@
       </div>
     </section>
 
-<!-- Código do Efeito Slide de Entrada por Baixo (Sem travar o desempenho) -->
-<style>
-@keyframes slideVindoDeBaixo {
-  from {
-    opacity: 0;
-    transform: translateY(40px); /* Começa 40 pixels abaixo */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);    /* Sobe suavemente até a posição original */
-  }
-}
-</style>
+<!-- Script Sensor de Rolagem Ultraleve (Dispara a animação na hora certa) -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const secaoCaracteristicas = document.getElementById("features032-2");
+    
+    const sensor = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // Se a seção apareceu pelo menos 15% na tela do usuário
+        if (entry.isIntersecting) {
+          secaoCaracteristicas.style.opacity = "1";
+          secaoCaracteristicas.style.transform = "translateY(0)";
+          sensor.unobserve(secaoCaracteristicas); // Desliga o sensor após animar para economizar memória
+        }
+      });
+    }, { threshold: 0.15 });
+
+    sensor.observe(secaoCaracteristicas);
+  });
+</script>
 
     <!-- Logotipo Central -->
     <div class="reveal-effect" style="width:100%; display:flex; justify-content:center; margin: 20px 0;">
