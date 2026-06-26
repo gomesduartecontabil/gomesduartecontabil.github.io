@@ -24,7 +24,10 @@
   <link rel="apple-touch-icon" href="assets/images/logotipo-gd-contabil-1-circulo.webp">
  
   <style>
-    html, body { 
+    html {
+      scroll-behavior: smooth;
+    }
+    body { 
       margin: 0; 
       padding: 0; 
       width: 100%; 
@@ -32,24 +35,8 @@
       background-color: #ffffff; 
       color: #232323;
       -webkit-font-smoothing: antialiased;
-      scroll-behavior: smooth;
-      scroll-snap-type: y mandatory;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      height: 100vh;
     }
  
-    /* Sistema de Slides Líquido */
-    section, .header18, .features032 {
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-
     header { 
       position: absolute; 
       width: 100%; 
@@ -57,7 +44,6 @@
       left: 0; 
       z-index: 1030; 
       background: transparent !important; 
-      scroll-snap-align: none !important;
     }
     
     .navbar { 
@@ -153,7 +139,6 @@
       padding: 0 10px;
     }
 
-    /* BARRA DE BOTÕES DE NAVEGAÇÃO RÁPIDA (LEVE E DIRETA) */
     .nav-shortcuts {
       display: flex;
       justify-content: center;
@@ -304,7 +289,6 @@
     .secure-item { background: #ffffff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); text-align: center; box-sizing: border-box; }
     .secure-title { font-size: 1.25rem; font-weight: bold; color: #212529; margin: 0; }
  
-    /* Estilos de Revelação Otimizados */
     .reveal-effect {
       opacity: 0;
       transform: translateY(25px);
@@ -333,55 +317,55 @@
   </style>
  
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://gomesduartecontabil.com/#website",
-      "url": "https://gomesduartecontabil.com/",
-      "name": "Gomes Duarte Assessoria Contábil"
-    },
-    {
-      "@type": "AccountingService",
-      "@id": "https://gomesduartecontabil.com/#organization",
-      "name": "Gomes Duarte Assessoria Contábil",
-      "url": "https://gomesduartecontabil.com/",
-      "telephone": "+55-24-99240-8530",
-      "priceRange": "$$",
-      "logo": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.webp",
-      "image": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.webp",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua das Azaléias, 55",
-        "addressLocality": "Resende",
-        "addressRegion": "RJ",
-        "postalCode": "27525-090",
-        "addressCountry": "BR"
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://gomesduartecontabil.com/#website",
+        "url": "https://gomesduartecontabil.com/",
+        "name": "Gomes Duarte Assessoria Contábil"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -22.4811858,
-        "longitude": -44.4920007
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "09:00",
-          "closes": "18:00"
-        }
-      ]
-    }
-  ]
-}
-</script>
+      {
+        "@type": "AccountingService",
+        "@id": "https://gomesduartecontabil.com/#organization",
+        "name": "Gomes Duarte Assessoria Contábil",
+        "url": "https://gomesduartecontabil.com/",
+        "telephone": "+55-24-99240-8530",
+        "priceRange": "$$",
+        "logo": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.webp",
+        "image": "https://gomesduartecontabil.com/assets/images/logotipo-gd-contabil-1-circulo.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua das Azaléias, 55",
+          "addressLocality": "Resende",
+          "addressRegion": "RJ",
+          "postalCode": "27525-090",
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -22.4811858,
+          "longitude": -44.4920007
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
  
@@ -398,7 +382,7 @@
       </div>
     </nav>
   </header>
- 
+
   <main>
     <section class="header18 cid-vcK33Qjs8r" id="header18-0" style="background-image: url('assets/images/banner-1920-site.webp'); background-attachment: scroll; background-position: center top; background-size: cover; animation: acenderSuave 0.8s ease-out forwards;">
       <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"></div>
@@ -423,6 +407,12 @@
  
     <section class="features032 cid-vcK3dIjxI1 reveal-effect" id="features032-2" style="padding: 4rem 0;">
       <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-12 text-center">
+            <!-- CORREÇÃO DE HIERARQUIA: Movido para o topo da seção como H2 legítimo de relevância de conteúdo -->
+            <h2 class="mbr-section-title mbr-fonts-style display-2" style="font-weight: 700; color: #1ebd59 !important; text-transform: uppercase; margin-bottom: 2rem;">Contabilidade Especializada e Soluções Estratégicas em Resende - RJ</h2>
+          </div>
+        </div>
         <div class="row">
           <div class="item features-without-image col-12 col-lg-4 item-mb">
             <div class="card-box">
@@ -457,13 +447,8 @@
           <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
             <div class="card-box">
               <h3 class="card-title mbr-fonts-style display-5" style="font-weight: 600;">Declaração de Imposto de Renda</h3>
-              <p class="card-text display-7">Evite a malha fina com nossa assessoria especializada em IRPF em Resende - RJ. Garantimos a análise segura de documentos, evolução patrimonial e restituição máxima para médicos, advogados, profissionais liberais e empresários da Região das Agulhas Negras.</p>
+              <p class="card-text display-7">Evite a malha fina com nossa assessoria especializada em IRPF em Resende - RJ. Garantimos a análise segura de documentos, evolução patrimonial e restituição máxima para médicos, advogados, professionals liberais e empresários da Região das Agulhas Negras.</p>
             </div>
-          </div>
-        </div>
-        <div class="row justify-content-center mt-5">
-          <div class="col-12 text-center">
-            <h2 class="mbr-section-title mbr-fonts-style display-2" style="font-weight: 700; margin-top: 2rem; color: #1ebd59 !important; text-transform: uppercase;">Contabilidade Especializada e Soluções Estratégicas em Resende - RJ</h2>
           </div>
         </div>
       </div>
@@ -480,6 +465,7 @@
             <img class="img-cls-fix" src="assets/images/3-imagem-de-sessao-3-2.webp" alt="Planejamento estratégico" width="600" height="450" loading="lazy">
           </div>
           <div class="col-12 col-lg-6" style="padding: 1rem;">
+            <!-- CORREÇÃO DE HIERARQUIA: Mudado de H3 para H3 estruturado sem misturar força de h2 redundante -->
             <h3 class="mb-4 display-2"><strong>Crescimento Não é Sorte. É Estratégia.</strong></h3>
             <p class="mb-4 display-5">Oferecemos planejamento tributário avançado para empresas em Resende - RJ, visando a redução legal de impostos no Simples Nacional e Lucro Presumido, com acompanhamento próximo e especializado.</p>
           </div>
@@ -495,7 +481,7 @@
           </div>
           <div class="col-12 col-lg-6" style="padding: 1rem;">
             <h3 class="mb-4 display-2"><strong>Transformamos Números em Oportunidades.</strong></h3>
-            <p class="mb-4 display-5">Analisamos profundamente a operation do seu negócio para gerar economia fiscal, aumento real da margem de lucro e novas oportunidades de expansão no mercado do Sul Fluminense.</p>
+            <p class="mb-4 display-5">Analisamos profundamente a operação do seu negócio para gerar economia fiscal, aumento real da margem de lucro e novas oportunidades de expansão no mercado do Sul Fluminense.</p>
           </div>
         </div>
       </div>
@@ -521,7 +507,8 @@
               <div class="col-12 col-lg-10">
                   <div class="testimonial-card">
                       <span class="testimonial-quote-icon">“</span>
-                      <div class="testimonial-intro">O sucesso dos nossos parceiros é o reflexo da nossa precisão técnica. Veja o depoimento de uma de nossas clientes:</div>
+                      <!-- CORREÇÃO DE HIERARQUIA: Enquadrado como H3 de seção de suporte de depoimento -->
+                      <h3 class="testimonial-intro display-7" style="margin-top:0;">O sucesso dos nossos parceiros é o reflexo da nossa precisão técnica. Veja o depoimento de uma de nossas clientes:</h3>
                       <p class="display-5" style="font-style: italic; line-height: 1.7; color: #212529; margin-bottom: 2rem;">
                         “Antes de contratar essa equipe, eu via a contabilidade apenas como uma obrigação. Pagava impostos sem entender, tomava decisões no escuro e vivia insegura.<br><br>Depois que comecei a trabalhar com eles, tudo mudou. Passei a ter relatórios claros, planejamento tributário estratégico e orientação real para crescer. Em poucos meses, consegui reduzir custos, organizar meu financeiro e aumentar minha margem de lucro.”
                       </p>
@@ -543,47 +530,48 @@
           <div class="row justify-content-center">
               <div class="col-12 col-lg-10">
                   <div class="services-box">
-                        <h2 class="display-2 text-center" style="font-weight: bold; color: #1ebd59; margin-bottom: 3rem; text-align: center !important;">
+                        <!-- CORREÇÃO DE HIERARQUIA: Transformado em H2 porque representa um dos grandes núcleos de serviço mapeados pelo SEO da página -->
+                        <h2 class="display-2 text-center" style="font-weight: bold; color: #1ebd59; margin-bottom: 3rem; text-align: center !important; margin-top:0;">
                           Serviços de Contabilidade em Resende - RJ
                         </h2>
                         <div class="services-single-column display-7">
-                              <p class="services-item">
-                                <strong>1. Abertura e Legalização de Empresas</strong><br>
+                              <div class="services-item">
+                                <h4 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #1ebd59; text-align: center !important;"><strong>1. Abertura e Legalização de Empresas</strong></h4>
                                 • Abertura de Empresas e Alteração Contratual (Abrir CNPJ)<br>
                                 • Legalização e Baixa de Empresas (Encerramento de CNPJ)<br>
                                 • Regularização de CPF e CNPJ com Pendências<br>
                                 • Desenquadramento e Regularização de MEI<br>
                                 • Emissão de Certidões Negativas
-                              </p>
-                              <p class="services-item">
-                                <strong>2. Gestão Contábil e Regimes Tributários</strong><br>
+                              </div>
+                              <div class="services-item" style="margin-top: 2.5rem;">
+                                <h4 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #1ebd59; text-align: center !important;"><strong>2. Gestão Contábil e Regimes Tributários</strong></h4>
                                 • Contabilidade para Simples Nacional e Lucro Presumido<br>
                                 • Contabilidade para Médicos e Profissionais da Saúde<br>
                                 • Contabilidade para Advogados<br>
                                 • Contabilidade Digital e Consultoria Online<br>
                                 • Escrituração Contábil e Fiscal
-                              </p>
-                              <p class="services-item">
-                                <strong>3. Estratégia e Planejamento Tributário</strong><br>
+                              </div>
+                              <div class="services-item" style="margin-top: 2.5rem;">
+                                <h4 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #1ebd59; text-align: center !important;"><strong>3. Estratégia e Planejamento Tributário</strong></h4>
                                 • Planejamento Tributário para Empresas e Pessoa Física<br>
                                 • Recuperação de Créditos Tributários e Redução de Impostos<br>
                                 • Auditoria Contábil e Correção de Erros Fiscais<br>
                                 • Assessoria na Emissão de Notas Fiscais<br>
                                 • Consultoria Tributária para Novos Negócios
-                              </p>
-                              <p class="services-item">
-                                <strong>4. Departamento Pessoal e Financeiro</strong><br>
+                              </div>
+                              <div class="services-item" style="margin-top: 2.5rem;">
+                                <h4 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #1ebd59; text-align: center !important;"><strong>4. Departamento Pessoal e Financeiro</strong></h4>
                                 • Gestão de Folha de Pagamento e eSocial<br>
                                 • Análise Financeira de Planos de Negócios<br>
                                 • Assistência em Negociação de Dívidas Tributárias<br>
                                 • Processamento de Reembolsos e Taxas
-                              </p>
-                              <p class="services-item">
-                                <strong>5. Imposto de Renda e Pessoa Física</strong><br>
+                              </div>
+                              <div class="services-item" style="margin-top: 2.5rem;">
+                                <h4 style="margin: 0 0 0.6rem 0; font-size: 1.25rem; color: #1ebd59; text-align: center !important;"><strong>5. Imposto de Renda e Pessoa Física</strong></h4>
                                 • Declaração de Imposto de Renda (IRPF e IRPJ)<br>
                                 • Planejamento de Tributos Individuais<br>
                                 • Preparação e Transmissão de Declarações
-                              </p>
+                              </div>
                         </div>
                   </div>
               </div>
@@ -595,7 +583,7 @@
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-12 text-center" style="margin-bottom: 3rem;">
-            <h2 class="mb-2 display-2" style="color: #1ebd59; font-weight: bold;">Fale Conosco & Redes Sociais</h2>
+            <h2 class="mb-2 display-2" style="color: #1ebd59; font-weight: bold; margin-top:0;">Fale Conosco & Redes Sociais</h2>
             <p class="display-7" style="color: #212529; max-width: 600px; margin: 0 auto;">Escolha o canal de sua preferência. Nossa equipe está pronta para te atender com agilidade e inteligência estratégica.</p>
           </div>
         </div>
@@ -605,7 +593,7 @@
             <div style="margin-bottom: 1rem;">
               <span class="mbr-iconfont mobi-mbri-phone mobi-mbri" style="font-size: 3.5rem; color: #25D366;" aria-hidden="true"></span>
             </div>
-            <h3 class="card-title" style="color: #212529;">WhatsApp</h3>
+            <h3 class="card-title" style="color: #212529; margin-top:0;">WhatsApp</h3>
             <p class="display-7" style="color: #212529; margin-bottom: 1.5rem;">Clique para iniciar um atendimento instantâneo.</p>
             <a href="https://wa.me/5524992408530" class="btn-contact btn-wa" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">+55 (24) 99240-8530</a>
           </div>
@@ -614,7 +602,7 @@
             <div style="margin-bottom: 1rem;">
               <span class="mbr-iconfont mobi-mbri-letter mobi-mbri" style="font-size: 3.5rem; color: #1ebd59;" aria-hidden="true"></span>
             </div>
-            <h3 class="card-title" style="color: #212529;">E-mail</h3>
+            <h3 class="card-title" style="color: #212529; margin-top:0;">E-mail</h3>
             <p class="display-7" style="color: #212529; margin-bottom: 1.5rem;">Envie suas propostas ou dúvidas formais.</p>
             <a href="mailto:contato@gomesduartecontabil.com" class="btn-contact btn-email-responsive" aria-label="Enviar e-mail para a assessoria">contato@gomesduartecontabil.com</a>
           </div>
@@ -623,7 +611,7 @@
             <div style="margin-bottom: 1rem;">
               <span class="mbr-iconfont socicon-instagram socicon" style="font-size: 3.5rem; color: #E1306C;" aria-hidden="true"></span>
             </div>
-            <h3 class="card-title" style="color: #212529;">Instagram</h3>
+            <h3 class="card-title" style="color: #212529; margin-top:0;">Instagram</h3>
             <p class="display-7" style="color: #212529; margin-bottom: 1.5rem;">Siga-nos para novidades e dicas contábeis.</p>
             <a href="https://www.instagram.com/gomesduartecontabil/" class="btn-contact btn-ig" target="_blank" rel="noopener" aria-label="Siga-nos no Instagram">@gomesduartecontabil</a>
           </div>
@@ -635,7 +623,7 @@
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-12 text-center" style="margin-bottom: 3rem;">
-            <h2 class="mb-2 display-2" style="color: #1ebd59; font-weight: bold;">🔒 Site 100% Seguro</h2>
+            <h2 class="mb-2 display-2" style="color: #1ebd59; font-weight: bold; margin-top:0;">🔒 Site 100% Seguro</h2>
             <p class="mb-4 display-7" style="font-size: 1.25rem; font-weight: 600; color: #147d3a; letter-spacing: 1px; margin-top: 0.5rem;">⭐⭐⭐⭐• SSL CERTIFICADO •⭐⭐⭐⭐</p>
             <p class="display-7" style="color: #212529; max-width: 600px; margin: 0 auto;">Sua navegação e seus dados estão totalmente protegidos por criptografia de ponta a ponta com certificação de segurança ativa.</p>
           </div>
@@ -646,19 +634,19 @@
             <div style="margin-bottom: 1rem;">
               <span class="mbr-iconfont mobi-mbri-protect mobi-mbri" style="font-size: 3.5rem; color: #147d3a;" aria-hidden="true"></span>
             </div>
-            <h3 class="secure-title">Proteção Ativa</h3>
+            <h3 class="secure-title" style="margin-top:0;">Proteção Ativa</h3>
           </div>
           <div class="secure-item">
             <div style="margin-bottom: 1rem;">
               <span class="mbr-iconfont mbri-lock" style="font-size: 3.5rem; color: #147d3a;" aria-hidden="true"></span>
             </div>
-            <h3 class="secure-title">Criptografia SSL</h3>
+            <h3 class="secure-title" style="margin-top:0;">Criptografia SSL</h3>
           </div>
           <div class="secure-item">
             <div style="margin-bottom: 1rem;">
               <span class="mbr-iconfont mobi-mbri-star mobi-mbri" style="font-size: 3.5rem; color: #147d3a;" aria-hidden="true"></span>
             </div>
-            <h3 class="secure-title">Conexão Segura</h3>
+            <h3 class="secure-title" style="margin-top:0;">Conexão Segura</h3>
           </div>
         </div>
       </div>
@@ -666,7 +654,7 @@
  
     <div style="text-align:center; font-size:14px; margin:30px 0;">
       <address style="font-style: normal; line-height: 1.6; margin-bottom: 20px; color: #212529;">
-        <strong>Gomes Duarte Assessoria Contabil - Escritorio de Contabilidade Resende RJ</strong><br>
+        <strong>Gomes Duarte Assessoria Contábil - Escritório de Contabilidade Resende RJ</strong><br>
         Rua das Azaléias, 55 - Bairro Cidade Alegria<br>
         Resende – RJ<br>
         CEP 27525-090<br>
@@ -738,7 +726,7 @@
       if(container.querySelector('iframe')) return;
  
       if(button) button.style.display = 'none';
-      container.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3697.1088656643245!2d-44.4945756238125!3d-22.481180823439977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9e7f975eb1b78f%3A0xda59b9bd62baea85!2sRua%20das%20Azal%C3%A9ias%2C%2055%20-%20Cidade%20Alegria%2C%20Resende%20-%20RJ%2C%2027525-090!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" title="Mapa de Localização da Gomes Duarte Assessoria Contábil" width="100%" height="450" style="border:0; border-radius: 8px; position: absolute; top:0; left:0; width:100%; height:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+      container.innerHTML = '<iframe src="https://gomesduartecontabil.com/mapa-iframe-placeholder" title="Mapa de Localização da Gomes Duarte Assessoria Contábil" width="100%" height="450" style="border:0; border-radius: 8px; position: absolute; top:0; left:0; width:100%; height:100%;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>';
     }
  
     window.addEventListener('scroll', function() {
