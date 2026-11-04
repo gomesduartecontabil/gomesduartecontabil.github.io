@@ -591,3 +591,126 @@
         Resende - RJ, 27525-090<br>
         Tel: <a href="tel:+5524992408530" style="color: #147d3a; font-weight: bold;" aria-label="Ligar por telefone para o escritório Gomes Duarte Assessoria Contábil">(24) 99240-8530</a>
       </address>
+      <div style="max-width: 800px; margin: 0 auto; padding: 0 15px;">
+        <div id="map-container" style="width:100%; height:450px; background-color:#e5e3df; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display:flex; align-items:center; justify-content:center; position: relative;">
+          <button id="map-trigger-btn" onclick="loadGoogleMap()" style="padding: 12px 24px; background-color: #147d3a; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 2;" aria-label="Carregar e interagir com o mapa de localização dinâmico">Visualizar Mapa Interativo</button>
+        </div>
+      </div>
+    </div>
+  </main>
+ 
+  <footer>
+    <p style="text-align: center; color: #1a1a1a; font-size: 12px; margin-top: 40px; margin-bottom: 20px;">
+      © <span id="current-year"></span> Gomes Duarte Assessoria e Contabilidade Resende. Desenvolvido via Mobirise.
+    </p>
+  </footer>
+ 
+  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+ 
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js" defer></script>
+ 
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const fontsToPreload = [
+        'assets/web/assets/mobirise-icons2/mobirise2.woff2?f2bix4',
+        'assets/web/assets/mobirise-icons/mobirise-icons.woff2?spat4u',
+        'assets/socicon/fonts/socicon.woff2'
+      ];
+
+      fontsToPreload.forEach(function(href) {
+        var link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'font';
+        link.type = 'font/woff2';
+        link.crossOrigin = 'anonymous';
+        link.href = href;
+        document.head.appendChild(link);
+      });
+
+      const nonCriticalCss = [
+        'assets/web/assets/mobirise-icons2/mobirise2.css',
+        'assets/web/assets/mobirise-icons/mobirise-icons.css',
+        'assets/socicon/css/styles.css'
+      ];
+ 
+      nonCriticalCss.forEach(function(href) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        link.media = 'print';
+        link.onload = function() { this.media = 'all'; };
+        document.head.appendChild(link);
+      });
+    });
+ 
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var themeScript = document.createElement('script');
+        themeScript.src = "assets/theme/js/script.js";
+        themeScript.defer = true;
+        document.body.appendChild(themeScript);
+      }, 400);
+    });
+  </script>
+ 
+  <script>
+    let isMapLoaded = false;
+
+    function loadGoogleMap() {
+      if (isMapLoaded) return;
+      isMapLoaded = true;
+
+      window.removeEventListener('scroll', checkMapScroll);
+
+      var container = document.getElementById('map-container');
+      var button = document.getElementById('map-trigger-btn');
+ 
+      if(button) button.style.display = 'none';
+      
+      container.innerHTML = '<iframe src="https://google.com" title="Mapa de Localização da Gomes Duarte Assessoria Contábil" width="100%" height="450" style="border:0; border-radius: 8px; position: absolute; top:0; left:0; width:100%; height:100%;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+    }
+ 
+    function checkMapScroll() {
+      var element = document.getElementById('map-container');
+      if(element) {
+        var position = element.getBoundingClientRect();
+        if(position.top < window.innerHeight && position.bottom >= 0) {
+          loadGoogleMap();
+        }
+      }
+    }
+
+    window.addEventListener('scroll', checkMapScroll);
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if ('IntersectionObserver' in window) {
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px 0px -40px 0px", 
+          threshold: 0.05
+        };
+
+        const scrollObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              requestAnimationFrame(() => {
+                entry.target.classList.add('active');
+              });
+              scrollObserver.unobserve(entry.target); 
+            }
+          });
+        }, observerOptions);
+
+        revealElements.forEach(el => scrollObserver.observe(el));
+      } else {
+        document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('active'));
+      }
+    });
+  </script>
+</body>
+</html>
